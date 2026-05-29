@@ -6,459 +6,525 @@
 <title>Dr. Tivendra Aadhraan | General Physician & Public Health Specialist – Delhi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <style>
-/* ─── RESET & BASE ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: 'DM Sans', sans-serif; color: #0f1923; background: #fff; overflow-x: hidden; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; color: #1a2e1a; background: #fff; overflow-x: hidden; }
 
 :root {
-  --teal: #0a7c6e;
-  --teal-dark: #065a50;
-  --teal-mid: #0d9e8d;
-  --teal-light: #e6f7f5;
-  --teal-border: #b2ddd8;
-  --text: #0f1923;
-  --muted: #5a6a72;
-  --border: #e2e8ec;
-  --bg2: #f7fafa;
-  --white: #fff;
+  --green-900: #0d2b0d;
+  --green-800: #1a4a1a;
+  --green-700: #1f5c1f;
+  --green-600: #2d7a2d;
+  --green-500: #3a9e3a;
+  --green-400: #4fc04f;
+  --green-300: #86d486;
+  --green-200: #b8e8b8;
+  --green-100: #d6f0d6;
+  --green-50:  #edfaed;
+  --yellow-500: #f0c200;
+  --yellow-400: #f5d000;
+  --yellow-300: #f9df4a;
+  --yellow-200: #fceea0;
+  --yellow-100: #fef7d0;
+  --yellow-50:  #fffdf0;
+  --white: #ffffff;
+  --text: #1a2e1a;
+  --muted: #4a6b4a;
+  --border: #c8e0c8;
 }
 
-/* ─── TOP BAR ─── */
+/* ── TOPBAR ── */
 .topbar {
-  background: var(--teal-dark);
-  padding: 10px 0;
-  font-size: 12.5px;
-  color: rgba(255,255,255,.78);
+  background: var(--green-900);
+  padding: 9px 0;
+  font-size: 12px;
+  color: rgba(255,255,255,.7);
 }
-.topbar .container {
+.topbar .wrap {
   max-width: 1200px; margin: 0 auto; padding: 0 24px;
   display: flex; align-items: center; gap: 28px; flex-wrap: wrap;
 }
-.topbar-item { display: flex; align-items: center; gap: 7px; }
-.topbar-item i { color: #5fe0d0; font-size: 11px; }
-.topbar-item a { color: rgba(255,255,255,.85); text-decoration: none; transition: color .2s; }
-.topbar-item a:hover { color: #fff; }
+.ti { display: flex; align-items: center; gap: 7px; }
+.ti i { color: var(--yellow-400); font-size: 11px; }
+.ti a { color: rgba(255,255,255,.8); text-decoration: none; transition: color .2s; }
+.ti a:hover { color: var(--yellow-300); }
 
-/* ─── NAVBAR ─── */
+/* ── NAVBAR ── */
 header {
   position: sticky; top: 0; z-index: 999;
-  background: #fff; border-bottom: 1px solid var(--border);
-  box-shadow: 0 2px 16px rgba(0,0,0,.06);
+  background: #fff;
+  border-bottom: 2px solid var(--green-100);
+  box-shadow: 0 4px 24px rgba(26,74,26,.08);
 }
 nav {
   max-width: 1200px; margin: 0 auto;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 24px; height: 72px;
+  padding: 0 24px; height: 74px;
 }
-.nav-brand { display: flex; align-items: center; gap: 13px; text-decoration: none; }
-.nav-brand-icon {
-  width: 46px; height: 46px; border-radius: 13px;
-  background: var(--teal); display: flex; align-items: center; justify-content: center;
+.brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.brand-icon {
+  width: 48px; height: 48px; border-radius: 14px;
+  background: linear-gradient(135deg, var(--green-600), var(--green-800));
+  display: flex; align-items: center; justify-content: center;
   color: #fff; font-size: 20px; flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(45,122,45,.3);
 }
-.nav-brand-name { font-size: 15px; font-weight: 700; color: var(--text); line-height: 1.2; font-family: 'DM Serif Display', serif; }
-.nav-brand-creds { font-size: 11px; color: var(--muted); font-weight: 400; }
-.nav-links { display: flex; align-items: center; gap: 34px; list-style: none; }
-.nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; transition: color .2s; }
-.nav-links a:hover { color: var(--teal); }
+.brand-name { font-size: 15.5px; font-weight: 800; color: var(--text); line-height: 1.2; font-family: 'Playfair Display', serif; }
+.brand-creds { font-size: 11px; color: var(--muted); font-weight: 400; }
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 600; transition: color .2s; }
+.nav-links a:hover { color: var(--green-600); }
 .nav-book {
-  background: var(--teal); color: #fff; text-decoration: none;
-  padding: 11px 24px; border-radius: 9px; font-size: 14px; font-weight: 600;
-  transition: background .2s; white-space: nowrap; display: flex; align-items: center; gap: 7px;
+  background: var(--yellow-400); color: var(--green-900); text-decoration: none;
+  padding: 11px 22px; border-radius: 10px; font-size: 13.5px; font-weight: 800;
+  transition: all .2s; white-space: nowrap; display: flex; align-items: center; gap: 7px;
+  box-shadow: 0 4px 16px rgba(240,194,0,.35);
 }
-.nav-book:hover { background: var(--teal-dark); }
+.nav-book:hover { background: var(--yellow-500); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(240,194,0,.45); }
 .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
 .hamburger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; display: block; }
 .mobile-nav {
   display: none; flex-direction: column;
   background: #fff; border-top: 1px solid var(--border);
-  position: fixed; top: 72px; left: 0; right: 0; z-index: 998;
-  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  position: fixed; top: 74px; left: 0; right: 0; z-index: 998;
+  box-shadow: 0 8px 32px rgba(0,0,0,.1);
 }
 .mobile-nav.open { display: flex; }
-.mobile-nav a { padding: 16px 24px; text-decoration: none; color: var(--text); font-size: 15px; font-weight: 500; border-bottom: 1px solid var(--border); }
-.mobile-nav a.cta { background: var(--teal); color: #fff; text-align: center; font-weight: 600; border: none; }
+.mobile-nav a { padding: 16px 24px; text-decoration: none; color: var(--text); font-size: 15px; font-weight: 600; border-bottom: 1px solid var(--border); }
+.mobile-nav a.cta { background: var(--yellow-400); color: var(--green-900); text-align: center; font-weight: 800; border: none; }
 
-/* ─── SHARED ─── */
+/* ── SHARED ── */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-.section-tag {
+.tag {
   display: inline-flex; align-items: center; gap: 8px;
-  background: var(--teal-light); color: var(--teal);
-  border: 1px solid var(--teal-border); border-radius: 100px;
-  padding: 5px 14px; font-size: 11.5px; font-weight: 700;
-  letter-spacing: .6px; text-transform: uppercase; margin-bottom: 16px;
+  background: var(--yellow-100); color: var(--green-800);
+  border: 1.5px solid var(--yellow-300); border-radius: 100px;
+  padding: 5px 16px; font-size: 11px; font-weight: 800;
+  letter-spacing: .7px; text-transform: uppercase; margin-bottom: 16px;
 }
-.section-title { font-family: 'DM Serif Display', serif; font-size: clamp(26px, 3vw, 38px); line-height: 1.15; color: var(--text); margin-bottom: 14px; }
-.section-title em { color: var(--teal); font-style: italic; }
-.section-sub { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 28px; }
-.btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 9px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all .2s; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; }
-.btn-primary { background: var(--teal); color: #fff; box-shadow: 0 4px 18px rgba(10,124,110,.25); }
-.btn-primary:hover { background: var(--teal-dark); transform: translateY(-1px); }
+.tag i { color: var(--yellow-500); }
+.sec-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.5vw, 42px); line-height: 1.12; color: var(--text); margin-bottom: 14px; }
+.sec-title em { color: var(--green-600); font-style: italic; }
+.sec-sub { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 28px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 10px; font-size: 14px; font-weight: 700; text-decoration: none; transition: all .2s; cursor: pointer; border: none; font-family: 'Plus Jakarta Sans', sans-serif; }
+.btn-primary { background: var(--green-600); color: #fff; box-shadow: 0 4px 18px rgba(45,122,45,.28); }
+.btn-primary:hover { background: var(--green-700); transform: translateY(-1px); }
+.btn-yellow { background: var(--yellow-400); color: var(--green-900); box-shadow: 0 4px 18px rgba(240,194,0,.3); }
+.btn-yellow:hover { background: var(--yellow-500); transform: translateY(-1px); }
 .btn-outline { background: #fff; color: var(--text); border: 1.5px solid var(--border); }
-.btn-outline:hover { border-color: var(--teal); color: var(--teal); }
+.btn-outline:hover { border-color: var(--green-500); color: var(--green-600); }
 
-/* ─── FADE UP ─── */
-.fade-up { opacity: 0; transform: translateY(30px); transition: opacity .65s ease, transform .65s ease; }
+/* ── FADE UP ── */
+.fade-up { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
 .fade-up.in { opacity: 1; transform: translateY(0); }
-.fade-up-delay-1 { transition-delay: .12s; }
-.fade-up-delay-2 { transition-delay: .24s; }
-.fade-up-delay-3 { transition-delay: .36s; }
-.fade-up-delay-4 { transition-delay: .48s; }
+.d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; } .d4 { transition-delay: .4s; }
 
-/* ─── HERO ─── */
+/* ── HERO ── */
 .hero {
-  background: linear-gradient(160deg, #e6f7f5 0%, #fff 55%, #f0faf9 100%);
-  padding: 90px 0 80px;
+  background: linear-gradient(155deg, var(--green-50) 0%, #fff 50%, var(--yellow-50) 100%);
+  padding: 96px 0 88px; position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: -120px; right: -120px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, var(--green-100) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: -80px; left: -80px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, var(--yellow-100) 0%, transparent 70%);
+  pointer-events: none;
 }
 .hero-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+  display: grid; grid-template-columns: 1fr 480px; gap: 64px; align-items: center; position: relative; z-index: 1;
 }
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
-  background: var(--teal-light); color: var(--teal);
-  border: 1px solid var(--teal-border); border-radius: 100px;
-  padding: 6px 16px; font-size: 12px; font-weight: 700;
-  letter-spacing: .5px; margin-bottom: 20px;
+  background: var(--green-900); color: var(--yellow-300);
+  border-radius: 100px; padding: 7px 18px;
+  font-size: 11.5px; font-weight: 800; letter-spacing: .6px; margin-bottom: 22px;
 }
-.hero-quote {
-  font-family: 'DM Serif Display', serif;
-  font-size: clamp(36px, 4.5vw, 58px); line-height: 1.08;
-  color: var(--text); margin-bottom: 16px;
+.hero-eyebrow i { font-size: 10px; }
+h1.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 5vw, 62px); line-height: 1.06;
+  color: var(--text); margin-bottom: 18px;
 }
-.hero-quote em { color: var(--teal); font-style: italic; }
-.hero-subquote { font-size: 15.5px; color: var(--muted); line-height: 1.75; margin-bottom: 32px; max-width: 470px; }
-.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 44px; }
-.hero-stats { display: flex; gap: 36px; }
-.stat { }
-.stat-num { display: block; font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--teal); line-height: 1; }
-.stat-label { display: block; font-size: 11.5px; color: var(--muted); font-weight: 500; margin-top: 4px; }
+h1.hero-title em { color: var(--green-600); font-style: italic; }
+.hero-title .accent {
+  position: relative; display: inline-block;
+}
+.hero-title .accent::after {
+  content: '';
+  position: absolute; bottom: 2px; left: 0; right: 0; height: 6px;
+  background: var(--yellow-300); z-index: -1; border-radius: 2px; opacity: .7;
+}
+.hero-sub { font-size: 15.5px; color: var(--muted); line-height: 1.8; margin-bottom: 34px; max-width: 480px; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 48px; }
+.hero-stats { display: flex; gap: 40px; }
+.stat-num { display: block; font-family: 'Playfair Display', serif; font-size: 32px; color: var(--green-600); line-height: 1; font-weight: 900; }
+.stat-label { display: block; font-size: 11.5px; color: var(--muted); font-weight: 600; margin-top: 5px; }
 
-/* hero image panel */
-.hero-image-panel { position: relative; display: flex; justify-content: center; }
+/* Hero image */
+.hero-img-panel { position: relative; display: flex; justify-content: center; }
 .hero-img-bg {
-  position: absolute; inset: 20px -20px -20px 20px;
-  background: linear-gradient(135deg, var(--teal-light), #c8eeea);
-  border-radius: 28px; z-index: 0;
+  position: absolute; inset: 24px -16px -16px 16px;
+  background: linear-gradient(135deg, var(--green-200), var(--green-100));
+  border-radius: 32px; z-index: 0;
 }
 .hero-img {
-  width: 100%; max-width: 420px; border-radius: 24px;
-  object-fit: cover; object-position: top;
-  height: 500px;
+  width: 100%; max-width: 420px; height: 520px;
+  border-radius: 28px; object-fit: cover; object-position: top;
   position: relative; z-index: 1;
-  box-shadow: 0 24px 64px rgba(10,124,110,.18);
-  border: 4px solid #fff;
+  box-shadow: 0 28px 72px rgba(26,74,26,.22);
+  border: 5px solid #fff;
+  display: block;
 }
 .hero-badge {
-  position: absolute; top: 24px; left: -18px; z-index: 2;
-  background: var(--teal); color: #fff; border-radius: 16px;
-  padding: 16px 20px; text-align: center;
-  box-shadow: 0 8px 28px rgba(10,124,110,.35);
+  position: absolute; top: 28px; left: -22px; z-index: 2;
+  background: var(--yellow-400); color: var(--green-900);
+  border-radius: 16px; padding: 16px 18px; text-align: center;
+  box-shadow: 0 8px 28px rgba(240,194,0,.45);
 }
-.hero-badge-num { font-family: 'DM Serif Display', serif; font-size: 22px; line-height: 1; }
-.hero-badge-text { font-size: 10px; opacity: .85; margin-top: 4px; font-weight: 500; }
+.hero-badge-num { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; line-height: 1; }
+.hero-badge-text { font-size: 9.5px; font-weight: 800; margin-top: 3px; opacity: .85; text-transform: uppercase; letter-spacing: .5px; }
 .hero-card {
-  position: absolute; bottom: 30px; right: -16px; z-index: 2;
-  background: #fff; border-radius: 14px;
-  padding: 14px 18px; border: 1px solid var(--border);
-  box-shadow: 0 8px 28px rgba(0,0,0,.1);
-  max-width: 210px;
+  position: absolute; bottom: 28px; right: -18px; z-index: 2;
+  background: var(--green-900); border-radius: 16px;
+  padding: 16px 20px; max-width: 220px;
+  box-shadow: 0 8px 32px rgba(13,43,13,.4);
 }
-.hero-card-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: var(--teal); margin-bottom: 3px; }
-.hero-card-doc { font-family: 'DM Serif Display', serif; font-size: 15px; color: var(--text); line-height: 1.2; }
-.hero-card-spec { font-size: 11px; color: var(--muted); margin-top: 3px; line-height: 1.4; }
+.hero-card-label { font-size: 9.5px; font-weight: 800; text-transform: uppercase; letter-spacing: .9px; color: var(--yellow-400); margin-bottom: 4px; }
+.hero-card-name { font-family: 'Playfair Display', serif; font-size: 15px; color: #fff; line-height: 1.2; }
+.hero-card-spec { font-size: 11px; color: rgba(255,255,255,.55); margin-top: 4px; line-height: 1.4; }
 
-/* ─── ABOUT ─── */
-.about { padding: 100px 0; background: var(--bg2); }
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+/* ── TRUST STRIP ── */
+.trust-strip {
+  background: var(--green-900); padding: 22px 0;
+}
+.trust-inner {
+  display: flex; align-items: center; justify-content: center;
+  gap: 40px; flex-wrap: wrap;
+}
+.trust-item {
+  display: flex; align-items: center; gap: 10px;
+  color: rgba(255,255,255,.75); font-size: 13px; font-weight: 600;
+}
+.trust-item i { color: var(--yellow-400); font-size: 14px; }
+
+/* ── ABOUT ── */
+.about { padding: 104px 0; background: var(--green-50); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
 .about-img-wrap { position: relative; }
 .about-img {
-  width: 100%; border-radius: 24px; object-fit: cover; object-position: top;
-  height: 520px; display: block;
-  box-shadow: 0 16px 48px rgba(0,0,0,.1); border: 4px solid #fff;
+  width: 100%; border-radius: 28px; object-fit: cover; object-position: top;
+  height: 540px; display: block;
+  box-shadow: 0 20px 60px rgba(26,74,26,.15);
+  border: 5px solid #fff;
 }
 .about-img-accent {
-  position: absolute; inset: 16px -16px -16px 16px;
-  background: linear-gradient(135deg, var(--teal-light), #b8e8e3);
-  border-radius: 24px; z-index: -1;
+  position: absolute; inset: 18px -18px -18px 18px;
+  background: linear-gradient(135deg, var(--green-200), var(--yellow-200));
+  border-radius: 28px; z-index: -1;
 }
 .about-exp-badge {
-  position: absolute; bottom: -20px; right: -18px;
-  background: var(--teal); color: #fff; border-radius: 16px;
-  padding: 18px 22px; text-align: center;
-  box-shadow: 0 8px 28px rgba(10,124,110,.4);
+  position: absolute; bottom: -22px; right: -20px;
+  background: var(--yellow-400); color: var(--green-900);
+  border-radius: 18px; padding: 20px 24px; text-align: center;
+  box-shadow: 0 10px 32px rgba(240,194,0,.45);
 }
-.about-exp-badge .num { font-family: 'DM Serif Display', serif; font-size: 30px; line-height: 1; }
-.about-exp-badge .lbl { font-size: 11px; opacity: .85; margin-top: 4px; font-weight: 500; }
-.about-highlights { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
-.about-hi { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text); }
-.about-hi i { color: var(--teal); font-size: 14px; }
-.about-creds { display: flex; flex-direction: column; gap: 9px; margin-top: 16px; }
+.about-exp-badge .num { font-family: 'Playfair Display', serif; font-size: 34px; font-weight: 900; line-height: 1; }
+.about-exp-badge .lbl { font-size: 10.5px; font-weight: 800; margin-top: 4px; opacity: .85; text-transform: uppercase; letter-spacing: .4px; }
+.about-hi-list { display: flex; flex-direction: column; gap: 10px; margin: 18px 0; }
+.ahi { display: flex; align-items: center; gap: 10px; font-size: 14.5px; font-weight: 600; color: var(--text); }
+.ahi i { color: var(--green-600); }
+.creds { display: flex; flex-direction: column; gap: 10px; margin-top: 18px; padding: 20px; background: #fff; border-radius: 14px; border: 1.5px solid var(--green-100); }
 .cred { display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: var(--muted); }
-.cred i { color: var(--teal); width: 16px; flex-shrink: 0; }
+.cred i { color: var(--green-500); width: 16px; flex-shrink: 0; }
 
-/* ─── SPECIALITY HIGHLIGHTS ─── */
-.spec-highlights { padding: 100px 0; background: #fff; }
-.spec-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px;
-  margin-top: 52px;
+/* ── SPECIALITIES ── */
+.specs { padding: 104px 0; background: #fff; }
+.specs-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+  margin-top: 56px;
 }
 .spec-card {
-  background: #fff; border: 1px solid var(--border); border-radius: 20px;
-  padding: 28px 24px; position: relative; overflow: hidden;
-  transition: all .25s; box-shadow: 0 2px 8px rgba(0,0,0,.04);
+  background: #fff; border: 1.5px solid var(--green-100); border-radius: 22px;
+  padding: 32px 26px; position: relative; overflow: hidden;
+  transition: all .3s; box-shadow: 0 2px 10px rgba(26,74,26,.05);
 }
-.spec-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(10,124,110,.12); border-color: var(--teal-border); }
-.spec-card:hover .spec-num { color: var(--teal); opacity: 1; }
-.spec-num { font-family: 'DM Serif Display', serif; font-size: 40px; color: #e2e8ec; opacity: .6; position: absolute; top: 16px; right: 20px; line-height: 1; transition: .25s; }
+.spec-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--green-400), var(--yellow-400));
+  transform: scaleX(0); transform-origin: left; transition: transform .3s;
+}
+.spec-card:hover { transform: translateY(-6px); box-shadow: 0 20px 56px rgba(26,74,26,.14); border-color: var(--green-300); }
+.spec-card:hover::before { transform: scaleX(1); }
+.spec-num { font-family: 'Playfair Display', serif; font-size: 44px; color: var(--green-50); position: absolute; top: 14px; right: 18px; line-height: 1; transition: .3s; font-weight: 900; }
+.spec-card:hover .spec-num { color: var(--yellow-200); }
 .spec-icon {
-  width: 52px; height: 52px; background: var(--teal-light); border-radius: 14px;
+  width: 54px; height: 54px; border-radius: 14px;
+  background: var(--green-50); border: 1.5px solid var(--green-200);
   display: flex; align-items: center; justify-content: center; margin-bottom: 18px;
-  border: 1px solid var(--teal-border);
 }
-.spec-icon img { width: 28px; height: 28px; object-fit: contain; }
-.spec-icon i { font-size: 22px; color: var(--teal); }
-.spec-card h3 { font-family: 'DM Serif Display', serif; font-size: 18px; margin-bottom: 10px; color: var(--text); }
-.spec-card p { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+.spec-icon img { width: 28px; height: 28px; object-fit: cover; border-radius: 6px; }
+.spec-icon i { font-size: 22px; color: var(--green-600); }
+.spec-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 10px; color: var(--text); }
+.spec-card p { font-size: 13.5px; color: var(--muted); line-height: 1.7; }
 
-/* ─── SERVICES ─── */
-.services { padding: 100px 0; background: var(--bg2); }
-.services-header { }
-.services-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-  margin-top: 40px;
+/* ── WHY ── */
+.why { padding: 104px 0; background: var(--green-900); position: relative; overflow: hidden; }
+.why::before {
+  content: '';
+  position: absolute; top: -200px; right: -200px;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(79,192,79,.1) 0%, transparent 70%);
+  pointer-events: none;
 }
-.service-card {
-  background: #fff; border-radius: 20px; overflow: hidden;
-  border: 1.5px solid var(--border); transition: all .25s;
-  box-shadow: 0 2px 8px rgba(0,0,0,.04); text-decoration: none; color: var(--text);
-  display: flex; flex-direction: column;
-}
-.service-card.featured { grid-column: span 1; }
-.service-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(10,124,110,.13); border-color: var(--teal-border); }
-.service-card-img { height: 185px; overflow: hidden; position: relative; flex-shrink: 0; }
-.service-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .35s ease; }
-.service-card:hover .service-card-img img { transform: scale(1.05); }
-.service-card-img::after {
-  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 52px;
-  background: linear-gradient(to top, #fff, transparent); pointer-events: none;
-}
-.service-card-tag {
-  position: absolute; top: 12px; left: 12px; z-index: 1;
-  background: var(--teal); color: #fff; border-radius: 6px;
-  padding: 4px 10px; font-size: 10.5px; font-weight: 700; letter-spacing: .4px;
-}
-.service-card-body { padding: 20px 24px 26px; flex: 1; display: flex; flex-direction: column; }
-.service-icon-wrap {
-  width: 40px; height: 40px; background: var(--teal-light); border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  color: var(--teal); font-size: 17px; margin-bottom: 14px;
-  border: 1px solid var(--teal-border); flex-shrink: 0;
-}
-.service-card-body h3 { font-family: 'DM Serif Display', serif; font-size: 17px; margin-bottom: 8px; color: var(--text); }
-.service-card-body p { font-size: 13px; color: var(--muted); line-height: 1.65; flex: 1; }
-.service-link {
-  display: inline-flex; align-items: center; gap: 6px;
-  color: var(--teal); font-size: 13px; font-weight: 600; margin-top: 14px;
-  transition: gap .2s;
-}
-.service-card:hover .service-link { gap: 10px; }
-
-/* ─── WHY CHOOSE ─── */
-.why { padding: 100px 0; background: #fff; }
-.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
-.why-img-wrap { position: relative; }
-.why-img {
-  width: 100%; border-radius: 24px; object-fit: cover;
-  height: 520px; display: block;
-  box-shadow: 0 16px 48px rgba(0,0,0,.1); border: 4px solid #fff;
-}
-.why-overlay {
-  position: absolute; bottom: -20px; left: -20px;
-  background: var(--teal); color: #fff; border-radius: 16px;
-  padding: 18px 20px; max-width: 280px;
-  box-shadow: 0 8px 28px rgba(10,124,110,.4);
-  display: flex; gap: 12px; align-items: flex-start;
-}
-.why-overlay-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
-.why-overlay-text { font-size: 12px; line-height: 1.55; opacity: .92; }
-.why-overlay-text strong { display: block; font-size: 13px; margin-bottom: 3px; opacity: 1; font-weight: 700; }
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 1; }
+.why .tag { background: rgba(240,194,0,.15); color: var(--yellow-300); border-color: rgba(240,194,0,.3); }
+.why .tag i { color: var(--yellow-400); }
+.why .sec-title { color: #fff; }
+.why .sec-title em { color: var(--yellow-300); }
+.why .sec-sub { color: rgba(255,255,255,.6); }
 .why-list { display: flex; flex-direction: column; gap: 20px; margin-top: 8px; }
 .why-item { display: flex; gap: 16px; align-items: flex-start; }
-.why-item-icon {
-  width: 44px; height: 44px; background: var(--teal-light); border-radius: 12px;
+.why-icon {
+  width: 46px; height: 46px; border-radius: 12px; flex-shrink: 0;
+  background: rgba(240,194,0,.12); border: 1px solid rgba(240,194,0,.25);
   display: flex; align-items: center; justify-content: center;
-  color: var(--teal); font-size: 18px; flex-shrink: 0; border: 1px solid var(--teal-border);
+  color: var(--yellow-400); font-size: 19px;
 }
-.why-item-body h4 { font-size: 15px; font-weight: 700; margin-bottom: 5px; color: var(--text); }
-.why-item-body p { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
-
-/* ─── STATS BAR ─── */
-.stats-bar { background: var(--teal); padding: 64px 0; }
-.stats-inner {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center;
+.why-item h4 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 5px; }
+.why-item p { font-size: 13.5px; color: rgba(255,255,255,.55); line-height: 1.7; }
+.why-img-panel { position: relative; }
+.why-img {
+  width: 100%; border-radius: 28px; object-fit: cover; height: 540px;
+  display: block; border: 5px solid rgba(255,255,255,.1);
+  box-shadow: 0 24px 72px rgba(0,0,0,.4);
 }
-.stat-box { color: #fff; }
-.stat-box strong { font-family: 'DM Serif Display', serif; font-size: clamp(36px, 4vw, 52px); display: block; line-height: 1; margin-bottom: 8px; }
-.stat-box span { font-size: 13px; opacity: .7; font-weight: 500; }
+.why-overlay {
+  position: absolute; bottom: -18px; left: -18px;
+  background: var(--yellow-400); color: var(--green-900);
+  border-radius: 18px; padding: 18px 22px;
+  max-width: 260px; box-shadow: 0 10px 32px rgba(240,194,0,.5);
+  display: flex; gap: 12px; align-items: flex-start;
+}
+.why-overlay-icon { font-size: 22px; flex-shrink: 0; margin-top: 1px; }
+.why-overlay-text { font-size: 12.5px; line-height: 1.6; font-weight: 600; }
+.why-overlay-text strong { display: block; font-size: 13.5px; margin-bottom: 3px; font-weight: 800; }
 
-/* ─── APPOINTMENT ─── */
-.appointment { padding: 100px 0; background: var(--bg2); }
-.appt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: flex-start; }
-.appt-features { display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
-.appt-feat { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--muted); }
-.appt-feat i { color: var(--teal); width: 18px; flex-shrink: 0; margin-top: 2px; }
+/* ── STATS BAR ── */
+.stats-bar { background: var(--yellow-400); padding: 68px 0; }
+.stats-inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+.stat-box strong { font-family: 'Playfair Display', serif; font-size: clamp(40px, 4.5vw, 58px); display: block; line-height: 1; margin-bottom: 8px; color: var(--green-900); font-weight: 900; }
+.stat-box span { font-size: 13px; color: var(--green-800); font-weight: 700; opacity: .75; }
+
+/* ── SERVICES ── */
+.services { padding: 104px 0; background: var(--green-50); }
+.services-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  margin-top: 44px;
+}
+.svc-card {
+  background: #fff; border-radius: 22px; overflow: hidden;
+  border: 1.5px solid var(--green-100); transition: all .3s;
+  box-shadow: 0 2px 10px rgba(26,74,26,.05); text-decoration: none; color: var(--text);
+  display: flex; flex-direction: column;
+}
+.svc-card:hover { transform: translateY(-6px); box-shadow: 0 20px 56px rgba(26,74,26,.14); border-color: var(--green-300); }
+.svc-img { height: 190px; overflow: hidden; position: relative; flex-shrink: 0; }
+.svc-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
+.svc-card:hover .svc-img img { transform: scale(1.07); }
+.svc-tag {
+  position: absolute; top: 12px; left: 12px; z-index: 1;
+  background: var(--yellow-400); color: var(--green-900);
+  border-radius: 7px; padding: 4px 11px;
+  font-size: 10.5px; font-weight: 800; letter-spacing: .4px;
+}
+.svc-body { padding: 22px 24px 28px; flex: 1; display: flex; flex-direction: column; }
+.svc-icon {
+  width: 42px; height: 42px; background: var(--green-50); border-radius: 11px;
+  border: 1.5px solid var(--green-200);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--green-600); font-size: 18px; margin-bottom: 14px; flex-shrink: 0;
+}
+.svc-body h3 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 8px; }
+.svc-body p { font-size: 13.5px; color: var(--muted); line-height: 1.7; flex: 1; }
+.svc-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--green-600); font-size: 13px; font-weight: 700; margin-top: 16px;
+  transition: gap .2s;
+}
+.svc-card:hover .svc-link { gap: 10px; }
+
+/* ── APPOINTMENT ── */
+.appointment { padding: 104px 0; background: #fff; }
+.appt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: flex-start; }
+.appt-feats { display: flex; flex-direction: column; gap: 14px; margin-top: 10px; }
+.appt-feat { display: flex; align-items: flex-start; gap: 11px; font-size: 14px; color: var(--muted); font-weight: 500; }
+.appt-feat i { color: var(--green-500); width: 18px; flex-shrink: 0; margin-top: 2px; }
 .appt-form {
-  background: #fff; border-radius: 22px; padding: 38px;
-  box-shadow: 0 20px 60px rgba(0,0,0,.08); border: 1px solid var(--border);
+  background: #fff; border-radius: 24px; padding: 40px;
+  box-shadow: 0 24px 72px rgba(26,74,26,.1);
+  border: 1.5px solid var(--green-100);
 }
-.appt-form h3 { font-family: 'DM Serif Display', serif; font-size: 22px; margin-bottom: 4px; }
+.appt-form h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 4px; }
 .appt-form > p { font-size: 13.5px; color: var(--muted); margin-bottom: 28px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.form-group { margin-bottom: 16px; }
-.form-group label { display: block; font-size: 11px; font-weight: 700; color: var(--muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: .5px; }
-.form-group input, .form-group select, .form-group textarea {
-  width: 100%; padding: 12px 14px; border: 1.5px solid var(--border);
-  border-radius: 9px; font-family: 'DM Sans', sans-serif; font-size: 14px;
-  color: var(--text); outline: none; transition: border .2s; background: var(--bg2);
+.fg { margin-bottom: 16px; }
+.fg label { display: block; font-size: 10.5px; font-weight: 800; color: var(--muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: .6px; }
+.fg input, .fg select, .fg textarea {
+  width: 100%; padding: 12px 14px;
+  border: 1.5px solid var(--border); border-radius: 10px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px;
+  color: var(--text); outline: none; transition: border .2s, box-shadow .2s;
+  background: var(--green-50);
 }
-.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--teal); background: #fff; }
-.form-group textarea { height: 90px; resize: vertical; }
+.fg input:focus, .fg select:focus, .fg textarea:focus {
+  border-color: var(--green-500); background: #fff;
+  box-shadow: 0 0 0 3px rgba(58,158,58,.1);
+}
+.fg textarea { height: 94px; resize: vertical; }
 .form-submit {
-  width: 100%; padding: 15px; background: var(--teal); color: #fff;
-  border: none; border-radius: 10px; font-family: 'DM Sans', sans-serif;
-  font-size: 15px; font-weight: 700; cursor: pointer; transition: background .2s;
+  width: 100%; padding: 15px;
+  background: linear-gradient(135deg, var(--green-600), var(--green-800));
+  color: #fff; border: none; border-radius: 12px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 800;
+  cursor: pointer; transition: all .2s;
   display: flex; align-items: center; justify-content: center; gap: 9px; margin-top: 4px;
+  box-shadow: 0 6px 24px rgba(45,122,45,.35);
 }
-.form-submit:hover { background: var(--teal-dark); }
+.form-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(45,122,45,.45); }
 .form-note { font-size: 12px; color: var(--muted); margin-top: 12px; display: flex; align-items: center; gap: 6px; justify-content: center; }
-.form-note i { color: var(--teal); }
+.form-note i { color: var(--green-500); }
 
-/* ─── FOOTER ─── */
-footer { background: #0a1a17; padding: 72px 0 28px; }
-.footer-inner {
-  display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 56px; margin-bottom: 52px;
-}
-.f-brand strong { font-family: 'DM Serif Display', serif; font-size: 20px; color: #fff; display: block; margin-bottom: 10px; }
-.f-brand p { font-size: 13px; color: rgba(255,255,255,.45); line-height: 1.8; margin-bottom: 20px; }
+/* ── FOOTER ── */
+footer { background: var(--green-900); padding: 80px 0 32px; }
+.footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 56px; margin-bottom: 52px; }
+.f-brand strong { font-family: 'Playfair Display', serif; font-size: 20px; color: #fff; display: block; margin-bottom: 10px; }
+.f-brand p { font-size: 13px; color: rgba(255,255,255,.4); line-height: 1.85; margin-bottom: 20px; }
 .f-badge {
-  display: inline-flex; align-items: center; gap: 7px;
-  background: rgba(10,124,110,.25); border: 1px solid rgba(10,124,110,.5);
-  border-radius: 7px; padding: 7px 14px; font-size: 11px; color: #5fe0d0; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(240,194,0,.12); border: 1px solid rgba(240,194,0,.3);
+  border-radius: 8px; padding: 8px 16px; font-size: 11px; color: var(--yellow-300); font-weight: 700;
 }
-footer h4 { font-size: 11px; font-weight: 700; color: rgba(255,255,255,.9); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1.2px; }
+footer h4 { font-size: 10.5px; font-weight: 800; color: rgba(255,255,255,.9); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1.4px; }
 footer ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-footer ul li a { text-decoration: none; color: rgba(255,255,255,.45); font-size: 14px; transition: color .2s; }
-footer ul li a:hover { color: #fff; }
+footer ul li a { text-decoration: none; color: rgba(255,255,255,.4); font-size: 14px; transition: color .2s; }
+footer ul li a:hover { color: var(--yellow-300); }
 .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.07); margin-bottom: 24px; }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
-.footer-bottom p { font-size: 12px; color: rgba(255,255,255,.28); }
+.footer-bottom p { font-size: 12px; color: rgba(255,255,255,.25); }
 
-/* ─── WHATSAPP FLOAT ─── */
-.whatsapp-float {
+/* ── WHATSAPP FLOAT ── */
+.wa-float {
   position: fixed; bottom: 24px; right: 24px; z-index: 900;
-  width: 58px; height: 58px; border-radius: 50%;
+  width: 60px; height: 60px; border-radius: 50%;
   background: #25d366; color: #fff; text-decoration: none;
   display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 4px 20px rgba(37,211,102,.45); transition: transform .25s;
+  box-shadow: 0 6px 24px rgba(37,211,102,.5); transition: transform .25s;
 }
-.whatsapp-float:hover { transform: scale(1.1); }
+.wa-float:hover { transform: scale(1.12); }
 
-/* ─── RESPONSIVE ─── */
+/* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
-  .spec-grid { grid-template-columns: repeat(2, 1fr); }
-  .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 36px; }
+  .specs-grid { grid-template-columns: repeat(2,1fr); }
+  .stats-inner { grid-template-columns: repeat(2,1fr); gap: 40px; }
+  .hero-grid { grid-template-columns: 1fr 400px; gap: 48px; }
 }
 @media (max-width: 900px) {
-  .hero-grid, .about-grid, .why-grid, .appt-grid { grid-template-columns: 1fr; gap: 48px; }
-  .hero-image-panel { order: -1; }
+  .hero-grid, .about-grid, .why-grid, .appt-grid { grid-template-columns: 1fr; gap: 52px; }
+  .hero-img-panel { order: -1; }
+  .why-img-panel { order: -1; }
   .services-grid { grid-template-columns: 1fr 1fr; }
   .footer-inner { grid-template-columns: 1fr 1fr; gap: 36px; }
   .footer-inner .f-brand { grid-column: 1 / -1; }
-  .hero-badge{ top: -10px;
-        height: 57px;}
-  .hero-badge-num { height : 12px ; width: 55px; }
-.hero-badge-text {  display: none;}
+  .hero-badge { top: -8px; }
+  .hero-badge-text { display: none; }
 }
 @media (max-width: 640px) {
   .nav-links, .nav-book { display: none; }
   .hamburger { display: flex; }
-  .hero { padding: 60px 0; }
-  .hero-quote { font-size: 34px; }
-  .hero-stats { gap: 22px; }
+  .hero { padding: 64px 0; }
+  h1.hero-title { font-size: 34px; }
+  .hero-stats { gap: 24px; }
   .hero-img { height: 360px; max-width: 100%; }
-  .spec-grid { grid-template-columns: 1fr; }
-  .services-grid { grid-template-columns: 1fr; }
+  .specs-grid, .services-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; }
   .footer-inner .f-brand { grid-column: auto; }
   .footer-bottom { flex-direction: column; text-align: center; }
   .about-img, .why-img { height: 320px; }
-  .why-overlay { left: 0; bottom: -10px; }
-  .topbar .container { gap: 14px; }
+  .why-overlay { left: 0; }
+  .trust-inner { gap: 20px; }
 }
 </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
+<!-- TOPBAR -->
 <div class="topbar">
-  <div class="container">
-    <div class="topbar-item"><i class="fa-solid fa-phone"></i><a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a></div>
-    <div class="topbar-item"><i class="fa-solid fa-envelope"></i><a href="#">Available on WhatsApp</a></div>
-    <div class="topbar-item"><i class="fa-solid fa-location-dot"></i><span>Delhi, India</span></div>
+  <div class="wrap">
+    <div class="ti"><i class="fa-solid fa-phone"></i><a href="tel:+91 98992 26760">+91 98992 26760</a></div>
+    <div class="ti"><i class="fa-brands fa-whatsapp"></i><a href="/contact.html">Available on WhatsApp</a></div>
+    <div class="ti"><i class="fa-solid fa-location-dot"></i><span>Delhi, India</span></div>
   </div>
 </div>
 
 <!-- NAVBAR -->
 <header>
   <nav>
-    <a class="nav-brand" href="#">
-      <div class="nav-brand-icon"><i class="fa-solid fa-stethoscope"></i></div>
+    <a class="brand" href="#">
+      <div class="brand-icon"><i class="fa-solid fa-stethoscope"></i></div>
       <div>
-        <div class="nav-brand-name">Dr. Tivendra Aadhraan</div>
-        <div class="nav-brand-creds">MBBS · MPH · General Physician · Delhi</div>
+        <div class="brand-name">Dr. Tivendra Aadhraan</div>
+        <div class="brand-creds">MBBS · MPH · General Physician · Delhi</div>
       </div>
     </a>
-    <ul class="nav-links" id="navLinks">
+    <ul class="nav-links">
       <li><a href="#">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#appointment">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="service.html">Go to Services</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
     </ul>
-    <a class="nav-book" href="#appointment"><i class="fa-regular fa-calendar-check"></i> Book Consultation</a>
+    <a class="nav-book" href="/contact.html"><i class="fa-regular fa-calendar-check"></i> Book Consultation</a>
     <button class="hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
   <div class="mobile-nav" id="mobileNav">
-    <a href="#">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#appointment">Contact</a>
-    <a class="cta" href="#appointment">Book Consultation</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="service.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a class="cta" href="/contact.html">Book Consultation</a>
   </div>
 </header>
 
-<!-- ─── HERO ─── -->
+<!-- HERO -->
 <section class="hero">
   <div class="container">
     <div class="hero-grid">
       <div class="fade-up">
-        <div class="hero-eyebrow"><i class="fa-solid fa-shield-halved"></i><span>Trusted Family Medicine · Delhi</span></div>
-        <h1 class="hero-quote">
+        <div class="hero-eyebrow"><i class="fa-solid fa-circle-check"></i> Trusted Family Medicine · Delhi</div>
+        <h1 class="hero-title">
           Comprehensive Care<br>
-          <em>Built on 26 Years</em><br>of Expertise.
+          <em>Built on <span class="accent">26 Years</span></em><br>of Expertise.
         </h1>
-        <p class="hero-subquote">
+        <p class="hero-sub">
           Dr. Tivendra Aadhraan — General Physician, Public Health Specialist & Epidemiologist — delivers evidence-based medicine, preventive care, and personalised treatment for Delhi families.
         </p>
         <div class="hero-actions">
-          <a href="#appointment" class="btn btn-primary"><i class="fa-regular fa-calendar-check"></i> Book Consultation</a>
-          <a href="#services" class="btn btn-outline"><i class="fa-solid fa-stethoscope"></i> Our Services</a>
+          <a href="contact.html" class="btn btn-yellow"><i class="fa-regular fa-calendar-check"></i> Book Consultation</a>
+          <a href="service.html" class="btn btn-outline"><i class="fa-solid fa-stethoscope"></i> Our Services</a>
         </div>
         <div class="hero-stats">
           <div class="stat"><span class="stat-num">26+</span><span class="stat-label">Years Experience</span></div>
@@ -466,9 +532,10 @@ footer ul li a:hover { color: #fff; }
           <div class="stat"><span class="stat-num">13</span><span class="stat-label">Services</span></div>
         </div>
       </div>
-      <div class="hero-image-panel fade-up fade-up-delay-2">
+      <div class="hero-img-panel fade-up d2">
         <div class="hero-img-bg"></div>
-        <img class="hero-img" src="https://lh3.googleusercontent.com/p/AF1QipNmjoYai9WBOJIsnyUTNiheBovusETg9EIzRqWW=s1360-w1360-h1020-rw"
+        <img class="hero-img"
+          src="dr main image.jpeg"
           alt="Dr. Tivendra Aadhraan" loading="eager"
           onerror="this.src='https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80'"/>
         <div class="hero-badge">
@@ -476,23 +543,35 @@ footer ul li a:hover { color: #fff; }
           <div class="hero-badge-text">MPH · Delhi</div>
         </div>
         <div class="hero-card">
-          <div class="hero-card-title">General Physician</div>
-          <div class="hero-card-doc">Dr. Tivendra Aadhraan</div>
+          <div class="hero-card-label">General Physician</div>
+          <div class="hero-card-name">Dr. Tivendra Aadhraan</div>
           <div class="hero-card-spec">Public Health Specialist · Epidemiologist</div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<hr/>
-<!-- ─── ABOUT ─── -->
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-item"><i class="fa-solid fa-shield-halved"></i> Delhi Medical Council Reg. No. 10915</div>
+      <div class="trust-item"><i class="fa-solid fa-graduation-cap"></i> MBBS + MPH Qualified</div>
+      <div class="trust-item"><i class="fa-solid fa-users"></i> Member, Delhi Medical Association</div>
+      <div class="trust-item"><i class="fa-solid fa-calendar-check"></i> Same-Day Consultations</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
 <section class="about" id="about">
   <div class="container">
     <div class="about-grid">
       <div class="about-img-wrap fade-up">
         <img class="about-img"
           src="https://lh3.googleusercontent.com/p/AF1QipNmjoYai9WBOJIsnyUTNiheBovusETg9EIzRqWW=s1360-w1360-h1020-rw"
-          alt="Dr. Tivendra Aadhraan in consultation" loading="lazy"
+          alt="Dr. Tivendra Aadhraan" loading="lazy"
           onerror="this.src='https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80'"/>
         <div class="about-img-accent"></div>
         <div class="about-exp-badge">
@@ -500,60 +579,60 @@ footer ul li a:hover { color: #fff; }
           <div class="lbl">Years of<br>Excellence</div>
         </div>
       </div>
-      <div class="fade-up fade-up-delay-2">
-        <div class="section-tag">About the Doctor</div>
-        <h2 class="section-title">A Patient-First Physician With a Public Health Vision</h2>
-        <p class="section-sub">
+      <div class="fade-up d2">
+        <div class="tag"><i class="fa-solid fa-user-doctor"></i> About the Doctor</div>
+        <h2 class="sec-title">A Patient-First Physician With a Public Health Vision</h2>
+        <p class="sec-sub">
           Dr. Tivendra Aadhraan is a seasoned General Physician and Public Health Medicine Specialist based in Delhi, with over 26 years of clinical experience. Founder of Trissha Family Clinic (2000–2020), he combines clinical excellence with an epidemiological perspective — delivering preventive, evidence-based, and compassionate care to every patient.
         </p>
-        <div class="about-highlights">
-          <div class="about-hi"><i class="fa-solid fa-circle-check"></i><span><b>General Physician & Public Health Specialist</b></span></div>
-          <div class="about-hi"><i class="fa-solid fa-circle-check"></i><span><b>Preventive Medicine & Epidemiology Expert</b></span></div>
-          <div class="about-hi"><i class="fa-solid fa-circle-check"></i><span><b>Founder, Trissha Family Clinic (2000–2020)</b></span></div>
+        <div class="about-hi-list">
+          <div class="ahi"><i class="fa-solid fa-circle-check"></i> General Physician & Public Health Specialist</div>
+          <div class="ahi"><i class="fa-solid fa-circle-check"></i> Preventive Medicine & Epidemiology Expert</div>
+          <div class="ahi"><i class="fa-solid fa-circle-check"></i> Founder, Trissha Family Clinic (2000–2020)</div>
         </div>
-        <div class="about-creds">
-          <div class="cred"><i class="fa-solid fa-graduation-cap"></i><span>MBBS – CCH, Chhattisgarh (2000)</span></div>
-          <div class="cred"><i class="fa-solid fa-graduation-cap"></i><span>MPH – SCTIMST, Trivandrum (2006)</span></div>
-          <div class="cred"><i class="fa-solid fa-award"></i><span>Delhi Medical Council – Reg. No. 10915 (2001)</span></div>
-          <div class="cred"><i class="fa-solid fa-users"></i><span>Member, Delhi Medical Association (DMA)</span></div>
-          <div class="cred"><i class="fa-solid fa-users"></i><span>Member, Indian Dental Association</span></div>
+        <div class="creds">
+          <div class="cred"><i class="fa-solid fa-graduation-cap"></i> MBBS – CCH, Chhattisgarh (2000)</div>
+          <div class="cred"><i class="fa-solid fa-graduation-cap"></i> MPH – SCTIMST, Trivandrum (2006)</div>
+          <div class="cred"><i class="fa-solid fa-award"></i> Delhi Medical Council – Reg. No. 10915 (2001)</div>
+          <div class="cred"><i class="fa-solid fa-users"></i> Member, Delhi Medical Association (DMA)</div>
+          <div class="cred"><i class="fa-solid fa-users"></i> Member, Indian Dental Association</div>
         </div>
-        <a href="#appointment" class="btn btn-primary" style="margin-top:32px"><i class="fa-regular fa-calendar-check"></i> Schedule a Consultation</a>
+        <a href="contact.html" class="btn btn-primary" style="margin-top:32px"><i class="fa-regular fa-calendar-check"></i> Schedule a Consultation</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── SPECIALITY HIGHLIGHTS ─── -->
-<section class="spec-highlights" id="specialities">
+<!-- SPECIALITIES -->
+<section class="specs" id="specialities">
   <div class="container">
     <div style="text-align:center;max-width:560px;margin:0 auto" class="fade-up">
-      <div class="section-tag">Core Specialities</div>
-      <h2 class="section-title">Deep Expertise in Areas</h2>
-      <p class="section-sub" style="margin:0 auto">Precision primary care grounded in clinical excellence, public health science, preventive medicine, and community-first values.</p>
+      <div class="tag"><i class="fa-solid fa-star"></i> Core Specialities</div>
+      <h2 class="sec-title">Deep Expertise in <em>Key Areas</em></h2>
+      <p class="sec-sub" style="margin:0 auto">Precision primary care grounded in clinical excellence, public health science, preventive medicine, and community-first values.</p>
     </div>
-    <div class="spec-grid">
-      <div class="spec-card fade-up fade-up-delay-1">
+    <div class="specs-grid">
+      <div class="spec-card fade-up d1">
         <span class="spec-num">01</span>
-        <div class="spec-icon"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXcBKQGSyQzxK18TWiEw7uVtX2JD-LgIdSWQ&s"></div>
+        <div class="spec-icon"><i class="fa-solid fa-stethoscope"></i></div>
         <h3>General Medicine</h3>
         <p>Comprehensive diagnosis and management of all common illnesses — fever, infections, allergies, diabetes — with a strong clinical-first approach.</p>
       </div>
-      <div class="spec-card fade-up fade-up-delay-2">
+      <div class="spec-card fade-up d2">
         <span class="spec-num">02</span>
-        <div class="spec-icon"><img src="https://i.guim.co.uk/img/media/20491572b80293361199ca2fc95e49dfd85e1f42/0_236_5157_3094/master/5157.jpg?width=700&quality=85&auto=format&fit=max&s=75467b37e566112a23646eeb8cbc9a26"></div>
+        <div class="spec-icon"><i class="fa-solid fa-shield-halved"></i></div>
         <h3>Preventive Medicine</h3>
         <p>Proactive health strategies, vaccination programs, lifestyle guidance, and early risk detection to prevent illness before it takes hold.</p>
       </div>
-      <div class="spec-card fade-up fade-up-delay-3">
+      <div class="spec-card fade-up d3">
         <span class="spec-num">03</span>
-        <div class="spec-icon"><img src="https://img.magnific.com/free-photo/young-beautiful-smiling-female-trendy-summer-white-dress-sexy-carefree-woman-posing-near-blue-wall-studio-positive-model-having-fun-cheerful-happy-isolated_158538-25710.jpg?semt=ais_hybrid&w=740&q=80"></div>
+        <div class="spec-icon"><i class="fa-solid fa-chart-line"></i></div>
         <h3>Public Health & Epidemiology</h3>
         <p>Population-level health thinking applied at the individual level — understanding disease patterns to deliver smarter, safer, personalised care.</p>
       </div>
-      <div class="spec-card fade-up fade-up-delay-4">
+      <div class="spec-card fade-up d4">
         <span class="spec-num">04</span>
-        <div class="spec-icon"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSQ-vQBbR0Kcg5GDyBtipoy7Z-eDKotfaWzw&s"></div>
+        <div class="spec-icon"><i class="fa-solid fa-house-chimney-medical"></i></div>
         <h3>Family & Community Care</h3>
         <p>20 years of trusted family medicine — treating patients across all ages with continuity of care, deep trust, and long-term health management.</p>
       </div>
@@ -561,149 +640,174 @@ footer ul li a:hover { color: #fff; }
   </div>
 </section>
 
-<!-- ─── SERVICES ─── -->
-<section class="services" id="services">
+<!-- WHY CHOOSE -->
+<section class="why" id="why">
   <div class="container">
-    <div class="services-header">
+    <div class="why-grid">
       <div class="fade-up">
-        <div class="section-tag">Treatments & Services</div>
-        <h2 class="section-title" style="margin-bottom:0">13 Specialised Medical Services</h2>
+        <div class="tag"><i class="fa-solid fa-star"></i> Why Choose Us</div>
+        <h2 class="sec-title">Medicine That Puts <em>You First</em></h2>
+        <p class="sec-sub">Every patient deserves more than a prescription — they deserve a physician who listens, thinks, and genuinely cares.</p>
+        <div class="why-list">
+          <div class="why-item">
+            <div class="why-icon"><i class="fa-solid fa-clock"></i></div>
+            <div>
+              <h4>26+ Years Clinical Experience</h4>
+              <p>Decades of hands-on patient care, diagnostic precision, and real-world clinical wisdom across Delhi.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon"><i class="fa-solid fa-flask"></i></div>
+            <div>
+              <h4>Evidence-Based Practice</h4>
+              <p>Treatment grounded in the latest clinical research — not guesswork. Every decision is backed by science.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div>
+              <h4>Prevention-First Philosophy</h4>
+              <p>Catching problems early and guiding patients toward healthier lives — not just treating symptoms.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+            <div>
+              <h4>Compassionate, Personalised Care</h4>
+              <p>You are not a number. Every consultation is tailored, unhurried, and genuinely attentive to your needs.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="services-grid">
-
-        <div class="service-card fade-up fade-up-delay-1">
-          <div class="service-card-img">
-            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80" alt="Vaccination & Immunization" loading="lazy">
-            <span class="service-card-tag">Preventive</span>
-          </div>
-          <div class="service-card-body">
-            <div class="service-icon-wrap"><i class="fa-solid fa-syringe"></i></div>
-            <h3>Vaccination & Immunization</h3>
-            <p>Complete immunisation schedules for children and adults — including travel vaccines and routine boosters.</p>
-            <span class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+      <div class="why-img-panel fade-up d2">
+        <img class="why-img"
+          src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80"
+          alt="Doctor consultation" loading="lazy"
+          onerror="this.src='https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80'"/>
+        <div class="why-overlay">
+          <div class="why-overlay-icon"><i class="fa-solid fa-award"></i></div>
+          <div class="why-overlay-text">
+            <strong>Delhi Medical Council</strong>
+            Registered & Verified · Reg. No. 10915
           </div>
         </div>
-
-        <div class="service-card fade-up fade-up-delay-2">
-          <div class="service-card-img">
-            <img src="https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?w=600&q=80" alt="Allergy & Skin Allergies" loading="lazy">
-            <span class="service-card-tag">Allergy</span>
-          </div>
-          <div class="service-card-body">
-            <div class="service-icon-wrap"><i class="fa-solid fa-wind"></i></div>
-            <h3>Allergy & Skin Allergies</h3>
-            <p>Diagnosis and management of food, seasonal, environmental, and skin allergies with personalised care plans.</p>
-            <span class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </div>
-
-        <!-- <div class="service-card fade-up fade-up-delay-3">
-          <div class="service-card-img">
-            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80" alt="Viral Fever Treatment" loading="lazy">
-            <span class="service-card-tag">Fever · Viral</span>
-          </div>
-          <div class="service-card-body">
-            <div class="service-icon-wrap"><i class="fa-solid fa-temperature-high"></i></div>
-            <h3>Viral Fever Treatment</h3>
-            <p>Accurate diagnosis and targeted treatment for viral fevers, dengue, malaria, and all fever presentations.</p>
-            <span class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </div> -->
-
-        <!-- <div class="service-card fade-up fade-up-delay-1">
-          <div class="service-card-img">
-            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80" alt="Preventive Medicine" loading="lazy">
-            <span class="service-card-tag">Preventive</span>
-          </div>
-          <div class="service-card-body">
-            <div class="service-icon-wrap"><i class="fa-solid fa-shield-halved"></i></div>
-            <h3>Preventive Medicine</h3>
-            <p>Proactive health strategies and lifestyle guidance to prevent illness — screenings, risk assessments, and health education.</p>
-            <span class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </div> -->
-<!-- 
-        <div class="service-card fade-up fade-up-delay-2">
-          <div class="service-card-img">
-            <img src="https://images.unsplash.com/photo-1631563019676-5fcf6977dc25?w=600&q=80" alt="Diabetes Management" loading="lazy">
-            <span class="service-card-tag">Chronic</span>
-          </div>
-          <div class="service-card-body">
-            <div class="service-icon-wrap"><i class="fa-solid fa-droplet"></i></div>
-            <h3>Diabetes Management</h3>
-            <p>Personalised diabetes care plans — blood sugar monitoring, medication optimisation, and long-term chronic disease control.</p>
-            <span class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </div> -->
-
-        <div class="service-card fade-up fade-up-delay-3">
-          <div class="service-card-img">
-            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80" alt="Health Checkup" loading="lazy">
-            <span class="service-card-tag">Diagnostics</span>
-          </div>
-          <div class="service-card-body">
-            <div class="service-icon-wrap"><i class="fa-solid fa-microscope"></i></div>
-            <h3>Health Checkup (General)</h3>
-            <p>Comprehensive full-body screening and health assessments for all age groups — preventive and diagnostic.</p>
-            <span class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </div>
-
-       
-
-        <!-- <div class="service-card fade-up fade-up-delay-2">
-          <div class="service-card-img">
-            <img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?w=600&q=80" alt="Coronavirus Care" loading="lazy">
-            <span class="service-card-tag">COVID</span>
-          </div>
-          <div class="service-card-body">
-            <div class="service-icon-wrap"><i class="fa-solid fa-virus"></i></div>
-            <h3>Coronavirus Symptoms Care</h3>
-            <p>Symptom assessment, management, COVID testing guidance, and post-recovery health support.</p>
-            <span class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </div> -->
-
-        <div class="service-card fade-up fade-up-delay-3">
-          <div class="service-card-img">
-            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80" alt="Nutrition Consultation" loading="lazy">
-            <span class="service-card-tag">Nutrition</span>
-          </div>
-          <div class="service-card-body">
-            <div class="service-icon-wrap"><i class="fa-solid fa-leaf"></i></div>
-            <h3>Nutrition Consultation</h3>
-            <p>Evidence-based dietary guidance for wellness, weight management, and chronic condition control.</p>
-            <span class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </div>
-
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- ─── STATS BAR ─── -->
+<!-- STATS BAR -->
 <div class="stats-bar">
   <div class="container">
     <div class="stats-inner">
       <div class="stat-box fade-up"><strong>26+</strong><span>Years Experience</span></div>
-      <div class="stat-box fade-up fade-up-delay-1"><strong>15+</strong><span>Years as Specialist</span></div>
-      <div class="stat-box fade-up fade-up-delay-2"><strong>13</strong><span>Medical Services</span></div>
-      <div class="stat-box fade-up fade-up-delay-3"><strong>4</strong><span>Specializations</span></div>
+      <div class="stat-box fade-up d1"><strong>15+</strong><span>Years as Specialist</span></div>
+      <div class="stat-box fade-up d2"><strong>13</strong><span>Medical Services</span></div>
+      <div class="stat-box fade-up d3"><strong>4</strong><span>Specializations</span></div>
     </div>
   </div>
 </div>
 
-<!-- ─── APPOINTMENT ─── -->
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="fade-up">
+      <div class="tag"><i class="fa-solid fa-briefcase-medical"></i> Treatments & Services</div>
+      <h2 class="sec-title">13 Specialised <em>Medical Services</em></h2>
+    </div>
+    <div class="services-grid">
+
+      <div class="svc-card fade-up d1">
+        <div class="svc-img">
+          <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80" alt="Vaccination" loading="lazy">
+          <span class="svc-tag">Preventive</span>
+        </div>
+        <div class="svc-body">
+          <div class="svc-icon"><i class="fa-solid fa-syringe"></i></div>
+          <h3>Vaccination & Immunization</h3>
+          <p>Complete immunisation schedules for children and adults — including travel vaccines and routine boosters.</p>
+          <span class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+
+      <div class="svc-card fade-up d2">
+        <div class="svc-img">
+          <img src="https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?w=600&q=80" alt="Allergy" loading="lazy">
+          <span class="svc-tag">Allergy</span>
+        </div>
+        <div class="svc-body">
+          <div class="svc-icon"><i class="fa-solid fa-wind"></i></div>
+          <h3>Allergy & Skin Allergies</h3>
+          <p>Diagnosis and management of food, seasonal, environmental, and skin allergies with personalised care plans.</p>
+          <span class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+
+      <div class="svc-card fade-up d3">
+        <div class="svc-img">
+          <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80" alt="Health Checkup" loading="lazy">
+          <span class="svc-tag">Diagnostics</span>
+        </div>
+        <div class="svc-body">
+          <div class="svc-icon"><i class="fa-solid fa-microscope"></i></div>
+          <h3>Health Checkup (General)</h3>
+          <p>Comprehensive full-body screening and health assessments for all age groups — preventive and diagnostic.</p>
+          <span class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+
+      <div class="svc-card fade-up d1">
+        <div class="svc-img">
+          <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80" alt="Nutrition" loading="lazy">
+          <span class="svc-tag">Nutrition</span>
+        </div>
+        <div class="svc-body">
+          <div class="svc-icon"><i class="fa-solid fa-leaf"></i></div>
+          <h3>Nutrition Consultation</h3>
+          <p>Evidence-based dietary guidance for wellness, weight management, and chronic condition control.</p>
+          <span class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+
+      <div class="svc-card fade-up d2">
+        <div class="svc-img">
+          <img src="https://images.unsplash.com/photo-1631563019676-5fcf6977dc25?w=600&q=80" alt="Diabetes" loading="lazy">
+          <span class="svc-tag">Chronic</span>
+        </div>
+        <div class="svc-body">
+          <div class="svc-icon"><i class="fa-solid fa-droplet"></i></div>
+          <h3>Diabetes Management</h3>
+          <p>Personalised diabetes care plans — blood sugar monitoring, medication optimisation, and long-term chronic disease control.</p>
+          <span class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+
+      <div class="svc-card fade-up d3">
+        <div class="svc-img">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80" alt="Preventive Medicine" loading="lazy">
+          <span class="svc-tag">Preventive</span>
+        </div>
+        <div class="svc-body">
+          <div class="svc-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Preventive Medicine</h3>
+          <p>Proactive health strategies, screenings, risk assessments, and health education to prevent illness early.</p>
+          <span class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- APPOINTMENT -->
 <section class="appointment" id="appointment">
   <div class="container">
     <div class="appt-grid">
-      <div class="appt-left fade-up">
-        <div class="section-tag">Book an Appointment</div>
-        <h2 class="section-title">Start Your Journey to Better Health Today</h2>
-        <p class="section-sub">Fill in the form and our team will confirm your appointment at the earliest available slot.</p>
-        <div class="appt-features">
+      <div class="fade-up">
+        <div class="tag"><i class="fa-regular fa-calendar-check"></i> Book an Appointment</div>
+        <h2 class="sec-title">Start Your Journey to <em>Better Health</em> Today</h2>
+        <p class="sec-sub">Fill in the form and our team will confirm your appointment at the earliest available slot.</p>
+        <div class="appt-feats">
           <div class="appt-feat"><i class="fa-solid fa-location-dot"></i> Delhi, India</div>
           <div class="appt-feat"><i class="fa-solid fa-calendar-check"></i> Same-day consultations available</div>
           <div class="appt-feat"><i class="fa-solid fa-shield-halved"></i> Delhi Medical Council Reg. No. 10915</div>
@@ -711,30 +815,18 @@ footer ul li a:hover { color: #fff; }
           <div class="appt-feat"><i class="fa-solid fa-stethoscope"></i> General medicine, preventive & specialist care</div>
         </div>
       </div>
-      <div class="appt-form fade-up fade-up-delay-2">
+      <div class="appt-form fade-up d2">
         <h3>Request an Appointment</h3>
         <p>We'll confirm your preferred slot as soon as possible.</p>
         <div class="form-row">
-          <div class="form-group">
-            <label>First Name</label>
-            <input type="text" placeholder="Rahul"/>
-          </div>
-          <div class="form-group">
-            <label>Last Name</label>
-            <input type="text" placeholder="Sharma"/>
-          </div>
+          <div class="fg"><label>First Name</label><input type="text" placeholder="Rahul"/></div>
+          <div class="fg"><label>Last Name</label><input type="text" placeholder="Sharma"/></div>
         </div>
         <div class="form-row">
-          <div class="form-group">
-            <label>Phone Number</label>
-            <input type="tel" placeholder="+91 00000 00000"/>
-          </div>
-          <div class="form-group">
-            <label>Preferred Date</label>
-            <input type="date"/>
-          </div>
+          <div class="fg"><label>Phone Number</label><input type="tel" placeholder="+91 00000 00000"/></div>
+          <div class="fg"><label>Preferred Date</label><input type="date"/></div>
         </div>
-        <div class="form-group">
+        <div class="fg">
           <label>Service Required</label>
           <select>
             <option value="">Select a service</option>
@@ -752,7 +844,7 @@ footer ul li a:hover { color: #fff; }
             <option>Individual Counseling</option>
           </select>
         </div>
-        <div class="form-group">
+        <div class="fg">
           <label>Describe Your Concern (Optional)</label>
           <textarea placeholder="Tell us briefly about your symptoms or health concern..."></textarea>
         </div>
@@ -765,7 +857,7 @@ footer ul li a:hover { color: #fff; }
   </div>
 </section>
 
-<!-- ─── FOOTER ─── -->
+<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-inner">
@@ -777,10 +869,10 @@ footer ul li a:hover { color: #fff; }
       <div>
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#appointment">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div>
@@ -805,20 +897,17 @@ footer ul li a:hover { color: #fff; }
 
 <!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/91XXXXXXXXXX?text=Hello%20Dr.%20Tivendra%20Aadhraan%2C%20I%20would%20like%20to%20book%20a%20consultation."
-  class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="28" height="28" fill="#ffffff">
+  class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="28" height="28" fill="#fff">
     <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 414.7c-32 0-64-8-92-23l-6.6-4-68.5 18 18-66.8-4-6.6C55 304 46 264 46 222c0-98.1 80-178 178-178 98 0 178 80 178 178 0 98.1-80.1 178-178.1 178zM321 281.3c-5.3-2.7-31.5-15.6-36.4-17.4-4.9-1.8-8.4-2.7-12 2.7-3.6 5.3-13.8 17.4-16.9 21-3.1 3.6-6.2 4-11.6 1.3-5.3-2.7-22.5-8.3-42.9-26.6-15.8-14.2-26.5-31.8-29.6-37.1-3.1-5.3-.3-8.2 2.4-10.9 2.4-2.4 5.3-6.2 8-9.3 2.7-3.1 3.6-5.3 5.3-8.9 1.8-3.6.9-6.7-.4-9.3-1.3-2.7-12-28.9-16.4-39.6-4.3-10.4-8.7-9-12-9.1-3.1-.1-6.7-.1-10.2-.1-3.6 0-9.3 1.3-14.2 6.7-4.9 5.3-18.7 18.2-18.7 44.5 0 26.2 19.1 51.6 21.8 55.1 2.7 3.6 37.6 57.4 91 80.4 12.7 5.5 22.6 8.7 30.3 11.2 12.7 4 24.3 3.4 33.4 2.1 10.3-1.5 31.5-12.9 36-25.3 4.4-12.4 4.4-23.1 3.1-25.3-1.4-2.3-5-3.6-10.3-6.2z"/>
   </svg>
 </a>
 
 <script>
-  // Scroll reveal
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }});
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
-
-  // Mobile nav close on link click
   document.querySelectorAll('#mobileNav a').forEach(a => {
     a.addEventListener('click', () => document.getElementById('mobileNav').classList.remove('open'));
   });

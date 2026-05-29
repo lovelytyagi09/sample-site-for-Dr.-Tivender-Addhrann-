@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact | Dr. Tivendra Aadhraan – Delhi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; color: #1a2e1a; background: #fff; overflow-x: hidden; }
+
+:root {
+  --g900: #0d2b0d;
+  --g800: #1a4a1a;
+  --g700: #1f5c1f;
+  --g600: #2d7a2d;
+  --g500: #3a9e3a;
+  --g400: #4fc04f;
+  --g200: #b8e8b8;
+  --g100: #d6f0d6;
+  --g50:  #edfaed;
+  --y500: #f0c200;
+  --y400: #f5d000;
+  --y300: #f9df4a;
+  --y200: #fceea0;
+  --y100: #fef7d0;
+  --muted: #4a6b4a;
+  --border: #c8e0c8;
+}
+
+/* ── TOPBAR ── */
+.topbar { background: var(--g900); padding: 9px 0; font-size: 12px; color: rgba(255,255,255,.7); }
+.topbar .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+.ti { display: flex; align-items: center; gap: 7px; }
+.ti i { color: var(--y400); font-size: 11px; }
+.ti a { color: rgba(255,255,255,.8); text-decoration: none; }
+.ti a:hover { color: var(--y300); }
+
+/* ── NAVBAR ── */
+header { position: sticky; top: 0; z-index: 999; background: #fff; border-bottom: 2px solid var(--g100); box-shadow: 0 4px 24px rgba(26,74,26,.08); }
+nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 74px; }
+.brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.brand-icon { width: 48px; height: 48px; border-radius: 14px; background: linear-gradient(135deg, var(--g600), var(--g800)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 20px; flex-shrink: 0; box-shadow: 0 4px 14px rgba(45,122,45,.3); }
+.brand-name { font-size: 15.5px; font-weight: 800; color: #1a2e1a; line-height: 1.2; font-family: 'Playfair Display', serif; }
+.brand-creds { font-size: 11px; color: var(--muted); }
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 600; transition: color .2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--g600); }
+.nav-book { background: var(--y400); color: var(--g900); text-decoration: none; padding: 11px 22px; border-radius: 10px; font-size: 13.5px; font-weight: 800; display: flex; align-items: center; gap: 7px; box-shadow: 0 4px 16px rgba(240,194,0,.35); transition: all .2s; white-space: nowrap; }
+.nav-book:hover { background: var(--y500); transform: translateY(-1px); }
+.hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
+.hamburger span { width: 22px; height: 2px; background: #1a2e1a; border-radius: 2px; display: block; }
+.mobile-nav { display: none; flex-direction: column; background: #fff; border-top: 1px solid var(--border); position: fixed; top: 74px; left: 0; right: 0; z-index: 998; box-shadow: 0 8px 32px rgba(0,0,0,.1); }
+.mobile-nav.open { display: flex; }
+.mobile-nav a { padding: 16px 24px; text-decoration: none; color: #1a2e1a; font-size: 15px; font-weight: 600; border-bottom: 1px solid var(--border); }
+.mobile-nav a.cta { background: var(--y400); color: var(--g900); text-align: center; font-weight: 800; border: none; }
+
+/* ── SHARED ── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.tag { display: inline-flex; align-items: center; gap: 8px; background: var(--y100); color: var(--g800); border: 1.5px solid var(--y300); border-radius: 100px; padding: 5px 16px; font-size: 11px; font-weight: 800; letter-spacing: .7px; text-transform: uppercase; margin-bottom: 16px; }
+.tag i { color: var(--y500); }
+.fade-up { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+.fade-up.in { opacity: 1; transform: translateY(0); }
+.d1{transition-delay:.08s} .d2{transition-delay:.16s} .d3{transition-delay:.24s} .d4{transition-delay:.32s} .d5{transition-delay:.4s}
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(150deg, var(--g900) 0%, #152b15 55%, #0d2b0d 100%);
+  padding: 80px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: -200px; right: -200px;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(245,208,0,.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 120px;
+  background: linear-gradient(to bottom, transparent, #fff);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 64px;
+  align-items: flex-end;
+  position: relative; z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Left: text */
+.hero-text { padding-bottom: 80px; }
+.hero-text .tag { background: rgba(245,208,0,.12); border-color: rgba(245,208,0,.3); color: var(--y300); }
+.hero-text .tag i { color: var(--y400); }
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 4.5vw, 60px);
+  line-height: 1.06;
+  color: #fff;
+  margin-bottom: 18px;
+}
+.hero-text h1 em { color: var(--y300); font-style: italic; }
+.hero-text p { font-size: 15.5px; color: rgba(255,255,255,.6); line-height: 1.8; margin-bottom: 36px; max-width: 480px; }
+
+/* credential badges */
+.cred-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
+.cred-badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 8px;
+  padding: 7px 13px;
+  font-size: 12px; font-weight: 700; color: rgba(255,255,255,.8);
+}
+.cred-badge i { color: var(--y400); font-size: 11px; }
+
+/* quick contact pills */
+.hero-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+.pill {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--y400); color: var(--g900);
+  text-decoration: none; padding: 11px 20px; border-radius: 10px;
+  font-size: 13.5px; font-weight: 800;
+  box-shadow: 0 4px 18px rgba(245,208,0,.3);
+  transition: all .2s;
+}
+.pill:hover { background: var(--y500); transform: translateY(-2px); }
+.pill.outline {
+  background: transparent;
+  border: 2px solid rgba(255,255,255,.25);
+  color: rgba(255,255,255,.9);
+  box-shadow: none;
+}
+.pill.outline:hover { border-color: var(--y400); color: var(--y300); background: rgba(245,208,0,.06); }
+
+/* Right: doctor image card */
+.hero-img-wrap {
+  position: relative;
+  align-self: flex-end;
+}
+.hero-img-card {
+  position: relative;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+  box-shadow: 0 -12px 60px rgba(0,0,0,.4);
+}
+.hero-img-card img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  filter: grayscale(15%) contrast(1.05);
+}
+/* subtle gradient on image bottom */
+.hero-img-card::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 120px;
+  background: linear-gradient(to bottom, transparent, rgba(13,43,13,.6));
+  pointer-events: none;
+}
+/* decorative corner accent */
+.hero-img-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--y400), var(--g400));
+  z-index: 2;
+}
+/* name tag over image */
+.img-name-tag {
+  position: absolute;
+  bottom: 20px; left: 20px; right: 20px;
+  z-index: 3;
+  background: rgba(13,43,13,.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(245,208,0,.2);
+  border-radius: 12px;
+  padding: 14px 18px;
+  display: flex; align-items: center; gap: 14px;
+}
+.img-name-tag .dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 0 3px rgba(74,222,128,.25);
+  flex-shrink: 0;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%,100%{ box-shadow: 0 0 0 3px rgba(74,222,128,.25); }
+  50%{ box-shadow: 0 0 0 6px rgba(74,222,128,.1); }
+}
+.img-name-tag strong { font-size: 14px; font-weight: 800; color: #fff; font-family: 'Playfair Display', serif; display: block; }
+.img-name-tag span { font-size: 11.5px; color: rgba(255,255,255,.55); margin-top: 2px; display: block; }
+/* verified tick */
+.img-verified {
+  margin-left: auto; flex-shrink: 0;
+  background: rgba(245,208,0,.15);
+  border: 1px solid rgba(245,208,0,.3);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 11px; font-weight: 700; color: var(--y300);
+  display: flex; align-items: center; gap: 5px;
+}
+
+/* ── CONTACT SECTION ── */
+.contact-section { padding: 80px 0; background: #fff; }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* Info column */
+.info-col {}
+.info-col h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(26px, 3vw, 36px);
+  color: #1a2e1a;
+  margin-bottom: 10px;
+}
+.info-col h2 em { color: var(--g600); font-style: italic; }
+.info-col > p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 36px; }
+
+.info-cards { display: flex; flex-direction: column; gap: 14px; }
+.info-card {
+  display: flex; align-items: flex-start; gap: 16px;
+  background: var(--g50);
+  border: 1.5px solid var(--g100);
+  border-radius: 14px;
+  padding: 20px 22px;
+  text-decoration: none;
+  transition: all .25s;
+}
+.info-card:hover { border-color: var(--g300); box-shadow: 0 8px 28px rgba(26,74,26,.1); transform: translateX(4px); }
+.info-card-icon {
+  width: 46px; height: 46px; border-radius: 12px; flex-shrink: 0;
+  background: var(--g800);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--y400); font-size: 18px;
+}
+.info-card-body { flex: 1; }
+.info-card-label { font-size: 10.5px; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: .9px; margin-bottom: 4px; }
+.info-card-value { font-size: 15px; font-weight: 700; color: #1a2e1a; line-height: 1.4; }
+.info-card-sub { font-size: 12.5px; color: var(--muted); margin-top: 3px; }
+.info-card-arrow { color: var(--g400); font-size: 13px; align-self: center; margin-left: auto; flex-shrink: 0; opacity: 0; transition: opacity .2s, transform .2s; }
+.info-card:hover .info-card-arrow { opacity: 1; transform: translateX(3px); }
+
+/* Hours table */
+.hours-card {
+  background: var(--g900);
+  border-radius: 14px;
+  padding: 24px 26px;
+  margin-top: 14px;
+}
+.hours-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px; color: #fff;
+  margin-bottom: 18px;
+  display: flex; align-items: center; gap: 10px;
+}
+.hours-card h4 i { color: var(--y400); }
+.hours-list { display: flex; flex-direction: column; gap: 10px; }
+.hours-row { display: flex; justify-content: space-between; align-items: center; }
+.hours-day { font-size: 13px; color: rgba(255,255,255,.55); font-weight: 600; }
+.hours-time { font-size: 13px; color: rgba(255,255,255,.9); font-weight: 700; }
+.hours-closed { color: #f87171; font-weight: 700; font-size: 13px; }
+.hours-divider { border: none; border-top: 1px solid rgba(255,255,255,.08); margin: 4px 0; }
+
+/* Form column */
+.form-col {}
+.form-box {
+  background: var(--g50);
+  border: 1.5px solid var(--g100);
+  border-radius: 18px;
+  padding: 36px 32px;
+}
+.form-box h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; color: #1a2e1a; margin-bottom: 6px;
+}
+.form-box p { font-size: 14px; color: var(--muted); margin-bottom: 28px; line-height: 1.7; }
+.form-group { margin-bottom: 18px; }
+.form-group label { display: block; font-size: 12px; font-weight: 800; color: var(--g800); text-transform: uppercase; letter-spacing: .7px; margin-bottom: 7px; }
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  color: #1a2e1a;
+  transition: border-color .2s, box-shadow .2s;
+  outline: none;
+  appearance: none;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--g500);
+  box-shadow: 0 0 0 3px rgba(58,158,58,.12);
+}
+.form-group textarea { resize: vertical; min-height: 110px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.btn-submit {
+  width: 100%;
+  background: var(--g800);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 15px 24px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px; font-weight: 800;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 9px;
+  transition: all .2s;
+  margin-top: 6px;
+}
+.btn-submit:hover { background: var(--g700); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,74,26,.25); }
+.btn-submit i { font-size: 14px; }
+.form-note { font-size: 12px; color: var(--muted); text-align: center; margin-top: 14px; }
+.form-note i { color: var(--g500); margin-right: 4px; }
+
+/* success message */
+.form-success {
+  display: none;
+  background: #ecfdf5;
+  border: 1.5px solid #6ee7b7;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-top: 16px;
+  font-size: 14px; color: #065f46; font-weight: 600;
+  text-align: center;
+}
+.form-success i { margin-right: 6px; color: #10b981; }
+
+/* ── MAP SECTION ── */
+.map-section { background: var(--g900); padding: 72px 0; }
+.map-section-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.map-header { text-align: center; margin-bottom: 40px; }
+.map-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(26px,3vw,36px); color: #fff; margin-bottom: 10px; }
+.map-header h2 em { color: var(--y300); font-style: italic; }
+.map-header p { font-size: 15px; color: rgba(255,255,255,.5); }
+.map-wrap {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 20px 60px rgba(0,0,0,.4);
+  height: 380px;
+  background: #1a3a1a;
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+}
+/* placeholder map styling */
+.map-placeholder {
+  text-align: center; color: rgba(255,255,255,.35);
+}
+.map-placeholder i { font-size: 48px; display: block; margin-bottom: 14px; color: var(--y400); opacity: .6; }
+.map-placeholder p { font-size: 14px; }
+.map-placeholder span { font-size: 12px; opacity: .6; display: block; margin-top: 5px; }
+
+/* ── SOCIAL STRIP ── */
+.social-strip { background: var(--g50); border-top: 1.5px solid var(--border); padding: 36px 0; }
+.social-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+.social-label { font-size: 13px; font-weight: 700; color: var(--muted); }
+.social-links { display: flex; gap: 12px; }
+.social-btn {
+  width: 42px; height: 42px; border-radius: 10px;
+  background: var(--g800);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--y400); font-size: 16px; text-decoration: none;
+  transition: all .2s;
+}
+.social-btn:hover { background: var(--g600); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(26,74,26,.25); }
+
+/* ── FOOTER ── */
+footer { background: var(--g900); padding: 60px 0 28px; }
+.footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 44px; }
+.f-brand strong { font-family: 'Playfair Display', serif; font-size: 19px; color: #fff; display: block; margin-bottom: 10px; }
+.f-brand p { font-size: 13px; color: rgba(255,255,255,.38); line-height: 1.8; margin-bottom: 18px; }
+.f-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(240,194,0,.12); border: 1px solid rgba(240,194,0,.3); border-radius: 8px; padding: 7px 14px; font-size: 11px; color: var(--y300); font-weight: 700; }
+footer h4 { font-size: 10.5px; font-weight: 800; color: rgba(255,255,255,.85); margin-bottom: 18px; text-transform: uppercase; letter-spacing: 1.4px; }
+footer ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+footer ul li a { text-decoration: none; color: rgba(255,255,255,.38); font-size: 14px; transition: color .2s; }
+footer ul li a:hover { color: var(--y300); }
+.footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.07); margin: 0 24px 20px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+.footer-bottom { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.footer-bottom p { font-size: 12px; color: rgba(255,255,255,.22); }
+
+/* ── WA FLOAT ── */
+.wa-float { position: fixed; bottom: 24px; right: 24px; z-index: 900; width: 60px; height: 60px; border-radius: 50%; background: #25d366; color: #fff; text-decoration: none; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 24px rgba(37,211,102,.5); transition: transform .25s; }
+.wa-float:hover { transform: scale(1.12); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr 360px; gap: 40px; }
+}
+@media (max-width: 768px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-img-wrap { display: none; }
+  .hero-text { padding-bottom: 60px; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+  .form-row { grid-template-columns: 1fr; }
+  .social-inner { flex-direction: column; text-align: center; }
+}
+@media (max-width: 640px) {
+  .nav-links, .nav-book { display: none; }
+  .hamburger { display: flex; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="ti"><i class="fa-solid fa-phone"></i><a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a></div>
+    <div class="ti"><i class="fa-brands fa-whatsapp"></i><a href="#">Available on WhatsApp</a></div>
+    <div class="ti"><i class="fa-solid fa-location-dot"></i><span>Delhi, India</span></div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<header>
+  <nav>
+    <a class="brand" href="#">
+      <div class="brand-icon"><i class="fa-solid fa-stethoscope"></i></div>
+      <div>
+        <div class="brand-name">Dr. Tivendra Aadhraan</div>
+        <div class="brand-creds">MBBS · MPH · General Physician · Delhi</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="service.html">Services</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <a class="nav-book" href="#contact-form"><i class="fa-regular fa-calendar-check"></i> Book Consultation</a>
+    <button class="hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="services.html">Services</a>
+    <a href="#">Contact</a>
+    <a class="cta" href="#contact-form">Book Consultation</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <!-- Left text -->
+    <div class="hero-text fade-up">
+      <div class="tag"><i class="fa-solid fa-address-card"></i> Get In Touch</div>
+      <h1>Reach Out to<br/><em>Dr. Tivendra</em><br/>Aadhraan</h1>
+      <p>Whether you need a consultation, have a health concern, or want to book a home visit — we're here for you. Delhi's trusted general physician, just a call away.</p>
+      <div class="cred-badges">
+        <span class="cred-badge"><i class="fa-solid fa-certificate"></i> MBBS</span>
+        <span class="cred-badge"><i class="fa-solid fa-graduation-cap"></i> MPH</span>
+        <span class="cred-badge"><i class="fa-solid fa-shield-halved"></i> DMC Reg. 10915</span>
+        <span class="cred-badge"><i class="fa-solid fa-clock"></i> 26+ Yrs Experience</span>
+      </div>
+      <div class="hero-pills">
+        <a href="tel:+91XXXXXXXXXX" class="pill"><i class="fa-solid fa-phone"></i> Call Now</a>
+        <a href="https://wa.me/91XXXXXXXXXX" class="pill outline" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        <a href="#contact-form" class="pill outline"><i class="fa-regular fa-calendar-check"></i> Book Appointment</a>
+      </div>
+    </div>
+
+    <!-- Right: Doctor image -->
+    <div class="hero-img-wrap fade-up d2">
+      <div class="hero-img-card">
+        <!-- Replace with actual doctor photo -->
+        <img
+          src="https://picsum.photos/seed/doctor-portrait-male/420/480"
+          alt="Dr. Tivendra Aadhraan"
+        />
+        <div class="img-name-tag">
+          <div class="dot"></div>
+          <div>
+            <strong>Dr. Tivendra Aadhraan</strong>
+            <span>General Physician · Delhi</span>
+          </div>
+          <div class="img-verified"><i class="fa-solid fa-circle-check"></i> Verified</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section" id="contact-form">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- INFO COLUMN -->
+      <div class="info-col fade-up">
+        <div class="tag"><i class="fa-solid fa-location-dot"></i> Contact Details</div>
+        <h2>Clinic <em>Information</em></h2>
+        <p>Visit us at the clinic or reach out through any of the channels below. We respond promptly to all enquiries.</p>
+
+        <div class="info-cards">
+
+          <a href="tel:+91XXXXXXXXXX" class="info-card">
+            <div class="info-card-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="info-card-body">
+              <div class="info-card-label">Phone</div>
+              <div class="info-card-value">+91 XXXXX XXXXX</div>
+              <div class="info-card-sub">Available during clinic hours</div>
+            </div>
+            <i class="fa-solid fa-arrow-right info-card-arrow"></i>
+          </a>
+
+          <a href="https://wa.me/91XXXXXXXXXX" class="info-card" target="_blank">
+            <div class="info-card-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <div class="info-card-body">
+              <div class="info-card-label">WhatsApp</div>
+              <div class="info-card-value">+91 XXXXX XXXXX</div>
+              <div class="info-card-sub">Quick queries & appointment booking</div>
+            </div>
+            <i class="fa-solid fa-arrow-right info-card-arrow"></i>
+          </a>
+
+          <a href="mailto:dr.tivendra@example.com" class="info-card">
+            <div class="info-card-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="info-card-body">
+              <div class="info-card-label">Email</div>
+              <div class="info-card-value">dr.tivendra@example.com</div>
+              <div class="info-card-sub">For referrals & formal correspondence</div>
+            </div>
+            <i class="fa-solid fa-arrow-right info-card-arrow"></i>
+          </a>
+
+          <div class="info-card" style="cursor:default">
+            <div class="info-card-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="info-card-body">
+              <div class="info-card-label">Clinic Address</div>
+              <div class="info-card-value">XYZ Medical Centre, [Area Name]</div>
+              <div class="info-card-sub">Delhi – 110XXX, India</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Hours -->
+        <div class="hours-card">
+          <h4><i class="fa-solid fa-clock"></i> Clinic Hours</h4>
+          <div class="hours-list">
+            <div class="hours-row">
+              <span class="hours-day">Monday – Friday</span>
+              <span class="hours-time">9:00 AM – 1:00 PM &nbsp;|&nbsp; 5:00 PM – 8:00 PM</span>
+            </div>
+            <hr class="hours-divider"/>
+            <div class="hours-row">
+              <span class="hours-day">Saturday</span>
+              <span class="hours-time">9:00 AM – 2:00 PM</span>
+            </div>
+            <hr class="hours-divider"/>
+            <div class="hours-row">
+              <span class="hours-day">Sunday</span>
+              <span class="hours-closed">Closed</span>
+            </div>
+            <hr class="hours-divider"/>
+            <div class="hours-row">
+              <span class="hours-day">Home Visits</span>
+              <span class="hours-time">By appointment</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FORM COLUMN -->
+      <div class="form-col fade-up d2">
+        <div class="form-box">
+          <h3>Send a Message</h3>
+          <p>Fill out the form and Dr. Tivendra's team will get back to you within a few hours.</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" placeholder="Your name" id="f-name"/>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="+91 XXXXX XXXXX" id="f-phone"/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="you@example.com" id="f-email"/>
+          </div>
+
+          <div class="form-group">
+            <label>Reason for Visit</label>
+            <select id="f-reason">
+              <option value="" disabled selected>Select a reason</option>
+              <option>General Consultation</option>
+              <option>Vaccination</option>
+              <option>Nutritional Counselling</option>
+              <option>Psychological Counselling</option>
+              <option>Home Visit Request</option>
+              <option>Follow-up Appointment</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Message / Symptoms</label>
+            <textarea placeholder="Briefly describe your concern or symptoms..." id="f-message"></textarea>
+          </div>
+
+          <button class="btn-submit" onclick="submitForm()">
+            <i class="fa-regular fa-paper-plane"></i> Send Message
+          </button>
+
+          <div class="form-success" id="form-success">
+            <i class="fa-solid fa-circle-check"></i> Message sent! We'll get back to you shortly.
+          </div>
+
+          <p class="form-note"><i class="fa-solid fa-lock"></i> Your information is private and never shared.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MAP SECTION -->
+<section class="map-section">
+  <div class="map-section-inner">
+    <div class="map-header fade-up">
+      <h2>Find the <em>Clinic</em></h2>
+      <p>Conveniently located in Delhi — easy to reach by metro, auto, or cab.</p>
+    </div>
+    <div class="map-wrap fade-up d1">
+      <!-- Replace the placeholder below with a real Google Maps embed iframe -->
+      <div class="map-placeholder">
+        <i class="fa-solid fa-map-location-dot"></i>
+        <p>Google Maps embed goes here</p>
+        <span>Replace with: &lt;iframe src="https://maps.google.com/..." ...&gt;</span>
+      </div>
+      <!--
+      REPLACE ABOVE WITH:
+      <iframe
+        src="https://www.google.com/maps/embed?pb=YOUR_EMBED_URL"
+        width="100%" height="380" style="border:0;" allowfullscreen loading="lazy">
+      </iframe>
+      -->
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL STRIP -->
+<div class="social-strip">
+  <div class="social-inner">
+    <span class="social-label">Connect with Dr. Tivendra</span>
+    <div class="social-links">
+      <a href="#" class="social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" class="social-btn" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://wa.me/91XXXXXXXXXX" class="social-btn" title="WhatsApp" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="f-brand">
+      <strong>Dr. Tivendra Aadhraan</strong>
+      <p>MBBS · MPH · General Physician · Public Health Medicine Specialist · Epidemiologist<br/><br/>Trusted family healthcare with evidence-based consultation, expert diagnostics, and personalised treatment across Delhi for over 26 years.</p>
+      <div class="f-badge"><i class="fa-solid fa-circle-check"></i> Verified · Delhi Medical Council · Reg. 10915</div>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Key Facilities</h4>
+      <ul>
+        <li><a href="#">OPD Consultation</a></li>
+        <li><a href="#">Vaccination</a></li>
+        <li><a href="#">Minor OT</a></li>
+        <li><a href="#">Emergency Care</a></li>
+        <li><a href="#">Home Visits</a></li>
+        <li><a href="#">Nutritional Counselling</a></li>
+      </ul>
+    </div>
+  </div>
+  <hr class="footer-divider"/>
+  <div class="footer-bottom">
+    <p>© 2025 Dr. Tivendra Aadhraan. All Rights Reserved.</p>
+    <p>Delhi Medical Council Reg. No. 10915 · Member, Delhi Medical Association</p>
+  </div>
+</footer>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/91XXXXXXXXXX?text=Hello%20Dr.%20Tivendra%20Aadhraan%2C%20I%20would%20like%20to%20book%20a%20consultation."
+  class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="28" height="28" fill="#fff">
+    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 414.7c-32 0-64-8-92-23l-6.6-4-68.5 18 18-66.8-4-6.6C55 304 46 264 46 222c0-98.1 80-178 178-178 98 0 178 80 178 178 0 98.1-80.1 178-178.1 178zM321 281.3c-5.3-2.7-31.5-15.6-36.4-17.4-4.9-1.8-8.4-2.7-12 2.7-3.6 5.3-13.8 17.4-16.9 21-3.1 3.6-6.2 4-11.6 1.3-5.3-2.7-22.5-8.3-42.9-26.6-15.8-14.2-26.5-31.8-29.6-37.1-3.1-5.3-.3-8.2 2.4-10.9 2.4-2.4 5.3-6.2 8-9.3 2.7-3.1 3.6-5.3 5.3-8.9 1.8-3.6.9-6.7-.4-9.3-1.3-2.7-12-28.9-16.4-39.6-4.3-10.4-8.7-9-12-9.1-3.1-.1-6.7-.1-10.2-.1-3.6 0-9.3 1.3-14.2 6.7-4.9 5.3-18.7 18.2-18.7 44.5 0 26.2 19.1 51.6 21.8 55.1 2.7 3.6 37.6 57.4 91 80.4 12.7 5.5 22.6 8.7 30.3 11.2 12.7 4 24.3 3.4 33.4 2.1 10.3-1.5 31.5-12.9 36-25.3 4.4-12.4 4.4-23.1 3.1-25.3-1.4-2.3-5-3.6-10.3-6.2z"/>
+  </svg>
+</a>
+
+<script>
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }});
+  }, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+  // Trigger hero immediately
+  document.querySelectorAll('.hero .fade-up').forEach(el => {
+    setTimeout(() => el.classList.add('in'), 100);
+  });
+
+  // Form submit
+  function submitForm() {
+    const name = document.getElementById('f-name').value.trim();
+    const phone = document.getElementById('f-phone').value.trim();
+    if (!name || !phone) { alert('Please fill in your name and phone number.'); return; }
+    document.getElementById('form-success').style.display = 'block';
+    document.querySelector('.btn-submit').textContent = '✓ Sent!';
+    document.querySelector('.btn-submit').style.background = '#15803d';
+  }
+
+  // Mobile nav close
+  document.querySelectorAll('#mobileNav a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('mobileNav').classList.remove('open'));
+  });
+</script>
+</body>
+</html>

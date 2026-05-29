@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Trisha Family Clinic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green-900: #0d2b0d;
+  --green-800: #1a4a1a;
+  --green-700: #1f5c1f;
+  --green-600: #2d7a2d;
+  --green-500: #3a9e3a;
+  --green-400: #4fc04f;
+  --green-300: #86d486;
+  --green-200: #b8e8b8;
+  --green-100: #d6f0d6;
+  --green-50:  #edfaed;
+  --yellow-500: #f0c200;
+  --yellow-400: #f5d000;
+  --yellow-300: #f9df4a;
+  --yellow-200: #fceea0;
+  --yellow-100: #fef7d0;
+  --yellow-50:  #fffdf0;
+  --white: #ffffff;
+  --cream: #f5f3ef;
+  --text: #1a2e1a;
+  --muted: #4a6b4a;
+  --border: #c8e0c8;
+  --navy: #0f1f2e;
+  --navy2: #162535;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 0 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 68px;
+}
+.nav-brand { display: flex; flex-direction: column; gap: 1px; }
+.nav-brand strong { font-size: 15px; font-weight: 700; color: var(--green-900); letter-spacing: -.01em; }
+.nav-brand span { font-size: 10px; font-weight: 500; color: var(--green-500); letter-spacing: .14em; text-transform: uppercase; }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a { font-size: 14px; font-weight: 500; color: var(--text); text-decoration: none; }
+.nav-links a:hover, .nav-links a.active { color: var(--green-600); }
+.nav-links a.active { border-bottom: 2px solid var(--green-500); padding-bottom: 2px; }
+.nav-cta {
+  background: var(--green-900); color: var(--white);
+  font-size: 13px; font-weight: 600; padding: 9px 22px;
+  border-radius: 6px; text-decoration: none; letter-spacing: .01em;
+}
+.nav-cta:hover { background: var(--green-700); }
+
+/* ── HERO SPLIT ── */
+.hero {
+  background: var(--cream);
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+}
+.hero-img-wrap {
+  position: relative; overflow: hidden;
+  background: var(--green-100);
+  display: flex; align-items: flex-end; justify-content: center;
+}
+.hero-img-placeholder {
+  width: 100%; height: 100%;
+  background: linear-gradient(160deg, var(--green-200) 0%, var(--green-100) 50%, var(--green-50) 100%);
+  display: flex; align-items: center; justify-content: center;
+  min-height: 480px;
+}
+.hero-img-placeholder svg { width: 160px; height: 160px; fill: var(--green-400); opacity: .4; }
+.hero-stat-badge {
+  position: absolute; bottom: 28px; left: 28px;
+  background: var(--green-900);
+  color: var(--white);
+  padding: 16px 22px;
+  border-radius: 10px;
+}
+.hero-stat-badge .big { font-size: 2rem; font-weight: 800; color: var(--yellow-300); line-height: 1; }
+.hero-stat-badge .lbl { font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--green-300); margin-top: 3px; }
+
+.hero-content {
+  padding: 64px 56px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.hero-eyebrow {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--green-600); margin-bottom: 22px;
+}
+.hero-eyebrow::before { content:''; width: 32px; height: 2px; background: var(--yellow-400); }
+.hero-content h1 { font-size: clamp(2.2rem, 3.5vw, 3rem); font-weight: 800; color: var(--green-900); line-height: 1.1; margin-bottom: 4px; }
+.hero-content h1 em { font-style: italic; color: var(--green-600); font-weight: 400; }
+.hero-creds {
+  border-left: 3px solid var(--green-500);
+  padding-left: 14px; margin: 18px 0 22px;
+}
+.hero-creds p { font-size: 14px; font-weight: 500; color: var(--text); line-height: 1.6; }
+.hero-bio { font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 28px; }
+.hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+.tag {
+  border: 1.5px solid var(--green-600);
+  color: var(--green-700); font-size: 12px; font-weight: 600;
+  padding: 6px 16px; border-radius: 100px; letter-spacing: .02em;
+}
+.tag.yellow { border-color: var(--yellow-500); color: #7a5e00; }
+.hero-stats-row { display: flex; gap: 28px; flex-wrap: wrap; }
+.hstat { display: flex; flex-direction: column; gap: 2px; }
+.hstat .n { font-size: 1.6rem; font-weight: 800; color: var(--green-900); line-height: 1; }
+.hstat .l { font-size: 11px; font-weight: 500; color: var(--muted); letter-spacing: .04em; }
+
+/* ── SECTION WRAPPER ── */
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 48px; }
+.section-head {
+  font-size: 10px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--green-600); margin-bottom: 32px; display: flex; align-items: center; gap: 12px;
+}
+.section-head::after { content:''; flex:1; height:1px; background: var(--border); }
+
+/* ── ROLES ── */
+.roles-section { padding: 80px 0; background: var(--white); }
+.roles-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+.role-card {
+  border: 1px solid var(--border); border-radius: 14px;
+  padding: 32px 28px; position: relative; overflow: hidden;
+  transition: box-shadow .2s, transform .2s;
+  background: var(--white);
+}
+.role-card:hover { box-shadow: 0 8px 32px rgba(29,90,29,.1); transform: translateY(-3px); }
+.role-card::before {
+  content:''; position: absolute; top:0; left:0; right:0; height:4px;
+  background: linear-gradient(90deg, var(--green-600), var(--green-400));
+}
+.role-num { font-size: 3rem; font-weight: 800; color: var(--green-100); position:absolute; top:16px; right:20px; line-height:1; }
+.role-icon {
+  width:44px; height:44px; background: var(--green-900); border-radius:10px;
+  display:flex; align-items:center; justify-content:center; margin-bottom:18px;
+}
+.role-icon svg { width:20px; height:20px; fill:var(--green-300); }
+.role-title { font-size: 1.05rem; font-weight: 700; color: var(--green-900); margin-bottom:5px; line-height:1.3; }
+.role-org { font-size: 12px; font-weight: 500; color: var(--green-600); margin-bottom:12px; line-height:1.4; }
+.role-since {
+  display:inline-block; font-size:11px; font-weight:600;
+  background: var(--green-900); color: var(--green-300);
+  padding:3px 12px; border-radius:100px; margin-bottom:14px; letter-spacing:.04em;
+}
+.role-desc { font-size:13px; color: var(--muted); line-height:1.65; }
+.role-contacts { margin-top:14px; display:flex; flex-direction:column; gap:5px; }
+.role-contacts a { font-size:12px; font-weight:500; color:var(--green-700); text-decoration:none; }
+.role-contacts a:hover { color:var(--green-500); }
+
+/* ── CLARITY BLOCK (One Visit style) ── */
+.clarity-section {
+  background: var(--cream);
+  padding: 80px 0;
+}
+.clarity-inner { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
+.clarity-img {
+  border-radius:14px; overflow:hidden; position:relative;
+  background: var(--green-100); min-height:360px;
+  display:flex; align-items:center; justify-content:center;
+}
+.clarity-img svg { width:120px; height:120px; fill:var(--green-400); opacity:.35; }
+.clarity-badge {
+  position:absolute; bottom:24px; right:24px;
+  background:var(--green-900); color:var(--white);
+  padding:14px 20px; border-radius:10px; text-align:center;
+}
+.clarity-badge .big { font-size:1.8rem; font-weight:800; color:var(--yellow-300); }
+.clarity-badge .lbl { font-size:10px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--green-300); }
+.clarity-text h2 { font-size: 2.2rem; font-weight:800; color:var(--green-900); line-height:1.15; margin-bottom:8px; }
+.clarity-text h2 em { font-style:italic; color:var(--green-600); font-weight:400; }
+.clarity-text p { font-size:15px; color:var(--muted); line-height:1.75; margin-bottom:28px; }
+.highlight-card {
+  background:var(--white); border:1px solid var(--border); border-radius:10px;
+  padding:18px 22px; margin-bottom:12px; display:flex; gap:14px; align-items:flex-start;
+}
+.highlight-card .hc-icon { font-size:1.2rem; flex-shrink:0; margin-top:2px; }
+.highlight-card .hc-title { font-size:14px; font-weight:700; color:var(--green-900); margin-bottom:2px; }
+.highlight-card .hc-desc { font-size:13px; color:var(--muted); line-height:1.5; }
+.highlight-card strong { color:var(--green-700); }
+
+/* ── ACCORDION CREDENTIALS ── */
+.creds-section { padding:80px 0; background:var(--white); }
+.creds-section h2 { font-size:2rem; font-weight:800; color:var(--green-900); margin-bottom:40px; }
+.accordion { display:flex; flex-direction:column; gap:12px; }
+.acc-item {
+  border:1px solid var(--border); border-radius:12px; overflow:hidden;
+}
+.acc-header {
+  display:flex; align-items:center; gap:14px; padding:20px 24px;
+  cursor:pointer; background:var(--white); user-select:none;
+  transition:background .15s;
+}
+.acc-header:hover { background:var(--green-50); }
+.acc-icon-box {
+  width:38px; height:38px; background:var(--green-50); border-radius:8px;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.acc-icon-box svg { width:18px; height:18px; fill:var(--green-600); }
+.acc-title { font-size:15px; font-weight:700; color:var(--green-900); flex:1; }
+.acc-chevron {
+  width:28px; height:28px; border-radius:50%; background:var(--green-50);
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  transition:transform .25s;
+}
+.acc-chevron svg { width:14px; height:14px; stroke:var(--green-600); fill:none; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; }
+.acc-item.open .acc-chevron { transform:rotate(180deg); }
+.acc-body { display:none; padding:0 24px 24px; }
+.acc-item.open .acc-body { display:block; }
+
+/* accordion body styles */
+.edu-row { padding:14px 0; border-bottom:1px solid var(--border); }
+.edu-row:last-child { border-bottom:none; }
+.edu-row .deg { font-size:14px; font-weight:600; color:var(--green-900); margin-bottom:3px; }
+.edu-row .yr { font-size:11px; font-weight:600; color:var(--green-500); letter-spacing:.06em; margin-bottom:3px; }
+.edu-row .inst { font-size:13px; color:var(--muted); line-height:1.5; }
+
+.lic-row { display:flex; gap:10px; align-items:flex-start; padding:10px 0; border-bottom:1px solid var(--border); }
+.lic-row:last-child { border-bottom:none; }
+.dot { width:7px; height:7px; border-radius:50%; background:var(--green-400); flex-shrink:0; margin-top:5px; }
+.lic-text { font-size:13px; color:var(--text); line-height:1.5; }
+
+.training-list { display:grid; grid-template-columns:1fr 1fr; gap:0; }
+.tr-item { padding:14px 16px; border-bottom:1px solid var(--border); border-right:1px solid var(--border); font-size:13px; color:var(--text); line-height:1.5; }
+.tr-item:nth-child(2n) { border-right:none; }
+.tr-year { font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--green-500); display:block; margin-bottom:3px; }
+
+/* ── OPD TIMINGS ── */
+.opd-section { background: var(--navy); padding:80px 0; }
+.opd-section .section-head { color: var(--green-400); }
+.opd-section .section-head::after { background: rgba(255,255,255,.08); }
+.opd-title { font-size:2.2rem; font-weight:800; color:var(--white); margin-bottom:40px; }
+.opd-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+.opd-card {
+  background: var(--navy2); border:1px solid rgba(255,255,255,.08);
+  border-radius:14px; padding:28px 24px;
+  transition:border-color .2s;
+}
+.opd-card.highlight { border-color:var(--yellow-400); background:rgba(245,208,0,.04); }
+.opd-card:hover { border-color:var(--green-700); }
+.opd-day { font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--green-400); margin-bottom:10px; }
+.opd-time { font-size:1.6rem; font-weight:800; color:var(--white); line-height:1.15; margin-bottom:8px; }
+.opd-label { font-size:12px; color:rgba(255,255,255,.45); }
+.opd-badge {
+  display:inline-block; font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  border:1.5px solid rgba(255,255,255,.2); color:rgba(255,255,255,.5);
+  padding:3px 10px; border-radius:100px; margin-bottom:10px;
+}
+.opd-closed { font-size:1.4rem; font-weight:800; color:rgba(255,255,255,.2); letter-spacing:.04em; }
+
+/* ── PUBLICATIONS ── */
+.pub-section { background: var(--green-900); padding:72px 0; }
+.pub-inner { display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap; }
+.pub-text h2 { font-size:1.9rem; font-weight:800; color:var(--white); margin-bottom:6px; }
+.pub-text p { font-size:14px; color:var(--green-300); }
+.pub-num { font-size:5.5rem; font-weight:800; color:var(--yellow-300); line-height:1; }
+.pub-num span { font-size:1.3rem; color:var(--green-400); vertical-align:super; font-weight:500; }
+
+/* ── FOOTER ── */
+footer { background:var(--navy); padding:56px 48px 32px; }
+.footer-top { display:grid; grid-template-columns:1.4fr 1fr 1fr 1.2fr; gap:48px; margin-bottom:48px; }
+.footer-brand strong { font-size:16px; font-weight:800; color:var(--white); display:block; margin-bottom:3px; }
+.footer-brand em { font-size:10px; font-style:normal; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--green-400); display:block; margin-bottom:16px; }
+.footer-brand p { font-size:13px; color:rgba(255,255,255,.4); line-height:1.7; }
+.footer-col h4 { font-size:13px; font-weight:700; color:var(--white); margin-bottom:16px; padding-bottom:8px; border-bottom:2px solid var(--yellow-400); display:inline-block; }
+.footer-col ul { list-style:none; display:flex; flex-direction:column; gap:9px; }
+.footer-col ul a { font-size:13px; color:rgba(255,255,255,.45); text-decoration:none; display:flex; align-items:center; gap:6px; }
+.footer-col ul a::before { content:'›'; color:var(--green-500); font-size:1rem; }
+.footer-col ul a:hover { color:var(--white); }
+.footer-contact-item { display:flex; gap:10px; align-items:flex-start; margin-bottom:12px; }
+.footer-contact-item .ic { font-size:1rem; color:var(--green-400); flex-shrink:0; margin-top:1px; }
+.footer-contact-item p { font-size:13px; color:rgba(255,255,255,.45); line-height:1.55; }
+.footer-bottom { border-top:1px solid rgba(255,255,255,.07); padding-top:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+.footer-bottom p { font-size:12px; color:rgba(255,255,255,.3); }
+.footer-bottom-links { display:flex; gap:20px; }
+.footer-bottom-links a { font-size:12px; color:rgba(255,255,255,.3); text-decoration:none; }
+.footer-bottom-links a:hover { color:rgba(255,255,255,.6); }
+
+/* ── WhatsApp FAB ── */
+.wa-fab {
+  position:fixed; bottom:28px; right:28px; z-index:999;
+  width:54px; height:54px; background:#25d366; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,.45);
+  text-decoration:none; transition:transform .2s;
+}
+.wa-fab:hover { transform:scale(1.08); }
+.wa-fab svg { width:28px; height:28px; fill:white; }
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px) {
+  .hero { grid-template-columns:1fr; }
+  .hero-img-wrap { min-height:300px; }
+  .clarity-inner { grid-template-columns:1fr; }
+  .roles-grid { grid-template-columns:1fr; }
+  .opd-grid { grid-template-columns:1fr 1fr; }
+  .footer-top { grid-template-columns:1fr 1fr; }
+  nav { padding:0 24px; }
+  .nav-links { display:none; }
+  .wrap { padding:0 24px; }
+  .hero-content { padding:48px 24px; }
+  .training-list { grid-template-columns:1fr; }
+  .tr-item { border-right:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <strong>Dr. Tivender Adhran</strong>
+    <span>Family Physician · New Delhi</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#" class="active">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#">Blogs</a></li>
+  </ul>
+  <a href="tel:9676553666" class="nav-cta">Book Appointment</a>
+</nav>
+
+<!-- HERO SPLIT -->
+<section class="hero">
+  <div class="hero-img-wrap">
+    <div class="hero-img-placeholder">
+      <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 1 1 0 10A5 5 0 0 1 12 2zm0 12c5.33 0 8 2.67 8 4v2H4v-2c0-1.33 2.67-4 8-4z"/></svg>
+    </div>
+    <div class="hero-stat-badge">
+      <div class="big">50,000+</div>
+      <div class="lbl">Patients Consulted</div>
+    </div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Trisha Family Clinic · Lajpat Nagar 4</div>
+    <h1>Dr. Tivender<br><em>Adhran</em></h1>
+    <div class="hero-creds">
+      <p>MBBS · MPH<br>Family Physician &amp; Research Scientist</p>
+    </div>
+    <p class="hero-bio">
+      Trusted family physician serving adults and children since 2014. With 26 years of clinical and research experience — including tenures at AIIMS Delhi, Safdarjung Hospital, and WHO/ICMR-affiliated institutions — Dr. Adhran brings rigorous evidence-based care to every consultation.
+    </p>
+    <div class="hero-tags">
+      <span class="tag">Family Medicine</span>
+      <span class="tag">Preventive Care</span>
+      <span class="tag">Clinical Research</span>
+      <span class="tag">Paediatrics</span>
+      <span class="tag yellow">AIIMS Ex-RO</span>
+    </div>
+    <div class="hero-stats-row">
+      <div class="hstat"><span class="n">26 yrs</span><span class="l">Experience</span></div>
+      <div class="hstat"><span class="n">4.8–4.9 ★</span><span class="l">Star Rating</span></div>
+      <div class="hstat"><span class="n">&lt;5%</span><span class="l">Revisit Rate</span></div>
+      <div class="hstat"><span class="n">40+</span><span class="l">Publications</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ROLES -->
+<section class="roles-section">
+  <div class="wrap">
+    <div class="section-head">Positions &amp; Roles</div>
+    <div class="roles-grid">
+
+      <div class="role-card">
+        <span class="role-num">01</span>
+        <div class="role-icon"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 1 1 0 10A5 5 0 0 1 12 2zm0 12c5.33 0 8 2.67 8 4v2H4v-2c0-1.33 2.67-4 8-4z"/></svg></div>
+        <div class="role-title">Family Physician</div>
+        <div class="role-org">Trisha Family Clinic, Lajpat Nagar 4, New Delhi</div>
+        <span class="role-since">Jan 2014 – Present</span>
+        <p class="role-desc">Ex. Research Officer, AIIMS Delhi (May 2000 – Dec 2006)<br>Ex. Resident, Safdarjung Hospital Delhi (Apr 1999 – Apr 2000)</p>
+        <div class="role-contacts">
+          <a href="tel:9676553666">📞 9676553666 (WhatsApp)</a>
+          <a href="tel:9582576086">📞 9582576086</a>
+          <a href="mailto:dr.tivenderadhran@gmail.com">✉ dr.tivenderadhran@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="role-card">
+        <span class="role-num">02</span>
+        <div class="role-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14l4-4h12a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/></svg></div>
+        <div class="role-title">Asst. Director &amp; Research Scientist</div>
+        <div class="role-org">Society for Applied Studies (SAS), New Delhi<br>ICMR &amp; WHO Collaborating Centre</div>
+        <span class="role-since">Jan 2007 – Present</span>
+        <p class="role-desc">30+ national &amp; international research projects. Part of innovations in new treatments and vaccine development.</p>
+        <div class="role-contacts">
+          <a href="tel:+919899226760">📞 +91 98992 26760 (WhatsApp)</a>
+          <a href="mailto:tivendra.kumar@sas.org.in">✉ tivendra.kumar@sas.org.in</a>
+          <a href="https://sas.org.in" target="_blank">🌐 sas.org.in</a>
+        </div>
+      </div>
+
+      <div class="role-card">
+        <span class="role-num">03</span>
+        <div class="role-icon"><svg viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg></div>
+        <div class="role-title">Physician</div>
+        <div class="role-org">Clinical Research Centre (CRC), Govt. of India<br>HIMSR &amp; HAHC Hospital, Jamia Hamdard University</div>
+        <span class="role-since">Jan 2023 – Present</span>
+        <p class="role-desc">Clinical research physician at a government-designated Clinical Research Centre, contributing to institutional and sponsored research initiatives.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ONE VISIT CLARITY -->
+<section class="clarity-section">
+  <div class="wrap">
+    <div class="clarity-inner">
+      <div class="clarity-img">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+        <div class="clarity-badge">
+          <div class="big">&lt; 5%</div>
+          <div class="lbl">Second Visit Rate</div>
+        </div>
+      </div>
+      <div class="clarity-text">
+        <div class="section-head">Why Patients Trust Us</div>
+        <h2>One Visit.<br><em>Complete Care.</em></h2>
+        <p>Walk in with any concern — leave with a clear diagnosis and actionable plan. Dr. Adhran's 26 years of experience means fewer referrals, fewer repeat visits, and more confidence for every patient and family.</p>
+        <div class="highlight-card">
+          <div class="hc-icon">🏥</div>
+          <div>
+            <div class="hc-title">Research-Backed Treatment</div>
+            <div class="hc-desc">Part of <strong>30+ national &amp; international research projects</strong> — treatments backed by evidence, not guesswork.</div>
+          </div>
+        </div>
+        <div class="highlight-card">
+          <div class="hc-icon">⭐</div>
+          <div>
+            <div class="hc-title">Consistently Top-Rated</div>
+            <div class="hc-desc"><strong>4.8–4.9 star ratings</strong> across platforms. More than 50,000 patients seen over 26 years of practice.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCORDION CREDENTIALS -->
+<section class="creds-section">
+  <div class="wrap">
+    <div class="section-head">Profile &amp; Credentials</div>
+    <h2 style="font-size:2rem;font-weight:800;color:var(--green-900);margin-bottom:40px;">Academic &amp; Professional Record</h2>
+    <div class="accordion">
+
+      <!-- Education -->
+      <div class="acc-item open">
+        <div class="acc-header" onclick="toggle(this)">
+          <div class="acc-icon-box"><svg viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z"/></svg></div>
+          <span class="acc-title">Education</span>
+          <div class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="acc-body">
+          <div class="edu-row">
+            <div class="deg">Masters of Public Health (MPH)</div>
+            <div class="yr">2005 – 2006</div>
+            <div class="inst">Achutha Menon Centre for Health Science Studies, Sree Chitra Tirunal Institute for Medical Sciences &amp; Technology, Thiruvananthapuram, Kerala</div>
+          </div>
+          <div class="edu-row">
+            <div class="deg">MBBS — Bachelor of Medicine &amp; Surgery</div>
+            <div class="yr">1993 – 1999</div>
+            <div class="inst">Lala Lajpat Rai Memorial Medical College, Meerut, UP, India</div>
+          </div>
+          <div class="edu-row">
+            <div class="deg">Date of Birth</div>
+            <div class="yr">05 March 1972</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Licensure -->
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggle(this)">
+          <div class="acc-icon-box"><svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-2 9H7v-2h4v2zm4-4H7v-2h8v2z"/></svg></div>
+          <span class="acc-title">Medical Licensure</span>
+          <div class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="acc-body">
+          <div class="lic-row"><div class="dot"></div><div class="lic-text">Delhi Medical Council, Delhi — Reg. No. <strong>10915</strong></div></div>
+          <div class="lic-row"><div class="dot"></div><div class="lic-text">Medical Council of Uttar Pradesh, Lucknow, UP</div></div>
+        </div>
+      </div>
+
+      <!-- Trainings -->
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggle(this)">
+          <div class="acc-icon-box"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14l4-4h12c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 9H7v-2h7v2zm3-4H7V6h10v2z"/></svg></div>
+          <span class="acc-title">Training &amp; Experience</span>
+          <div class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="acc-body">
+          <div class="training-list">
+            <div class="tr-item"><span class="tr-year">Aug 2013</span>Advanced GCP Training — DiagnoSearch, New Delhi</div>
+            <div class="tr-item"><span class="tr-year">Sep 2012</span>Basic GCP Training — CHRD-SAS</div>
+            <div class="tr-item"><span class="tr-year">May 2012</span>Biostatistics: Clinical Trial &amp; Meta-Analysis — CMC Vellore</div>
+            <div class="tr-item"><span class="tr-year">Jun 2012</span>Multiple Linear Regression &amp; Survival Analysis — CMC Vellore</div>
+            <div class="tr-item"><span class="tr-year">Jan 2010</span>IMNCI &amp; F-IMNCI Physician Training — Safdarjung Hospital, Delhi</div>
+            <div class="tr-item"><span class="tr-year">Apr 2008</span>Indo-US Workshop on RCTs — US Embassy, New Delhi</div>
+            <div class="tr-item"><span class="tr-year">Feb 2008</span>Data Analysis for Clinical Trials — AIIMS &amp; University of Bergen (Norway)</div>
+            <div class="tr-item"><span class="tr-year">Nov 2007</span>MedDRA Training — SIRO Clinpharm Pvt Ltd, Mumbai</div>
+            <div class="tr-item"><span class="tr-year">Jun 2007</span>Foundations of Clinical Research &amp; GCP — Academy of Clinical Excellence</div>
+            <div class="tr-item"><span class="tr-year">Jun 2006</span>Bioethics in Clinical Research — Indo-US Workshop, US Embassy</div>
+            <div class="tr-item"><span class="tr-year">Mar 2004</span>GCP &amp; GLP for Vaccine Evaluation — WHO &amp; ICMR</div>
+            <div class="tr-item"><span class="tr-year">Oct 2003</span>Epidemiology &amp; Research Methods — INCLEN, AIIMS, New Delhi</div>
+            <div class="tr-item"><span class="tr-year">Aug 2005</span>Ethical Issues in Health Research — AMCHSS, SCTIMST, Kerala</div>
+            <div class="tr-item"><span class="tr-year">Aug 2006</span>Non-Communicable Diseases Workshop — AMCHSS, SCTIMST, Kerala</div>
+            <div class="tr-item"><span class="tr-year">Kerala</span>Standardization Training: Anthropometry, BP, Temp, RR — AMCHSS</div>
+            <div class="tr-item"><span class="tr-year">Jan 2006</span>Human Participants Protection Education — NIH Online Course</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Specialisations -->
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggle(this)">
+          <div class="acc-icon-box"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+          <span class="acc-title">Specialisations &amp; Expertise</span>
+          <div class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="acc-body">
+          <div style="display:flex;flex-wrap:wrap;gap:10px;padding-top:8px;">
+            <span class="tag">Family Medicine</span>
+            <span class="tag">Preventive Healthcare</span>
+            <span class="tag">Paediatric Care</span>
+            <span class="tag">Clinical Research (GCP)</span>
+            <span class="tag">Epidemiology</span>
+            <span class="tag">Biostatistics</span>
+            <span class="tag">Vaccine Studies</span>
+            <span class="tag">Public Health (MPH)</span>
+            <span class="tag">IMNCI / F-IMNCI</span>
+            <span class="tag">NCD Management</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- OPD TIMINGS -->
+<section class="opd-section">
+  <div class="wrap">
+    <div class="section-head">Schedule</div>
+    <div class="opd-title">OPD Consultation Timings</div>
+    <div class="opd-grid">
+      <div class="opd-card highlight">
+        <div class="opd-day">Monday – Saturday</div>
+        <div class="opd-time">11:00 AM<br>– 1:30 PM</div>
+        <div class="opd-label">Morning OPD</div>
+      </div>
+      <div class="opd-card">
+        <div class="opd-day">Monday – Thursday – Saturday</div>
+        <div class="opd-time">5:30 PM<br>– 8:00 PM</div>
+        <div class="opd-label">Evening OPD</div>
+      </div>
+      <div class="opd-card">
+        <div class="opd-day">Emergencies</div>
+        <div class="opd-badge">Prior Appointments Only</div>
+        <div class="opd-time">2:00 PM<br>– 5:00 PM</div>
+        <div class="opd-label">Mon – Thu – Sat</div>
+      </div>
+      <div class="opd-card">
+        <div class="opd-day">Sunday</div>
+        <div class="opd-closed">CLOSED</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section class="pub-section">
+  <div class="wrap">
+    <div class="pub-inner">
+      <div class="pub-text">
+        <div class="section-head" style="color:var(--green-400);">Research Output</div>
+        <h2>Research Publications</h2>
+        <p>International peer-reviewed research papers &amp; reports</p>
+      </div>
+      <div class="pub-num">40<span>+</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <strong>Dr. Tivender Adhran</strong>
+      <em>Family Physician · Trisha Family Clinic</em>
+      <p>Complete family healthcare for adults and children. Evidence-based, patient-first medicine — 26 years, one family at a time.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Dr. Adhran</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Research</a></li>
+        <li><a href="#">Book Appointment</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">General Medicine</a></li>
+        <li><a href="#">Child Healthcare</a></li>
+        <li><a href="#">Preventive Care</a></li>
+        <li><a href="#">Chronic Disease</a></li>
+        <li><a href="#">Clinical Research</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <div class="footer-contact-item">
+        <div class="ic">📍</div>
+        <p>D-87, LGF, Amar Colony, Raghunath Temple Main Street, Lajpat Nagar 4, New Delhi – 110024</p>
+      </div>
+      <div class="footer-contact-item">
+        <div class="ic">📞</div>
+        <p>9676553666 · 9582576086</p>
+      </div>
+      <div class="footer-contact-item">
+        <div class="ic">✉</div>
+        <p>dr.tivenderadhran@gmail.com</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Trisha Family Clinic · Dr. Tivender Adhran · MBBS · MPH</p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp FAB -->
+<a href="https://wa.me/919676553666" class="wa-fab" target="_blank" title="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.558 4.115 1.535 5.84L.057 23.999l6.305-1.654A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.374l-.359-.213-3.722.976.992-3.625-.234-.372A9.818 9.818 0 0 1 2.182 12C2.182 6.577 6.577 2.182 12 2.182S21.818 6.577 21.818 12 17.423 21.818 12 21.818z"/></svg>
+</a>
+
+<script>
+function toggle(header) {
+  const item = header.parentElement;
+  item.classList.toggle('open');
+}
+</script>
+</body>
+</html>
