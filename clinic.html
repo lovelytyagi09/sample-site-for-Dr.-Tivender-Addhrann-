@@ -1,0 +1,934 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Clinic | Trisha Family Clinic – Dr. Tivender Addhrann</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --green-900: #0d3320;
+      --green-800: #1a4a2e;
+      --green-700: #1f5c38;
+      --green-600: #2d7a48;
+      --green-500: #3a9e60;
+      --green-400: #4fc07a;
+      --green-300: #86d4a8;
+      --green-200: #b8e8cc;
+      --green-100: #d6f0e2;
+      --green-50:  #edfaf3;
+      --yellow-500: #f0c200;
+      --yellow-400: #f5d000;
+      --yellow-300: #f9df4a;
+      --yellow-200: #fceea0;
+      --yellow-100: #fef7d0;
+      --yellow-50:  #fffdf0;
+      --sky-100: #e0f4ff;
+      --sky-300: #7dd3fc;
+      --sky-500: #0ea5e9;
+      --pink-100: #fce7f3;
+      --pink-300: #f9a8d4;
+      --pink-500: #ec4899;
+      --purple-100: #f3e8ff;
+      --purple-300: #d8b4fe;
+      --purple-500: #a855f7;
+      --white: #ffffff;
+      --text: #1a3a1a;
+      --muted: #3a5f3a;
+      --border: #c8e8d8;
+
+      /* Mapped aliases */
+      --navy:      var(--green-900);
+      --navy-mid:  var(--green-800);
+      --teal:      var(--green-600);
+      --teal-lt:   var(--green-50);
+      --gold:      var(--yellow-500);
+      --gold-lt:   var(--yellow-50);
+      --cream:     #f4faf6;
+      --radius: 14px;
+      --shadow-sm: 0 2px 14px rgba(13,51,32,.07);
+      --shadow-md: 0 8px 32px rgba(13,51,32,.12);
+      --font-head: 'Fraunces', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--text); background: #fff; font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+    h1,h2,h3,h4,h5 { font-family: var(--font-head); line-height: 1.2; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* TOP BAR */
+    .topbar { background: var(--green-900); color: rgba(255,255,255,.75); font-size: .82rem; padding: .5rem 0; }
+    .topbar a { color: rgba(255,255,255,.85); }
+    .topbar a:hover { color: #fff; }
+    .topbar .sep { margin: 0 .75rem; opacity: .35; }
+
+    /* NAVBAR */
+    .navbar { background: #fff; border-bottom: 1.5px solid var(--border); padding: .9rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: var(--shadow-sm); }
+    .navbar-brand { font-family: var(--font-head); font-weight: 700; font-size: 1.08rem; color: var(--green-900) !important; line-height: 1.2; }
+    .navbar-brand small { display: block; font-family: var(--font-body); font-size: .72rem; font-weight: 400; color: var(--muted); letter-spacing: .04em; }
+    .nav-link { font-family: var(--font-body); font-size: .88rem; font-weight: 600; color: var(--text) !important; padding: .4rem .9rem !important; transition: color .2s; }
+    .nav-link:hover, .nav-link.active { color: var(--green-600) !important; }
+    .btn-book { background: var(--green-600); color: #fff !important; border-radius: 50px; padding: .45rem 1.25rem !important; font-size: .83rem !important; font-weight: 700 !important; transition: background .2s, transform .15s; }
+    .btn-book:hover { background: var(--green-900); transform: translateY(-1px); }
+
+    /* PAGE HERO */
+    .page-hero {
+      background: linear-gradient(135deg, var(--green-900) 0%, var(--green-800) 55%, var(--green-600) 100%);
+      color: #fff; padding: 90px 0 75px; position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .page-hero .eyebrow { display: inline-block; font-size: .75rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--green-300); margin-bottom: 1rem; }
+    .page-hero h1 { font-size: clamp(2rem, 5vw, 3.1rem); font-weight: 700; }
+    .page-hero h1 em { font-style: italic; color: var(--yellow-300); }
+    .page-hero p { color: rgba(255,255,255,.75); font-size: 1.05rem; max-width: 540px; margin-top: .9rem; }
+    .hero-stats { display: flex; gap: 2.5rem; margin-top: 2.2rem; flex-wrap: wrap; }
+    .hero-stat strong { display: block; font-size: 1.75rem; font-family: var(--font-head); font-weight: 700; color: var(--yellow-300); }
+    .hero-stat span { font-size: .78rem; color: rgba(255,255,255,.6); letter-spacing: .05em; text-transform: uppercase; }
+    .breadcrumb-nav { margin-top: 1.5rem; font-size: .82rem; color: rgba(255,255,255,.5); }
+    .breadcrumb-nav a { color: rgba(255,255,255,.7); }
+    .breadcrumb-nav a:hover { color: #fff; }
+    .breadcrumb-nav .sep { margin: 0 .5rem; }
+
+    /* SECTION LABELS */
+    .section-label { display: inline-flex; align-items: center; gap: .5rem; font-size: .72rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--green-600); margin-bottom: .75rem; }
+    .section-label::before { content: ''; display: inline-block; width: 18px; height: 2.5px; background: var(--green-600); border-radius: 2px; }
+    .section-title { font-size: clamp(1.6rem, 3.5vw, 2.3rem); color: var(--green-900); font-weight: 700; }
+    .section-title em { font-style: italic; color: var(--green-600); }
+
+    /* OVERVIEW */
+    .overview-section { padding: 80px 0 60px; background: #fff; }
+    .overview-card { background: var(--green-50); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 2rem 1.75rem; height: 100%; box-shadow: var(--shadow-sm); transition: transform .25s, box-shadow .25s, border-color .25s; }
+    .overview-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--green-300); }
+    .overview-icon { width: 52px; height: 52px; background: var(--green-100); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.45rem; color: var(--green-600); margin-bottom: 1.1rem; }
+    .overview-card h5 { font-size: 1.05rem; font-weight: 700; margin-bottom: .5rem; color: var(--green-900); }
+    .overview-card p { font-size: .9rem; color: var(--muted); margin: 0; }
+
+    /* CLINIC PHOTOS */
+    .clinic-photos-section { background: var(--cream); padding: 80px 0; }
+    .photo-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 240px 240px; gap: 14px; border-radius: var(--radius); overflow: hidden; }
+    .photo-item { overflow: hidden; position: relative; cursor: pointer; }
+    .photo-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .55s cubic-bezier(.25,.46,.45,.94); }
+    .photo-item:hover img { transform: scale(1.06); }
+    .photo-item:first-child { grid-row: 1 / 3; }
+    .photo-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(13,51,32,.55), transparent); opacity: 0; transition: opacity .3s; display: flex; align-items: flex-end; padding: 1rem; }
+    .photo-item:hover .photo-overlay { opacity: 1; }
+    .photo-overlay span { color: #fff; font-size: .8rem; font-weight: 600; }
+    .photo-badge { position: absolute; top: .75rem; right: .75rem; background: rgba(255,255,255,.9); border-radius: 50px; padding: .25rem .75rem; font-size: .72rem; font-weight: 700; color: var(--green-700); display: flex; align-items: center; gap: .3rem; opacity: 0; transition: opacity .3s; }
+    .photo-item:hover .photo-badge { opacity: 1; }
+
+    /* CLINIC VIDEO */
+    .clinic-video-section { background: var(--green-900); padding: 80px 0; }
+    .clinic-video-section .section-label { color: var(--green-300); }
+    .clinic-video-section .section-label::before { background: var(--green-300); }
+    .clinic-video-section .section-title { color: #fff; }
+    .clinic-video-section .section-title em { color: var(--yellow-300); }
+    .video-wrap {
+      position: relative; border-radius: var(--radius); overflow: hidden;
+      box-shadow: 0 12px 48px rgba(0,0,0,.35);
+      background: var(--green-800);
+      aspect-ratio: 16/9;
+    }
+    .video-wrap iframe, .video-wrap video { width: 100%; height: 100%; border: none; display: block; }
+    .video-placeholder {
+      width: 100%; height: 100%; min-height: 320px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, var(--green-800), var(--green-900));
+      color: rgba(255,255,255,.7); gap: 1rem;
+    }
+    .video-placeholder .play-btn {
+      width: 72px; height: 72px; background: var(--green-500);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; color: #fff; transition: transform .2s, background .2s;
+      cursor: pointer;
+    }
+    .video-placeholder .play-btn:hover { transform: scale(1.1); background: var(--green-400); }
+    .video-placeholder p { font-size: .9rem; color: rgba(255,255,255,.5); margin: 0; }
+    .video-upload-hint {
+      background: rgba(255,255,255,.06); border: 1.5px dashed rgba(255,255,255,.2);
+      border-radius: var(--radius); padding: 1.5rem; margin-top: 1.25rem;
+      text-align: center; color: rgba(255,255,255,.5); font-size: .85rem;
+    }
+    .video-upload-hint code { color: var(--yellow-300); background: rgba(240,194,0,.12); padding: .1rem .4rem; border-radius: 4px; font-size: .82rem; }
+    .video-thumbs { display: flex; gap: 12px; margin-top: 1.25rem; flex-wrap: wrap; }
+    .video-thumb-item { flex: 1; min-width: 120px; border-radius: 10px; overflow: hidden; position: relative; cursor: pointer; border: 2px solid transparent; transition: border-color .2s; }
+    .video-thumb-item:hover { border-color: var(--green-400); }
+    .video-thumb-item img { width: 100%; height: 80px; object-fit: cover; }
+    .video-thumb-item .thumb-play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(13,51,32,.45); color: #fff; font-size: 1.4rem; opacity: 0; transition: opacity .2s; }
+    .video-thumb-item:hover .thumb-play { opacity: 1; }
+
+    /* LOCATION */
+    .location-section { background: #fff; padding: 80px 0; }
+    .location-map-wrap { border-radius: var(--radius); overflow: hidden; border: 1.5px solid var(--border); box-shadow: var(--shadow-md); height: 380px; }
+    .location-map-wrap iframe { width: 100%; height: 100%; border: none; }
+    .location-detail { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.5rem; }
+    .location-detail-icon { width: 42px; height: 42px; flex-shrink: 0; background: var(--green-50); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--green-600); }
+    .location-detail-text strong { display: block; font-size: .88rem; font-weight: 700; margin-bottom: .2rem; color: var(--green-900); }
+    .location-detail-text span { font-size: .9rem; color: var(--muted); }
+    .location-detail-text a { color: var(--green-600); }
+
+    /* TIMINGS */
+    .timings-section { background: var(--cream); padding: 80px 0; }
+    .timing-card { background: #fff; border: 1.5px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); }
+    .timing-card .day-header { background: var(--green-900); color: #fff; padding: .9rem 1.5rem; font-weight: 700; font-size: .9rem; display: flex; align-items: center; gap: .5rem; }
+    .timing-card .slots { padding: .5rem 0; }
+    .timing-slot { display: flex; justify-content: space-between; align-items: center; padding: .7rem 1.5rem; border-bottom: 1px solid var(--border); font-size: .875rem; }
+    .timing-slot:last-child { border-bottom: none; }
+    .timing-slot .label { color: var(--muted); font-size: .78rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+    .timing-slot .time { font-weight: 700; color: var(--green-900); }
+    .oncall-bar { background: linear-gradient(90deg, var(--green-700), var(--green-500)); color: #fff; border-radius: var(--radius); padding: 1.25rem 1.75rem; display: flex; align-items: center; gap: 1rem; box-shadow: var(--shadow-sm); }
+    .oncall-bar i { font-size: 1.5rem; }
+    .oncall-bar strong { font-size: 1rem; }
+    .oncall-bar span { font-size: .85rem; opacity: .85; }
+
+    /* FACILITIES */
+    .facilities-section { background: #fff; padding: 80px 0; }
+    .facility-tab-nav { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2.5rem; }
+    .facility-tab-btn { padding: .5rem 1.2rem; border-radius: 50px; border: 1.5px solid var(--border); background: transparent; font-size: .82rem; font-weight: 700; color: var(--muted); cursor: pointer; transition: all .2s; font-family: var(--font-body); }
+    .facility-tab-btn:hover, .facility-tab-btn.active { background: var(--green-600); border-color: var(--green-600); color: #fff; }
+    .facility-group { display: none; }
+    .facility-group.active { display: block; }
+    .facility-item-card { display: flex; gap: 1rem; align-items: flex-start; background: var(--green-50); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1rem; border: 1.5px solid var(--border); transition: border-color .2s; }
+    .facility-item-card:hover { border-color: var(--green-400); }
+    .facility-item-icon { width: 40px; height: 40px; flex-shrink: 0; background: #fff; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.15rem; color: var(--green-600); box-shadow: var(--shadow-sm); }
+    .facility-item-card h6 { font-size: .93rem; font-weight: 700; margin-bottom: .2rem; color: var(--green-900); }
+    .facility-item-card p { font-size: .83rem; color: var(--muted); margin: 0; }
+
+    /* REFERRAL */
+    .referral-section { background: var(--cream); padding: 80px 0; }
+    .referral-card { background: #fff; border: 1.5px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.25rem; text-align: center; height: 100%; transition: transform .25s, box-shadow .25s, border-color .25s; }
+    .referral-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--green-400); }
+    .referral-card .ref-icon { font-size: 2rem; color: var(--green-500); margin-bottom: .75rem; }
+    .referral-card h6 { font-size: .9rem; font-weight: 700; margin-bottom: .35rem; color: var(--green-900); }
+    .referral-card p { font-size: .8rem; color: var(--muted); margin: 0; }
+
+    /* CTA */
+    .cta-section { background: linear-gradient(135deg, var(--green-700) 0%, var(--green-500) 100%); padding: 70px 0; color: #fff; text-align: center; }
+    .cta-section h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); margin-bottom: .8rem; }
+    .cta-section h2 em { font-style: italic; color: var(--yellow-300); }
+    .cta-section p { color: rgba(255,255,255,.8); font-size: 1rem; max-width: 500px; margin: 0 auto 2rem; }
+    .btn-cta-white { background: #fff; color: var(--green-700); border-radius: 50px; padding: .85rem 2.2rem; font-weight: 800; font-size: .9rem; letter-spacing: .03em; transition: all .2s; display: inline-block; }
+    .btn-cta-white:hover { background: var(--green-900); color: #fff; transform: translateY(-2px); }
+    .btn-cta-outline { border: 2px solid rgba(255,255,255,.5); color: #fff; border-radius: 50px; padding: .85rem 2.2rem; font-weight: 700; font-size: .9rem; transition: all .2s; display: inline-block; }
+    .btn-cta-outline:hover { background: rgba(255,255,255,.15); border-color: #fff; }
+
+    /* FOOTER */
+    .site-footer { background: var(--green-900); color: rgba(255,255,255,.7); padding: 60px 0 0; }
+    .footer-brand { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; color: #fff; }
+    .footer-brand small { display: block; font-family: var(--font-body); font-size: .75rem; font-weight: 400; color: rgba(255,255,255,.5); margin-top: .15rem; }
+    .footer-desc { font-size: .85rem; margin: 1rem 0 1.25rem; color: rgba(255,255,255,.55); line-height: 1.6; }
+    .footer-badge { display: inline-flex; align-items: center; gap: .4rem; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-radius: 50px; padding: .35rem .9rem; font-size: .72rem; color: rgba(255,255,255,.6); }
+    .footer-heading { font-family: var(--font-body); font-size: .75rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 1.1rem; }
+    .footer-links { list-style: none; padding: 0; margin: 0; }
+    .footer-links li { margin-bottom: .55rem; }
+    .footer-links a { font-size: .875rem; color: rgba(255,255,255,.6); transition: color .2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-contact-item { display: flex; gap: .75rem; align-items: flex-start; margin-bottom: .75rem; font-size: .875rem; color: rgba(255,255,255,.6); }
+    .footer-contact-item i { margin-top: .2rem; color: var(--green-400); font-size: 1rem; }
+    .footer-contact-item a { color: rgba(255,255,255,.6); }
+    .footer-contact-item a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); margin-top: 3rem; padding: 1.25rem 0; font-size: .78rem; color: rgba(255,255,255,.35); display: flex; flex-wrap: wrap; gap: .5rem; justify-content: space-between; align-items: center; }
+
+    /* WA FAB */
+    .wa-fab { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 9999; width: 52px; height: 52px; border-radius: 50%; background: #25d366; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; color: #fff; box-shadow: 0 4px 20px rgba(37,211,102,.4); transition: transform .2s; }
+    .wa-fab:hover { transform: scale(1.1); color: #fff; }
+
+    /* LIGHTBOX */
+    .lightbox-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.92); z-index: 9998; display: none; align-items: center; justify-content: center; }
+    .lightbox-overlay.open { display: flex; }
+    .lightbox-inner { position: relative; max-width: 90vw; max-height: 90vh; }
+    .lightbox-inner img { max-width: 90vw; max-height: 85vh; object-fit: contain; border-radius: 8px; }
+    .lightbox-close { position: absolute; top: -2rem; right: 0; color: #fff; font-size: 1.5rem; cursor: pointer; background: none; border: none; }
+    .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); color: #fff; background: rgba(255,255,255,.15); border: none; border-radius: 50%; width: 44px; height: 44px; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .lightbox-prev { left: -3rem; }
+    .lightbox-next { right: -3rem; }
+    .lightbox-nav:hover { background: rgba(255,255,255,.3); }
+
+    @media (max-width: 767px) {
+      .photo-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .photo-item:first-child { grid-row: auto; grid-column: 1 / 3; }
+      .hero-stats { gap: 1.5rem; }
+      .lightbox-prev { left: -.5rem; }
+      .lightbox-next { right: -.5rem; }
+      .video-thumbs { display: none; }
+    }
+    /* ── TOPBAR ── */
+.topbar { background: var(--green-900); padding: 9px 0; font-size: 12px; color: rgba(255,255,255,.7); }
+.topbar .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+.ti { display: flex; align-items: center; gap: 7px; }
+.ti i { color: var(--yellow-400); font-size: 11px; }
+.ti a { color: rgba(255,255,255,.8); text-decoration: none; transition: color .2s; }
+.ti a:hover { color: var(--yellow-300); }
+
+/* ── NAVBAR ── */
+header { position: sticky; top: 0; z-index: 999; background: #fff; border-bottom: 2px solid var(--green-100); box-shadow: 0 4px 24px rgba(26,74,46,.08); }
+nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 74px; }
+.brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.brand-icon { width: 48px; height: 48px; border-radius: 14px; background: linear-gradient(135deg, var(--green-600), var(--green-800)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 20px; flex-shrink: 0; box-shadow: 0 4px 14px rgba(45,122,72,.3); }
+.brand-name { font-size: 15.5px; font-weight: 800; color: var(--text); line-height: 1.2; font-family: 'Playfair Display', serif; }
+.brand-creds { font-size: 11px; color: var(--muted); font-weight: 400; }
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 600; transition: color .2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--green-600); }
+.nav-book { background: var(--yellow-400); color: var(--green-900); text-decoration: none; padding: 11px 22px; border-radius: 10px; font-size: 13.5px; font-weight: 800; transition: all .2s; white-space: nowrap; display: flex; align-items: center; gap: 7px; box-shadow: 0 4px 16px rgba(240,194,0,.35); }
+.nav-book:hover { background: var(--yellow-500); transform: translateY(-1px); }
+.hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
+.hamburger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; display: block; }
+.mobile-nav { display: none; flex-direction: column; background: #fff; border-top: 1px solid var(--border); position: fixed; top: 74px; left: 0; right: 0; z-index: 998; box-shadow: 0 8px 32px rgba(0,0,0,.1); }
+.mobile-nav.open { display: flex; }
+.mobile-nav a { padding: 16px 24px; text-decoration: none; color: var(--text); font-size: 15px; font-weight: 600; border-bottom: 1px solid var(--border); }
+.mobile-nav a.cta { background: var(--yellow-400); color: var(--green-900); text-align: center; font-weight: 800; border: none; }
+
+/* ── DROPDOWN ── */
+.nav-dropdown { position: relative; }
+.nav-dropdown-toggle { display: flex; align-items: center; }
+.dropdown-menu { display: none; position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%); background: #fff; border-radius: 12px; border: 1.5px solid var(--green-100); box-shadow: 0 12px 40px rgba(26,74,46,.13); list-style: none; min-width: 200px; padding: 8px; z-index: 1000; }
+.dropdown-menu::before { content: ''; position: absolute; top: -6px; left: 50%; transform: translateX(-50%); width: 12px; height: 12px; background: #fff; border-left: 1.5px solid var(--green-100); border-top: 1.5px solid var(--green-100); rotate: 45deg; }
+.dropdown-menu li a { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; color: var(--text); font-size: 14px; font-weight: 600; transition: background .15s, color .15s; }
+.dropdown-menu li a i { color: var(--green-500); font-size: 15px; }
+.dropdown-menu li a:hover { background: var(--green-50); color: var(--green-700); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  .nav-links, .nav-book { display: none; }
+  .hamburger { display: flex; }
+}
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar d-none d-md-block">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div>
+      <i class="bi bi-geo-alt-fill me-1"></i> Lajpat Nagar 4, New Delhi – 110024
+      <span class="sep">|</span>
+      <i class="bi bi-clock me-1"></i> Mon–Fri: 5:30–9:30 PM &nbsp;·&nbsp; Sat: 2–4 PM &amp; 5:30–9:30 PM &nbsp;·&nbsp; Sun: 10:30 AM–9:30 PM
+    </div>
+    <div>
+      <a href="tel:+919899226760"><i class="bi bi-telephone-fill me-1"></i>+91 98992 26760</a>
+      <span class="sep">|</span>
+      <a href="https://wa.me/919899226760"><i class="bi bi-whatsapp me-1"></i>WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="ti"><i class="fa-solid fa-phone"></i><a href="tel:+919899226760">+91 98992 26760</a></div>
+    <div class="ti"><i class="fa-brands fa-whatsapp"></i><a href="/contact.html">Available on WhatsApp</a></div>
+    <div class="ti"><i class="fa-solid fa-location-dot"></i><span>Delhi, India</span></div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<header>
+  <nav>
+    <a class="brand" href="index.html">
+      <div class="brand-icon"><i class="fa-solid fa-stethoscope"></i></div>
+      <div>
+        <div class="brand-name">Dr. Tivender Addhrann</div>
+        <div class="brand-creds">MBBS · Family Physician · Child Health Consultant · Delhi</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-dropdown">
+        <a href="#" class="nav-dropdown-toggle">About <i class="fa-solid fa-chevron-down" style="font-size:10px;margin-left:3px;"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="doctor.html"><i class="fa-solid fa-user-doctor"></i> About Doctor</a></li>
+          <li><a href="clinic.html"><i class="fa-solid fa-house-chimney-medical"></i> About Clinic</a></li>
+        </ul>
+      </li>
+      <li><a href="service.html">Services</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <a class="nav-book" href="/contact.html"><i class="fa-regular fa-calendar-check"></i> Book Consultation</a>
+    <button class="hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="doctor.html"><i class="fa-solid fa-user-doctor" style="margin-right:8px;color:var(--green-500);"></i>About Doctor</a>
+    <a href="clinic.html"><i class="fa-solid fa-house-chimney-medical" style="margin-right:8px;color:var(--green-500);"></i>About Clinic</a>
+    <a href="service.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a class="cta" href="/contact.html">Book Consultation</a>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container position-relative">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <span class="eyebrow">Trisha Family Clinic · Est. 2000</span>
+        <h1>Our Clinic — <em>Where Families</em><br>Come First</h1>
+        <p>A warm, well-equipped primary care clinic in the heart of Lajpat Nagar, New Delhi — serving families for over 26 years with compassionate, evidence-based care.</p>
+        <div class="hero-stats">
+          <div class="hero-stat"><strong>26+</strong><span>Years Since Est.</span></div>
+          <div class="hero-stat"><strong>50K+</strong><span>Patients Seen</span></div>
+          <div class="hero-stat"><strong>13+</strong><span>OPD Facilities</span></div>
+          <div class="hero-stat"><strong>4.8★</strong><span>Star Rating</span></div>
+        </div>
+        <div class="breadcrumb-nav">
+          <a href="index.html">Home</a><span class="sep">/</span><span>Our Clinic</span>
+        </div>
+      </div>
+      <div class="col-lg-4 d-none d-lg-flex justify-content-end">
+        <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:1.75rem;text-align:center;min-width:220px;">
+          <div style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.75rem;">Verification</div>
+          <div style="font-weight:700;font-size:1rem;margin-bottom:.3rem;">Delhi Medical Council</div>
+          <div style="font-size:.85rem;color:rgba(255,255,255,.65);">Reg. No. 10915</div>
+          <hr style="border-color:rgba(255,255,255,.12);margin:1rem 0;">
+          <div style="font-size:.72rem;color:rgba(255,255,255,.5);">Member</div>
+          <div style="font-size:.88rem;font-weight:700;">Delhi Medical Association</div>
+          <hr style="border-color:rgba(255,255,255,.12);margin:1rem 0;">
+          <div style="font-size:.78rem;color:rgba(255,255,255,.5);">MBBS · MPH · AIIMS Ex-RO</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK OVERVIEW -->
+<section class="overview-section">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-6">
+        <span class="section-label">About the Clinic</span>
+        <h2 class="section-title">A Trusted Clinical <em>Home</em> for Delhi Families</h2>
+      </div>
+      <div class="col-lg-6 d-flex align-items-end">
+        <p class="mb-0" style="font-size:.95rem;color:var(--muted);">Trisha Family Clinic was established in 2000 by Dr. Tivender Addhrann — bringing together decades of AIIMS-trained clinical experience, public health expertise, and genuine compassion for every patient who walks through the door.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-3">
+        <div class="overview-card">
+          <div class="overview-icon"><i class="bi bi-house-heart-fill"></i></div>
+          <h5>Family-Centred Care</h5>
+          <p>One trusted doctor for every member of your family — newborns to seniors — under one roof.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="overview-card">
+          <div class="overview-icon"><i class="bi bi-clipboard2-pulse-fill"></i></div>
+          <h5>Evidence-Based Medicine</h5>
+          <p>Treatments backed by 30+ national &amp; international research projects. No guesswork — ever.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="overview-card">
+          <div class="overview-icon"><i class="bi bi-lightning-charge-fill"></i></div>
+          <h5>Same-Day Consultations</h5>
+          <p>Walk-in or pre-booked appointments available. Evening and weekend OPD for working families.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="overview-card">
+          <div class="overview-icon"><i class="bi bi-house-check-fill"></i></div>
+          <h5>Home Visits Available</h5>
+          <p>Can't make it in? Dr. Addhrann offers home visits for follow-ups and non-emergency care.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CLINIC PHOTOS ════════════════════════════════════════════ -->
+<section class="clinic-photos-section">
+  <div class="container">
+    <div class="row align-items-end mb-5">
+      <div class="col-lg-6">
+        <span class="section-label">Inside the Clinic</span>
+        <h2 class="section-title">A Warm, <em>Welcoming</em> Space</h2>
+        <p style="color:var(--muted);font-size:.95rem;margin-top:.75rem;">Trisha Family Clinic is designed to feel safe and comfortable — for children and seniors alike. Clean, well-equipped, and built around patient dignity.</p>
+      </div>
+      <div class="col-lg-6 text-lg-end">
+        <span style="font-size:.82rem;color:var(--muted);"><i class="bi bi-hand-index me-1"></i>Click any photo to enlarge</span>
+      </div>
+    </div>
+
+    <!-- Replace these src="" values with your actual clinic photos -->
+    <div class="photo-grid" id="photoGrid">
+      <div class="photo-item" data-index="0">
+        <img src="https://images.unsplash.com/photo-1631563019676-5fcf6977dc25?w=900&q=85" alt="Clinic reception" />
+        <div class="photo-overlay"><span><i class="bi bi-arrows-fullscreen me-1"></i>Reception</span></div>
+        <div class="photo-badge"><i class="bi bi-zoom-in"></i> View</div>
+      </div>
+      <div class="photo-item" data-index="1">
+        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80" alt="Consultation room" />
+        <div class="photo-overlay"><span><i class="bi bi-arrows-fullscreen me-1"></i>Consultation Room</span></div>
+        <div class="photo-badge"><i class="bi bi-zoom-in"></i> View</div>
+      </div>
+      <div class="photo-item" data-index="2">
+        <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&q=80" alt="Child health checkup" />
+        <div class="photo-overlay"><span><i class="bi bi-arrows-fullscreen me-1"></i>Paediatric Care</span></div>
+        <div class="photo-badge"><i class="bi bi-zoom-in"></i> View</div>
+      </div>
+      <div class="photo-item" data-index="3">
+        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80" alt="Vaccination" />
+        <div class="photo-overlay"><span><i class="bi bi-arrows-fullscreen me-1"></i>Vaccination Zone</span></div>
+        <div class="photo-badge"><i class="bi bi-zoom-in"></i> View</div>
+      </div>
+      <div class="photo-item" data-index="4">
+        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80" alt="Patient care" />
+        <div class="photo-overlay"><span><i class="bi bi-arrows-fullscreen me-1"></i>Waiting Area</span></div>
+        <div class="photo-badge"><i class="bi bi-zoom-in"></i> View</div>
+      </div>
+    </div>
+
+    <!-- Photo upload instructions for developer -->
+    <div style="background:var(--green-50);border:1.5px dashed var(--green-300);border-radius:var(--radius);padding:1.25rem 1.5rem;margin-top:1.5rem;font-size:.83rem;color:var(--muted);">
+      <i class="bi bi-info-circle me-1 text-green-600" style="color:var(--green-600);"></i>
+      <strong style="color:var(--green-800);">Developer note:</strong> Replace the <code style="background:var(--green-100);padding:.1rem .4rem;border-radius:4px;font-size:.8rem;">src="..."</code> attributes on the 5 photo items above with your actual clinic photo paths (e.g. <code style="background:var(--green-100);padding:.1rem .4rem;border-radius:4px;font-size:.8rem;">src="images/clinic-reception.jpg"</code>).
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CLINIC VIDEO ═════════════════════════════════════════════ -->
+<section class="clinic-video-section">
+  <div class="container">
+    <div class="row align-items-center mb-5">
+      <div class="col-lg-6">
+        <span class="section-label">Clinic Tour</span>
+        <h2 class="section-title">See the Clinic <em>in Action</em></h2>
+        <p style="color:rgba(255,255,255,.65);font-size:.95rem;margin-top:.75rem;">Take a virtual tour of Trisha Family Clinic — our spaces, our team, and the care we deliver every day.</p>
+      </div>
+    </div>
+
+    <div class="row g-4 align-items-start">
+      <div class="col-lg-8">
+
+        <!-- ── OPTION A: YouTube/Vimeo embed ──────────────────────
+             Replace the src below with your YouTube embed URL.
+             Format: https://www.youtube.com/embed/YOUR_VIDEO_ID
+             Uncomment and delete the placeholder div below. -->
+        <!--
+        <div class="video-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+            title="Trisha Family Clinic Tour"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        -->
+
+        <!-- ── OPTION B: Self-hosted video file ───────────────────
+             Replace src="YOUR_VIDEO.mp4" with your video file path.
+             Uncomment and delete the placeholder div below. -->
+        <!--
+        <div class="video-wrap">
+          <video controls poster="images/clinic-video-thumb.jpg">
+            <source src="videos/clinic-tour.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        -->
+
+        <!-- ── PLACEHOLDER (shown until video is added) ──────────-->
+        <div class="video-wrap">
+          <div class="video-placeholder">
+            <div class="play-btn"><i class="bi bi-play-fill"></i></div>
+            <strong style="color:rgba(255,255,255,.8);">Clinic Tour Video</strong>
+            <p>Video will appear here once added</p>
+          </div>
+        </div>
+
+        <div class="video-upload-hint">
+          <i class="bi bi-camera-video me-1"></i>
+          <strong>Add your video:</strong> Replace the placeholder above with a YouTube embed <code>&lt;iframe src="https://www.youtube.com/embed/VIDEO_ID"&gt;</code>
+          or a self-hosted <code>&lt;video src="clinic-tour.mp4"&gt;</code> tag.
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div style="background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:1.5rem;">
+          <div style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1.1rem;">In This Video</div>
+          <div style="display:flex;flex-direction:column;gap:.75rem;">
+            <div style="display:flex;gap:.75rem;align-items:center;">
+              <div style="width:32px;height:32px;background:var(--green-700);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:var(--green-300);flex-shrink:0;"><i class="bi bi-door-open-fill"></i></div>
+              <div><div style="font-size:.88rem;font-weight:600;color:#fff;">Reception &amp; Waiting Area</div><div style="font-size:.78rem;color:rgba(255,255,255,.45);">Clean, calm, family-friendly</div></div>
+            </div>
+            <div style="display:flex;gap:.75rem;align-items:center;">
+              <div style="width:32px;height:32px;background:var(--green-700);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:var(--green-300);flex-shrink:0;"><i class="bi bi-person-workspace"></i></div>
+              <div><div style="font-size:.88rem;font-weight:600;color:#fff;">Consultation Room</div><div style="font-size:.78rem;color:rgba(255,255,255,.45);">Private, well-equipped</div></div>
+            </div>
+            <div style="display:flex;gap:.75rem;align-items:center;">
+              <div style="width:32px;height:32px;background:var(--green-700);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:var(--green-300);flex-shrink:0;"><i class="bi bi-bandaid-fill"></i></div>
+              <div><div style="font-size:.88rem;font-weight:600;color:#fff;">Procedure &amp; OT Room</div><div style="font-size:.78rem;color:rgba(255,255,255,.45);">Sterile minor OT setup</div></div>
+            </div>
+            <div style="display:flex;gap:.75rem;align-items:center;">
+              <div style="width:32px;height:32px;background:var(--green-700);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:var(--green-300);flex-shrink:0;"><i class="bi bi-syringe"></i></div>
+              <div><div style="font-size:.88rem;font-weight:600;color:#fff;">Vaccination Corner</div><div style="font-size:.78rem;color:rgba(255,255,255,.45);">Child &amp; adult immunisation</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video thumbnail strip — replace src with your actual preview images -->
+        <div class="video-thumbs mt-3">
+          <div class="video-thumb-item">
+            <img src="https://images.unsplash.com/photo-1631563019676-5fcf6977dc25?w=300&q=70" alt="Clinic thumb 1" />
+            <div class="thumb-play"><i class="bi bi-play-fill"></i></div>
+          </div>
+          <div class="video-thumb-item">
+            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=300&q=70" alt="Clinic thumb 2" />
+            <div class="thumb-play"><i class="bi bi-play-fill"></i></div>
+          </div>
+          <div class="video-thumb-item">
+            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=300&q=70" alt="Clinic thumb 3" />
+            <div class="thumb-play"><i class="bi bi-play-fill"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location-section">
+  <div class="container">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-5">
+        <span class="section-label">Find Us</span>
+        <h2 class="section-title mb-4">Clinic <em>Location</em></h2>
+        <div class="location-detail">
+          <div class="location-detail-icon"><i class="bi bi-geo-alt-fill"></i></div>
+          <div class="location-detail-text">
+            <strong>Clinic Address</strong>
+            <span>LGF, D-87, Amar Colony,<br>Near Raghunath Temple,<br>Lajpat Nagar, New Delhi – 110024</span>
+          </div>
+        </div>
+        <div class="location-detail">
+          <div class="location-detail-icon"><i class="bi bi-telephone-fill"></i></div>
+          <div class="location-detail-text">
+            <strong>Clinic Phone</strong>
+            <span><a href="tel:9676553666">+91 96765 53666</a> (WhatsApp)<br><a href="tel:9582576086">+91 95825 76086</a></span>
+          </div>
+        </div>
+        <div class="location-detail">
+          <div class="location-detail-icon"><i class="bi bi-envelope-fill"></i></div>
+          <div class="location-detail-text">
+            <strong>Email</strong>
+            <span><a href="mailto:dr.tivenderadhran@gmail.com">dr.tivenderadhran@gmail.com</a></span>
+          </div>
+        </div>
+        <div class="location-detail">
+          <div class="location-detail-icon"><i class="bi bi-train-front-fill"></i></div>
+          <div class="location-detail-text">
+            <strong>Nearest Metro</strong>
+            <span>Lajpat Nagar Metro Station (Violet Line) — ~5 min walk</span>
+          </div>
+        </div>
+        <div class="location-detail">
+          <div class="location-detail-icon"><i class="bi bi-car-front-fill"></i></div>
+          <div class="location-detail-text">
+            <strong>Parking</strong>
+            <span>Street parking available on D-Block, Amar Colony</span>
+          </div>
+        </div>
+        <a href="https://maps.google.com/?q=Amar+Colony+Lajpat+Nagar+New+Delhi" target="_blank" class="btn mt-2" style="background:var(--green-600);color:#fff;border-radius:50px;padding:.6rem 1.5rem;font-size:.85rem;font-weight:700;">
+          <i class="bi bi-map me-2"></i>Open in Google Maps
+        </a>
+      </div>
+      <div class="col-lg-7">
+        <div class="location-map-wrap">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.8!2d77.2369!3d28.5672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3a6baac9cd5%3A0x8d58b4d24ead32b!2sAmar%20Colony%2C%20Lajpat%20Nagar%204%2C%20New%20Delhi%2C%20Delhi%20110024!5e0!3m2!1sen!2sin!4v1699000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPD TIMINGS -->
+<section class="timings-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="section-label">OPD Schedule</span>
+      <h2 class="section-title">Consultation <em>Timings</em></h2>
+      <p style="max-width:500px;margin:auto;font-size:.95rem;color:var(--muted);margin-top:.5rem;">Evening, weekend, and morning slots available — designed around your schedule.</p>
+    </div>
+    <div class="row g-4 mb-4">
+      <div class="col-md-4">
+        <div class="timing-card h-100">
+          <div class="day-header"><i class="bi bi-calendar-week me-1"></i> Monday – Friday</div>
+          <div class="slots">
+            <div class="timing-slot"><span class="label">Evening OPD</span><span class="time">5:30 PM – 9:30 PM</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="timing-card h-100">
+          <div class="day-header" style="background:var(--green-600);"><i class="bi bi-calendar-check me-1"></i> Saturday</div>
+          <div class="slots">
+            <div class="timing-slot"><span class="label">Afternoon OPD</span><span class="time">2:00 PM – 4:00 PM</span></div>
+            <div class="timing-slot"><span class="label">Evening OPD</span><span class="time">5:30 PM – 9:30 PM</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="timing-card h-100">
+          <div class="day-header" style="background:var(--yellow-500);color:var(--green-900);"><i class="bi bi-sun-fill me-1"></i> Sunday</div>
+          <div class="slots">
+            <div class="timing-slot"><span class="label">Morning OPD</span><span class="time">10:30 AM – 2:30 PM</span></div>
+            <div class="timing-slot"><span class="label">Evening OPD</span><span class="time">6:00 PM – 9:00 PM</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="oncall-bar">
+      <i class="bi bi-telephone-outbound-fill"></i>
+      <div>
+        <strong>On Call — Daily: 7:00 AM – 8:00 AM</strong>
+        <span class="d-block">Available for urgent queries every morning before OPD hours. Call <a href="tel:9676553666" style="color:#fff;text-decoration:underline;">+91 96765 53666</a>.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FACILITIES -->
+<section class="facilities-section">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-6">
+        <span class="section-label">What We Offer</span>
+        <h2 class="section-title">Clinic <em>Facilities</em></h2>
+      </div>
+      <div class="col-lg-6 d-flex align-items-end">
+        <p style="font-size:.95rem;color:var(--muted);margin:0;">Comprehensive primary care facilities across OPD, procedures, preventive care, and patient support — all delivered with clinical precision.</p>
+      </div>
+    </div>
+    <div class="facility-tab-nav">
+      <button class="facility-tab-btn active" data-target="opd">OPD Services</button>
+      <button class="facility-tab-btn" data-target="procedures">Procedures</button>
+      <button class="facility-tab-btn" data-target="vaccination">Vaccination</button>
+      <button class="facility-tab-btn" data-target="counselling">Counselling</button>
+    </div>
+    <div class="facility-group active" id="tab-opd">
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-4"><div class="facility-item-card"><div class="facility-item-icon"><i class="bi bi-person-check-fill"></i></div><div><h6>Outpatient Consultation</h6><p>General physician consultations for all age groups, all conditions.</p></div></div></div>
+        <div class="col-md-6 col-lg-4"><div class="facility-item-card"><div class="facility-item-icon"><i class="bi bi-heart-pulse-fill"></i></div><div><h6>Blood Pressure Monitoring</h6><p>Routine and follow-up BP measurement with clinical guidance.</p></div></div></div>
+        <div class="col-md-6 col-lg-4"><div class="facility-item-card"><div class="facility-item-icon"><i class="bi bi-droplet-fill"></i></div><div><h6>Blood Sugar Measurement</h6><p>On-site glucose testing for diabetes screening and monitoring.</p></div></div></div>
+        <div class="col-md-6 col-lg-4"><div class="facility-item-card"><div class="facility-item-icon"><i class="bi bi-syringe"></i></div><div><h6>Injection Facility</h6><p>Safe, sterile injection administration for prescribed medications.</p></div></div></div>
+        <div class="col-md-6 col-lg-4"><div class="facility-item-card"><div class="facility-item-icon"><i class="bi bi-bandaid-fill"></i></div><div><h6>Dressing Facility</h6><p>Professional wound care and dressing for cuts, injuries, and post-op care.</p></div></div></div>
+        <div class="col-md-6 col-lg-4"><div class="facility-item-card"><div class="facility-item-icon"><i class="bi bi-file-earmark-medical-fill"></i></div><div><h6>Medical Certificates</h6><p>Medical leave and fitness certificates issued for employment and institutions.</p></div></div></div>
+      </div>
+    </div>
+    <div class="facility-group" id="tab-procedures">
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-4"><div class="facility-item-card"><div class="facility-item-icon"><i class="bi bi-wind"></i></div><div><h6>Nebulization</h6><p>On-site nebulization for asthma, COPD, and acute respiratory conditions.</p></div></div></div>
+        <div class="col-md-6 col-lg-4"><div class="facility-item-card"><div class="facility-item-icon"><i class="bi bi-scissors"></i></div><div><h6>Minor OT Facility</h6><p>Minor surgical procedures performed with proper sterile technique.</p></div></div></div>
+        <div class="col-md-6 col-lg-4"><div class="facility-item-card"><div class="facility-item-icon"><i class="bi bi-droplet-half"></i></div><div><h6>IV Drip / In-Patient</h6><p>Short-stay in-patient and IV drip facility for rehydration and medication.</p></div></div></div>
+        <div class="col-md-6 col-lg-4"><div class="facility-item-card"><div class="facility-item-icon"><i class="bi bi-alarm-fill"></i></div><div><h6>Emergency Care</h6><p>First-response emergency care and stabilisation before specialist referral.</p></div></div></div>
+        <div class="col-md-6 col-lg-4"><div class="facility-item-card"><div class="facility-item-icon"><i class="bi bi-house-door-fill"></i></div><div><h6>Home Visit</h6><p>Home visits for elderly patients, post-hospitalisation care, and follow-ups.</p></div></div></div>
+      </div>
+    </div>
+    <div class="facility-group" id="tab-vaccination">
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-4"><div class="facility-item-card"><div class="facility-item-icon"><i class="bi bi-emoji-smile-fill"></i></div><div><h6>Child Vaccination</h6><p>Complete routine immunisation schedule for infants, toddlers, and children.</p></div></div></div>
+        <div class="col-md-6 col-lg-4"><div class="facility-item-card"><div class="facility-item-icon"><i class="bi bi-person-fill-check"></i></div><div><h6>Adult Vaccination</h6><p>Flu, typhoid, hepatitis, tetanus, and other adult immunisations.</p></div></div></div>
+        <div class="col-md-6 col-lg-4"><div class="facility-item-card"><div class="facility-item-icon"><i class="bi bi-airplane-fill"></i></div><div><h6>Travel Vaccines</h6><p>Pre-travel immunisation guidance and administration for international travel.</p></div></div></div>
+        <div class="col-md-6 col-lg-4"><div class="facility-item-card"><div class="facility-item-icon"><i class="bi bi-arrow-repeat"></i></div><div><h6>Booster Doses</h6><p>Timely booster reminders and administration for the whole family.</p></div></div></div>
+        <div class="col-md-6 col-lg-4"><div class="facility-item-card"><div class="facility-item-icon"><i class="bi bi-journal-medical"></i></div><div><h6>Vaccination Records</h6><p>Accurate immunisation records and certificates issued for all patients.</p></div></div></div>
+      </div>
+    </div>
+    <div class="facility-group" id="tab-counselling">
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-4"><div class="facility-item-card"><div class="facility-item-icon"><i class="bi bi-apple"></i></div><div><h6>Nutritional Counselling</h6><p>Evidence-based dietary guidance for wellness, weight management, and chronic conditions.</p></div></div></div>
+        <div class="col-md-6 col-lg-4"><div class="facility-item-card"><div class="facility-item-icon"><i class="bi bi-chat-heart-fill"></i></div><div><h6>Psychological Counselling</h6><p>Mental health consultations, stress management, and lifestyle guidance.</p></div></div></div>
+        <div class="col-md-6 col-lg-4"><div class="facility-item-card"><div class="facility-item-icon"><i class="bi bi-people-fill"></i></div><div><h6>Child Counselling</h6><p>Behavioural and developmental guidance for children and adolescents.</p></div></div></div>
+        <div class="col-md-6 col-lg-4"><div class="facility-item-card"><div class="facility-item-icon"><i class="bi bi-graph-up-arrow"></i></div><div><h6>Lifestyle Guidance</h6><p>Personalised plans for healthy habits, exercise, sleep, and preventive wellness.</p></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REFERRAL NETWORK -->
+<section class="referral-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="section-label">Beyond the Clinic</span>
+      <h2 class="section-title">Trusted <em>Referral Network</em></h2>
+      <p style="max-width:520px;margin:auto;font-size:.95rem;color:var(--muted);margin-top:.5rem;">We don't just treat — we connect you to the right specialists and facilities across Delhi.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-6 col-md-4 col-lg-3"><div class="referral-card"><div class="ref-icon"><i class="bi bi-capsule-pill"></i></div><h6>Pharmacies</h6><p>Trusted pharmacies near Lajpat Nagar for prescriptions &amp; OTC.</p></div></div>
+      <div class="col-6 col-md-4 col-lg-3"><div class="referral-card"><div class="ref-icon"><i class="bi bi-eyedropper"></i></div><h6>Labs &amp; ECG</h6><p>Accredited diagnostic labs and ECG centres for all investigations.</p></div></div>
+      <div class="col-6 col-md-4 col-lg-3"><div class="referral-card"><div class="ref-icon"><i class="bi bi-lungs-fill"></i></div><h6>X-Ray / USG / Radiology</h6><p>Trusted imaging centres for X-ray, ultrasound, and advanced scans.</p></div></div>
+      <div class="col-6 col-md-4 col-lg-3"><div class="referral-card"><div class="ref-icon"><i class="bi bi-activity"></i></div><h6>Physiotherapy</h6><p>Expert physio referrals for rehab, mobility recovery, and pain relief.</p></div></div>
+      <div class="col-6 col-md-4 col-lg-3"><div class="referral-card"><div class="ref-icon"><i class="bi bi-truck-front-fill"></i></div><h6>Ambulance</h6><p>Emergency ambulance coordination for urgent patient transfers.</p></div></div>
+      <div class="col-6 col-md-4 col-lg-3"><div class="referral-card"><div class="ref-icon"><i class="bi bi-house-heart-fill"></i></div><h6>Home Care</h6><p>Professional home nursing and post-hospitalisation support.</p></div></div>
+      <div class="col-6 col-md-4 col-lg-3"><div class="referral-card"><div class="ref-icon"><i class="bi bi-emoji-smile-fill"></i></div><h6>Dental Clinics</h6><p>Trusted dental referrals for oral health and specialist care.</p></div></div>
+      <div class="col-6 col-md-4 col-lg-3"><div class="referral-card"><div class="ref-icon"><i class="bi bi-hospital-fill"></i></div><h6>Speciality Hospitals</h6><p>Referrals to top speciality and super-speciality hospitals in Delhi.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Ready to Visit <em>Trisha Family Clinic?</em></h2>
+    <p>Same-day consultations available. Book online or simply walk in during OPD hours.</p>
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+      <a href="contact.html" class="btn-cta-white">Book Consultation</a>
+      <a href="https://wa.me/919899226760?text=Hello%20Dr.%20Tivender%20Addhrann%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" class="btn-cta-outline">
+        <i class="bi bi-whatsapp me-1"></i> WhatsApp Us
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-4">
+        <div class="footer-brand">Dr. Tivender Addhrann<small>MBBS · MPH · Family Physician · Child Health Consultant</small></div>
+        <p class="footer-desc">Trusted clinical care for your entire family — newborns, children, adults, and seniors — all under one compassionate roof for over 26 years.</p>
+        <span class="footer-badge"><i class="bi bi-patch-check-fill" style="color:var(--green-400);"></i> Verified · Delhi Medical Council · Reg. 10915</span>
+      </div>
+      <div class="col-sm-6 col-lg-2 offset-lg-1">
+        <div class="footer-heading">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="clinic.html">Our Clinic</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-6 col-lg-2">
+        <div class="footer-heading">Services</div>
+        <ul class="footer-links">
+          <li><a href="service.html">Child Health</a></li>
+          <li><a href="service.html">Vaccination</a></li>
+          <li><a href="service.html">Allergy Treatment</a></li>
+          <li><a href="service.html">Diabetes Care</a></li>
+          <li><a href="service.html">Health Checkup</a></li>
+          <li><a href="service.html">Nutrition</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <div class="footer-heading">Contact Us</div>
+        <div class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>LGF, D-87, Amar Colony, Near Raghunath Temple, Lajpat Nagar, New Delhi – 110024</span></div>
+        <div class="footer-contact-item"><i class="bi bi-telephone-fill"></i><span><a href="tel:9676553666">+91 96765 53666</a><br><a href="tel:9582576086">+91 95825 76086</a></span></div>
+        <div class="footer-contact-item"><i class="bi bi-envelope-fill"></i><a href="mailto:dr.tivenderadhran@gmail.com">dr.tivenderadhran@gmail.com</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Trisha Family Clinic · Dr. Tivender Addhrann. All Rights Reserved.</span>
+      <span>Delhi Medical Council Reg. No. 10915 · Member, Delhi Medical Association</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WA FAB -->
+<a href="https://wa.me/919899226760?text=Hello%20Dr.%20Tivender%20Addhrann%2C%20I%20would%20like%20to%20book%20a%20consultation." class="wa-fab" target="_blank" title="Chat on WhatsApp">
+  <i class="bi bi-whatsapp"></i>
+</a>
+
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="lbClose"><i class="bi bi-x-lg"></i></button>
+    <button class="lightbox-nav lightbox-prev" id="lbPrev"><i class="bi bi-chevron-left"></i></button>
+    <img src="" alt="" id="lbImg" />
+    <button class="lightbox-nav lightbox-next" id="lbNext"><i class="bi bi-chevron-right"></i></button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Facility tabs
+  document.querySelectorAll('.facility-tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.facility-tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.facility-group').forEach(g => g.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.target).classList.add('active');
+    });
+  });
+
+  // Lightbox
+  const photos = Array.from(document.querySelectorAll('#photoGrid .photo-item img'));
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  let cur = 0;
+
+  function openLb(i) {
+    cur = i;
+    lbImg.src = photos[i].src;
+    lbImg.alt = photos[i].alt;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLb() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('#photoGrid .photo-item').forEach((el, i) => {
+    el.addEventListener('click', () => openLb(i));
+  });
+  document.getElementById('lbClose').addEventListener('click', closeLb);
+  lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+  document.getElementById('lbPrev').addEventListener('click', e => { e.stopPropagation(); openLb((cur - 1 + photos.length) % photos.length); });
+  document.getElementById('lbNext').addEventListener('click', e => { e.stopPropagation(); openLb((cur + 1) % photos.length); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowLeft') openLb((cur - 1 + photos.length) % photos.length);
+    if (e.key === 'ArrowRight') openLb((cur + 1) % photos.length);
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.overview-card, .timing-card, .referral-card, .facility-item-card, .location-detail, .photo-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity .5s ease, transform .5s ease';
+    observer.observe(el);
+  });
+  
+  // Mobile nav close on link click
+  document.querySelectorAll('#mobileNav a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('mobileNav').classList.remove('open'));
+  });
+
+  // Dropdown toggle
+  document.querySelector('.nav-dropdown-toggle').addEventListener('click', function(e) {
+    e.preventDefault();
+    const menu = this.nextElementSibling;
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+  });
+
+  // Close dropdown on outside click
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nav-dropdown')) {
+      const menu = document.querySelector('.dropdown-menu');
+      if (menu) menu.style.display = 'none';
+    }
+  });
+
+</script>
+</body>
+</html>
