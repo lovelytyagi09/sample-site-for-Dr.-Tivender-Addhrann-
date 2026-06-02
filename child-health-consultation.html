@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Child Health Consultation – Dr. Tivender Addhrann | Trisha Family Clinic, Delhi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; color: #1a3a1a; background: #fff; overflow-x: hidden; }
+
+:root {
+  --green-900: #0d3320;
+  --green-800: #1a4a2e;
+  --green-700: #1f5c38;
+  --green-600: #2d7a48;
+  --green-500: #3a9e60;
+  --green-400: #4fc07a;
+  --green-300: #86d4a8;
+  --green-200: #b8e8cc;
+  --green-100: #d6f0e2;
+  --green-50:  #edfaf3;
+  --yellow-500: #f0c200;
+  --yellow-400: #f5d000;
+  --yellow-300: #f9df4a;
+  --yellow-200: #fceea0;
+  --yellow-100: #fef7d0;
+  --yellow-50:  #fffdf0;
+  --sky-100: #e0f4ff;
+  --sky-300: #7dd3fc;
+  --sky-500: #0ea5e9;
+  --pink-100: #fce7f3;
+  --pink-300: #f9a8d4;
+  --pink-500: #ec4899;
+  --purple-100: #f3e8ff;
+  --purple-300: #d8b4fe;
+  --purple-500: #a855f7;
+  --white: #ffffff;
+  --text: #1a3a1a;
+  --muted: #3a5f3a;
+  --border: #c8e8d8;
+}
+
+/* ── TOPBAR ── */
+.topbar { background: var(--green-900); padding: 9px 0; font-size: 12px; color: rgba(255,255,255,.7); }
+.topbar .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+.ti { display: flex; align-items: center; gap: 7px; }
+.ti i { color: var(--yellow-400); font-size: 11px; }
+.ti a { color: rgba(255,255,255,.8); text-decoration: none; transition: color .2s; }
+.ti a:hover { color: var(--yellow-300); }
+
+/* ── NAVBAR ── */
+header { position: sticky; top: 0; z-index: 999; background: #fff; border-bottom: 2px solid var(--green-100); box-shadow: 0 4px 24px rgba(26,74,46,.08); }
+nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 74px; }
+.brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.brand-icon { width: 48px; height: 48px; border-radius: 14px; background: linear-gradient(135deg, var(--green-600), var(--green-800)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 20px; flex-shrink: 0; box-shadow: 0 4px 14px rgba(45,122,72,.3); }
+.brand-name { font-size: 15.5px; font-weight: 800; color: var(--text); line-height: 1.2; font-family: 'Playfair Display', serif; }
+.brand-creds { font-size: 11px; color: var(--muted); font-weight: 400; }
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 600; transition: color .2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--green-600); }
+.nav-book { background: var(--yellow-400); color: var(--green-900); text-decoration: none; padding: 11px 22px; border-radius: 10px; font-size: 13.5px; font-weight: 800; transition: all .2s; white-space: nowrap; display: flex; align-items: center; gap: 7px; box-shadow: 0 4px 16px rgba(240,194,0,.35); }
+.nav-book:hover { background: var(--yellow-500); transform: translateY(-1px); }
+.hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
+.hamburger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; display: block; }
+.mobile-nav { display: none; flex-direction: column; background: #fff; border-top: 1px solid var(--border); position: fixed; top: 74px; left: 0; right: 0; z-index: 998; box-shadow: 0 8px 32px rgba(0,0,0,.1); }
+.mobile-nav.open { display: flex; }
+.mobile-nav a { padding: 16px 24px; text-decoration: none; color: var(--text); font-size: 15px; font-weight: 600; border-bottom: 1px solid var(--border); }
+.mobile-nav a.cta { background: var(--yellow-400); color: var(--green-900); text-align: center; font-weight: 800; border: none; }
+
+/* ── SHARED ── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.tag { display: inline-flex; align-items: center; gap: 8px; background: var(--yellow-100); color: var(--green-800); border: 1.5px solid var(--yellow-300); border-radius: 100px; padding: 5px 16px; font-size: 11px; font-weight: 800; letter-spacing: .7px; text-transform: uppercase; margin-bottom: 16px; }
+.tag i { color: var(--yellow-500); }
+.sec-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.5vw, 42px); line-height: 1.12; color: var(--text); margin-bottom: 14px; }
+.sec-title em { color: var(--green-600); font-style: italic; }
+.sec-sub { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 28px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 10px; font-size: 14px; font-weight: 700; text-decoration: none; transition: all .2s; cursor: pointer; border: none; font-family: 'Plus Jakarta Sans', sans-serif; }
+.btn-primary { background: var(--green-600); color: #fff; box-shadow: 0 4px 18px rgba(45,122,72,.28); }
+.btn-primary:hover { background: var(--green-700); transform: translateY(-1px); }
+.btn-yellow { background: var(--yellow-400); color: var(--green-900); box-shadow: 0 4px 18px rgba(240,194,0,.3); }
+.btn-yellow:hover { background: var(--yellow-500); transform: translateY(-1px); }
+.btn-outline { background: #fff; color: var(--text); border: 1.5px solid var(--border); }
+.btn-outline:hover { border-color: var(--green-500); color: var(--green-600); }
+
+/* ── FADE UP ── */
+.fade-up { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+.fade-up.in { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; } .d4 { transition-delay: .4s; } .d5 { transition-delay: .5s; }
+
+/* ── BREADCRUMB ── */
+.breadcrumb { background: var(--green-50); border-bottom: 1px solid var(--green-100); padding: 14px 0; }
+.breadcrumb-inner { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+.breadcrumb-inner a { text-decoration: none; color: var(--green-600); font-weight: 600; transition: color .2s; }
+.breadcrumb-inner a:hover { color: var(--green-800); }
+.breadcrumb-inner i { font-size: 10px; color: var(--green-300); }
+
+/* ── SERVICE HERO ── */
+.svc-hero {
+  background: linear-gradient(155deg, var(--green-50) 0%, #fff 50%, var(--sky-100) 100%);
+  padding: 88px 0 80px; position: relative; overflow: hidden;
+}
+.svc-hero::before {
+  content: ''; position: absolute; top: -100px; right: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, var(--sky-100) 0%, transparent 70%);
+  pointer-events: none;
+}
+.svc-hero::after {
+  content: ''; position: absolute; bottom: -60px; left: -60px;
+  width: 350px; height: 350px;
+  background: radial-gradient(circle, var(--green-100) 0%, transparent 70%);
+  pointer-events: none;
+}
+.svc-hero-grid { display: grid; grid-template-columns: 1fr 460px; gap: 72px; align-items: center; position: relative; z-index: 1; }
+.svc-hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: var(--sky-100); color: var(--sky-500); border: 1.5px solid var(--sky-300); border-radius: 100px; padding: 7px 18px; font-size: 11.5px; font-weight: 800; letter-spacing: .6px; margin-bottom: 22px; }
+.svc-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(34px, 4.5vw, 54px); line-height: 1.1; color: var(--text); margin-bottom: 18px; }
+.svc-hero h1 em { color: var(--green-600); font-style: italic; }
+.svc-hero-sub { font-size: 15.5px; color: var(--muted); line-height: 1.85; margin-bottom: 36px; max-width: 480px; }
+.svc-hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 44px; }
+.svc-hero-chips { display: flex; gap: 10px; flex-wrap: wrap; }
+.chip { display: inline-flex; align-items: center; gap: 7px; background: #fff; border: 1.5px solid var(--green-100); border-radius: 100px; padding: 8px 16px; font-size: 12.5px; font-weight: 700; color: var(--text); }
+.chip i { color: var(--green-500); font-size: 12px; }
+
+/* Hero image panel */
+.svc-hero-img-panel { position: relative; display: flex; justify-content: center; }
+.svc-hero-img-bg { position: absolute; inset: 20px -14px -14px 14px; background: linear-gradient(135deg, var(--sky-100), var(--green-100)); border-radius: 32px; z-index: 0; }
+.svc-hero-img { width: 100%; max-width: 420px; height: 500px; border-radius: 28px; object-fit: cover; object-position: center; position: relative; z-index: 1; box-shadow: 0 28px 72px rgba(26,74,46,.2); border: 5px solid #fff; display: block; }
+.svc-hero-badge { position: absolute; top: 24px; left: -18px; z-index: 2; background: var(--sky-500); color: #fff; border-radius: 16px; padding: 16px 18px; text-align: center; box-shadow: 0 8px 28px rgba(14,165,233,.4); }
+.svc-hero-badge-icon { font-size: 22px; margin-bottom: 4px; }
+.svc-hero-badge-text { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .5px; opacity: .9; }
+.svc-hero-card { position: absolute; bottom: 24px; right: -16px; z-index: 2; background: var(--green-900); border-radius: 16px; padding: 16px 20px; max-width: 230px; box-shadow: 0 8px 32px rgba(13,51,32,.4); }
+.svc-hero-card-label { font-size: 9.5px; font-weight: 800; text-transform: uppercase; letter-spacing: .9px; color: var(--yellow-400); margin-bottom: 4px; }
+.svc-hero-card-text { font-family: 'Playfair Display', serif; font-size: 14px; color: #fff; line-height: 1.35; }
+
+/* ── TRUST STRIP ── */
+.trust-strip { background: var(--green-900); padding: 22px 0; }
+.trust-inner { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+.trust-item { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,.75); font-size: 13px; font-weight: 600; }
+.trust-item i { color: var(--yellow-400); font-size: 14px; }
+
+/* ── OVERVIEW ── */
+.overview { padding: 104px 0; background: #fff; }
+.overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.overview-img-wrap { position: relative; }
+.overview-img { width: 100%; border-radius: 28px; object-fit: cover; height: 520px; display: block; box-shadow: 0 20px 60px rgba(26,74,46,.14); border: 5px solid #fff; }
+.overview-img-accent { position: absolute; inset: 18px -18px -18px 18px; background: linear-gradient(135deg, var(--sky-100), var(--green-100)); border-radius: 28px; z-index: -1; }
+.overview-float { position: absolute; bottom: -20px; right: -20px; background: var(--yellow-400); color: var(--green-900); border-radius: 18px; padding: 20px 24px; text-align: center; box-shadow: 0 10px 32px rgba(240,194,0,.45); }
+.overview-float .num { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; line-height: 1; }
+.overview-float .lbl { font-size: 10px; font-weight: 800; margin-top: 4px; text-transform: uppercase; letter-spacing: .4px; opacity: .85; }
+.check-list { display: flex; flex-direction: column; gap: 12px; margin: 20px 0 28px; }
+.check-item { display: flex; align-items: flex-start; gap: 12px; font-size: 14.5px; font-weight: 500; color: var(--text); line-height: 1.5; }
+.check-item i { color: var(--green-500); flex-shrink: 0; margin-top: 3px; }
+
+/* ── AGE STAGES ── */
+.stages { padding: 104px 0; background: var(--green-50); }
+.stages-header { text-align: center; max-width: 600px; margin: 0 auto 60px; }
+.stages-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.stage-card { background: #fff; border-radius: 22px; border: 1.5px solid var(--green-100); padding: 32px 24px; text-align: center; transition: all .3s; box-shadow: 0 2px 10px rgba(26,74,46,.05); position: relative; overflow: hidden; }
+.stage-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px; border-radius: 0 0 4px 4px; }
+.stage-card:nth-child(1)::after { background: linear-gradient(90deg, var(--green-400), var(--green-600)); }
+.stage-card:nth-child(2)::after { background: linear-gradient(90deg, var(--sky-300), var(--sky-500)); }
+.stage-card:nth-child(3)::after { background: linear-gradient(90deg, var(--pink-300), var(--pink-500)); }
+.stage-card:nth-child(4)::after { background: linear-gradient(90deg, var(--purple-300), var(--purple-500)); }
+.stage-card:hover { transform: translateY(-6px); box-shadow: 0 20px 56px rgba(26,74,46,.13); border-color: var(--green-300); }
+.stage-icon { width: 64px; height: 64px; border-radius: 18px; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; font-size: 26px; }
+.stage-card:nth-child(1) .stage-icon { background: var(--green-50); border: 1.5px solid var(--green-200); color: var(--green-600); }
+.stage-card:nth-child(2) .stage-icon { background: var(--sky-100); border: 1.5px solid var(--sky-300); color: var(--sky-500); }
+.stage-card:nth-child(3) .stage-icon { background: var(--pink-100); border: 1.5px solid var(--pink-300); color: var(--pink-500); }
+.stage-card:nth-child(4) .stage-icon { background: var(--purple-100); border: 1.5px solid var(--purple-300); color: var(--purple-500); }
+.stage-age { display: inline-block; font-size: 10.5px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; margin-bottom: 10px; }
+.stage-card:nth-child(1) .stage-age { background: var(--green-50); color: var(--green-700); }
+.stage-card:nth-child(2) .stage-age { background: var(--sky-100); color: var(--sky-500); }
+.stage-card:nth-child(3) .stage-age { background: var(--pink-100); color: var(--pink-500); }
+.stage-card:nth-child(4) .stage-age { background: var(--purple-100); color: var(--purple-500); }
+.stage-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 10px; color: var(--text); }
+.stage-card p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+/* ── SERVICES OFFERED ── */
+.services-offered { padding: 104px 0; background: #fff; }
+.services-offered-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+.so-card { background: var(--green-50); border: 1.5px solid var(--green-100); border-radius: 20px; padding: 28px 26px; transition: all .3s; }
+.so-card:hover { background: #fff; border-color: var(--green-300); box-shadow: 0 12px 40px rgba(26,74,46,.1); transform: translateY(-4px); }
+.so-icon { width: 48px; height: 48px; border-radius: 13px; background: var(--green-100); border: 1.5px solid var(--green-200); display: flex; align-items: center; justify-content: center; color: var(--green-600); font-size: 20px; margin-bottom: 16px; }
+.so-card:nth-child(2) .so-icon { background: var(--sky-100); border-color: var(--sky-300); color: var(--sky-500); }
+.so-card:nth-child(3) .so-icon { background: var(--pink-100); border-color: var(--pink-300); color: var(--pink-500); }
+.so-card:nth-child(4) .so-icon { background: var(--yellow-100); border-color: var(--yellow-300); color: var(--yellow-500); }
+.so-card:nth-child(5) .so-icon { background: var(--purple-100); border-color: var(--purple-300); color: var(--purple-500); }
+.so-card:nth-child(6) .so-icon { background: var(--green-100); border-color: var(--green-200); color: var(--green-700); }
+.so-card h3 { font-family: 'Playfair Display', serif; font-size: 17px; margin-bottom: 8px; color: var(--text); }
+.so-card p { font-size: 13.5px; color: var(--muted); line-height: 1.7; }
+
+/* ── WHY SECTION (dark) ── */
+.why { padding: 104px 0; background: var(--green-900); position: relative; overflow: hidden; }
+.why::before { content: ''; position: absolute; top: -200px; right: -200px; width: 700px; height: 700px; background: radial-gradient(circle, rgba(79,192,122,.08) 0%, transparent 70%); pointer-events: none; }
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 1; }
+.why .tag { background: rgba(14,165,233,.15); color: var(--sky-300); border-color: rgba(14,165,233,.3); }
+.why .tag i { color: var(--sky-300); }
+.why .sec-title { color: #fff; }
+.why .sec-title em { color: var(--yellow-300); }
+.why .sec-sub { color: rgba(255,255,255,.6); }
+.why-list { display: flex; flex-direction: column; gap: 20px; }
+.why-item { display: flex; gap: 16px; align-items: flex-start; }
+.why-icon { width: 46px; height: 46px; border-radius: 12px; flex-shrink: 0; background: rgba(240,194,0,.12); border: 1px solid rgba(240,194,0,.25); display: flex; align-items: center; justify-content: center; color: var(--yellow-400); font-size: 18px; }
+.why-item:nth-child(2) .why-icon { background: rgba(125,211,252,.1); border-color: rgba(125,211,252,.25); color: var(--sky-300); }
+.why-item:nth-child(3) .why-icon { background: rgba(249,168,212,.1); border-color: rgba(249,168,212,.25); color: var(--pink-300); }
+.why-item:nth-child(4) .why-icon { background: rgba(216,180,254,.1); border-color: rgba(216,180,254,.25); color: var(--purple-300); }
+.why-item h4 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 5px; }
+.why-item p { font-size: 13.5px; color: rgba(255,255,255,.55); line-height: 1.7; }
+.why-img-panel { position: relative; }
+.why-img { width: 100%; border-radius: 28px; object-fit: cover; height: 520px; display: block; border: 5px solid rgba(255,255,255,.1); box-shadow: 0 24px 72px rgba(0,0,0,.4); }
+.why-overlay { position: absolute; bottom: -18px; left: -18px; background: var(--yellow-400); color: var(--green-900); border-radius: 18px; padding: 18px 22px; max-width: 260px; box-shadow: 0 10px 32px rgba(240,194,0,.5); display: flex; gap: 12px; align-items: flex-start; }
+.why-overlay-icon { font-size: 22px; flex-shrink: 0; margin-top: 1px; }
+.why-overlay-text { font-size: 12.5px; line-height: 1.6; font-weight: 600; }
+.why-overlay-text strong { display: block; font-size: 13.5px; margin-bottom: 3px; font-weight: 800; }
+
+/* ── SYMPTOMS SECTION ── */
+.symptoms { padding: 104px 0; background: var(--green-50); }
+.symptoms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.symptoms-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
+.symptom-tag { display: flex; align-items: center; gap: 9px; background: #fff; border: 1.5px solid var(--border); border-radius: 10px; padding: 12px 14px; font-size: 13.5px; font-weight: 600; color: var(--text); transition: all .2s; }
+.symptom-tag:hover { border-color: var(--green-400); background: var(--green-50); }
+.symptom-tag i { color: var(--green-500); font-size: 13px; flex-shrink: 0; }
+.symptoms-cta { margin-top: 28px; }
+.symptoms-img { width: 100%; border-radius: 24px; height: 480px; object-fit: cover; display: block; box-shadow: 0 20px 60px rgba(26,74,46,.14); border: 5px solid #fff; }
+
+/* ── APPOINTMENT ── */
+.appointment { padding: 104px 0; background: #fff; }
+.appt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: flex-start; }
+.appt-feats { display: flex; flex-direction: column; gap: 14px; margin-top: 10px; }
+.appt-feat { display: flex; align-items: flex-start; gap: 11px; font-size: 14px; color: var(--muted); font-weight: 500; }
+.appt-feat i { color: var(--green-500); width: 18px; flex-shrink: 0; margin-top: 2px; }
+.appt-form { background: #fff; border-radius: 24px; padding: 40px; box-shadow: 0 24px 72px rgba(26,74,46,.1); border: 1.5px solid var(--green-100); }
+.appt-form h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 4px; }
+.appt-form > p { font-size: 13.5px; color: var(--muted); margin-bottom: 28px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.fg { margin-bottom: 16px; }
+.fg label { display: block; font-size: 10.5px; font-weight: 800; color: var(--muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: .6px; }
+.fg input, .fg select, .fg textarea { width: 100%; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 10px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; color: var(--text); outline: none; transition: border .2s, box-shadow .2s; background: var(--green-50); }
+.fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--green-500); background: #fff; box-shadow: 0 0 0 3px rgba(58,158,96,.1); }
+.fg textarea { height: 94px; resize: vertical; }
+.form-submit { width: 100%; padding: 15px; background: linear-gradient(135deg, var(--green-600), var(--green-800)); color: #fff; border: none; border-radius: 12px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 800; cursor: pointer; transition: all .2s; display: flex; align-items: center; justify-content: center; gap: 9px; margin-top: 4px; box-shadow: 0 6px 24px rgba(45,122,72,.35); }
+.form-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(45,122,72,.45); }
+.form-note { font-size: 12px; color: var(--muted); margin-top: 12px; display: flex; align-items: center; gap: 6px; justify-content: center; }
+.form-note i { color: var(--green-500); }
+
+/* ── OTHER SERVICES ── */
+.other-services { padding: 80px 0; background: var(--green-50); }
+.other-services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; }
+.os-card { background: #fff; border: 1.5px solid var(--green-100); border-radius: 16px; padding: 22px 20px; text-decoration: none; color: var(--text); transition: all .25s; display: flex; flex-direction: column; gap: 10px; }
+.os-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(26,74,46,.1); border-color: var(--green-300); }
+.os-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--green-50); border: 1.5px solid var(--green-200); display: flex; align-items: center; justify-content: center; color: var(--green-600); font-size: 16px; }
+.os-card h4 { font-family: 'Playfair Display', serif; font-size: 15px; line-height: 1.3; }
+.os-card p { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+.os-arrow { margin-top: auto; font-size: 12px; color: var(--green-500); font-weight: 700; display: flex; align-items: center; gap: 5px; transition: gap .2s; }
+.os-card:hover .os-arrow { gap: 9px; }
+
+/* ── FOOTER ── */
+footer { background: var(--green-900); padding: 80px 0 32px; }
+.footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 56px; margin-bottom: 52px; }
+.f-brand strong { font-family: 'Playfair Display', serif; font-size: 20px; color: #fff; display: block; margin-bottom: 10px; }
+.f-brand p { font-size: 13px; color: rgba(255,255,255,.4); line-height: 1.85; margin-bottom: 20px; }
+.f-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(240,194,0,.12); border: 1px solid rgba(240,194,0,.3); border-radius: 8px; padding: 8px 16px; font-size: 11px; color: var(--yellow-300); font-weight: 700; }
+footer h4 { font-size: 10.5px; font-weight: 800; color: rgba(255,255,255,.9); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1.4px; }
+footer ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+footer ul li a { text-decoration: none; color: rgba(255,255,255,.4); font-size: 14px; transition: color .2s; }
+footer ul li a:hover { color: var(--yellow-300); }
+.footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.07); margin-bottom: 24px; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+.footer-bottom p { font-size: 12px; color: rgba(255,255,255,.25); }
+
+/* ── WHATSAPP FLOAT ── */
+.wa-float { position: fixed; bottom: 24px; right: 24px; z-index: 900; width: 60px; height: 60px; border-radius: 50%; background: #25d366; color: #fff; text-decoration: none; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 24px rgba(37,211,102,.5); transition: transform .25s; }
+.wa-float:hover { transform: scale(1.12); }
+
+/* ── NAV DROPDOWN ── */
+.nav-dropdown { position: relative; }
+.dropdown-menu { display: none; position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%); background: #fff; border-radius: 12px; border: 1.5px solid var(--green-100); box-shadow: 0 12px 40px rgba(26,74,46,.13); list-style: none; min-width: 200px; padding: 8px; z-index: 1000; }
+.dropdown-menu::before { content: ''; position: absolute; top: -6px; left: 50%; transform: translateX(-50%); width: 12px; height: 12px; background: #fff; border-left: 1.5px solid var(--green-100); border-top: 1.5px solid var(--green-100); rotate: 45deg; }
+.dropdown-menu li a { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; color: var(--text); font-size: 14px; font-weight: 600; transition: background .15s, color .15s; }
+.dropdown-menu li a i { color: var(--green-500); font-size: 15px; }
+.dropdown-menu li a:hover { background: var(--green-50); color: var(--green-700); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .stages-grid { grid-template-columns: repeat(2, 1fr); }
+  .services-offered-grid { grid-template-columns: repeat(2, 1fr); }
+  .other-services-grid { grid-template-columns: repeat(2, 1fr); }
+  .svc-hero-grid { grid-template-columns: 1fr 380px; gap: 48px; }
+}
+@media (max-width: 900px) {
+  .svc-hero-grid, .overview-grid, .why-grid, .symptoms-grid, .appt-grid { grid-template-columns: 1fr; gap: 52px; }
+  .svc-hero-img-panel { order: -1; }
+  .why-img-panel { order: -1; }
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 36px; }
+  .footer-inner .f-brand { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+  .nav-links, .nav-book { display: none; }
+  .hamburger { display: flex; }
+  .svc-hero { padding: 64px 0; }
+  .svc-hero h1 { font-size: 32px; }
+  .svc-hero-img { height: 340px; }
+  .stages-grid, .services-offered-grid, .other-services-grid { grid-template-columns: 1fr; }
+  .symptoms-list { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-inner .f-brand { grid-column: auto; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .trust-inner { gap: 20px; }
+  .overview-img, .why-img, .symptoms-img { height: 300px; }
+  .why-overlay { left: 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="ti"><i class="fa-solid fa-phone"></i><a href="tel:+919676553666">+91 9676553666</a></div>
+    <div class="ti"><i class="fa-brands fa-whatsapp"></i><a href="/contact.html">Available on WhatsApp</a></div>
+    <div class="ti"><i class="fa-solid fa-location-dot"></i><span>Delhi, India</span></div>
+  </div>
+</div>
+
+<header>
+  <nav>
+    <a class="brand" href="index.html">
+      <div class="brand-icon"><i class="fa-solid fa-stethoscope"></i></div>
+      <div>
+        <div class="brand-name">Dr. Tivender Addhrann</div>
+        <div class="brand-creds">MBBS · Family Physician · Child Health Consultant · Delhi</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-dropdown">
+        <a href="#" class="nav-dropdown-toggle">About <i class="fa-solid fa-chevron-down" style="font-size:10px;margin-left:3px;"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="doctor.html"><i class="fa-solid fa-user-doctor"></i> About Doctor</a></li>
+          <li><a href="clinic.html"><i class="fa-solid fa-house-chimney-medical"></i> About Clinic</a></li>
+        </ul>
+      </li>
+      <li><a href="service.html" class="active">Services</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <a class="nav-book" href="contact.html"><i class="fa-regular fa-calendar-check"></i> Book Consultation</a>
+    <button class="hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="doctor.html"><i class="fa-solid fa-user-doctor" style="margin-right:8px;"></i>About Doctor</a>
+    <a href="clinic.html"><i class="fa-solid fa-house-chimney-medical" style="margin-right:8px;"></i>About Clinic</a>
+    <a href="service.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a class="cta" href="contact.html">Book Consultation</a>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="container">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Home</a>
+      <i class="fa-solid fa-chevron-right"></i>
+      <a href="service.html">Services</a>
+      <i class="fa-solid fa-chevron-right"></i>
+      <span>Child Health Consultation</span>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICE HERO -->
+<section class="svc-hero">
+  <div class="container">
+    <div class="svc-hero-grid">
+      <div class="fade-up">
+        <div class="svc-hero-eyebrow"><i class="fa-solid fa-baby"></i> Child Health Consultation</div>
+        <h1 class="svc-hero h1">Expert Care for Your <em>Growing Child</em> — From Birth Through Adolescence</h1>
+        <p class="svc-hero-sub">Dr. Tivender Addhrann provides dedicated child health consultations at Trisha Family Clinic, Delhi — covering growth monitoring, developmental milestones, illness management, vaccinations, and adolescent wellness with over 26 years of clinical experience.</p>
+        <div class="svc-hero-actions">
+          <a href="contact.html" class="btn btn-yellow"><i class="fa-regular fa-calendar-check"></i> Book Child Consultation</a>
+          <a href="#services-offered" class="btn btn-outline"><i class="fa-solid fa-list"></i> What We Cover</a>
+        </div>
+        <div class="svc-hero-chips">
+          <div class="chip"><i class="fa-solid fa-baby"></i> Newborns</div>
+          <div class="chip"><i class="fa-solid fa-child"></i> Children</div>
+          <div class="chip"><i class="fa-solid fa-person"></i> Adolescents</div>
+          <div class="chip"><i class="fa-solid fa-shield-halved"></i> All Vaccinations</div>
+        </div>
+      </div>
+      <div class="svc-hero-img-panel fade-up d2">
+        <div class="svc-hero-img-bg"></div>
+        <img class="svc-hero-img"
+          src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=700&q=80"
+          alt="Child health consultation" loading="eager"
+          onerror="this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&q=80'"/>
+        <div class="svc-hero-badge">
+          <div class="svc-hero-badge-icon"><i class="fa-solid fa-baby"></i></div>
+          <div class="svc-hero-badge-text">Child Care<br>Specialist</div>
+        </div>
+        <div class="svc-hero-card">
+          <div class="svc-hero-card-label">Specialist Consultation</div>
+          <div class="svc-hero-card-text">Newborn to 18 Years — All Child Health Needs Under One Roof</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-item"><i class="fa-solid fa-baby"></i> Newborn Care</div>
+      <div class="trust-item"><i class="fa-solid fa-chart-line"></i> Growth & Development</div>
+      <div class="trust-item"><i class="fa-solid fa-syringe"></i> Complete Vaccination</div>
+      <div class="trust-item"><i class="fa-solid fa-user-doctor"></i> 26+ Years Experience</div>
+      <div class="trust-item"><i class="fa-solid fa-calendar-check"></i> Same-Day Appointments</div>
+    </div>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<section class="overview" id="about">
+  <div class="container">
+    <div class="overview-grid">
+      <div class="overview-img-wrap fade-up">
+        <img class="overview-img"
+          src="https://images.unsplash.com/photo-1588776814546-ec7e903a1e99?w=700&q=80"
+          alt="Doctor with child patient" loading="lazy"
+          onerror="this.src='https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&q=80'"/>
+        <div class="overview-img-accent"></div>
+        <div class="overview-float">
+          <div class="num">26+</div>
+          <div class="lbl">Years Caring<br>for Children</div>
+        </div>
+      </div>
+      <div class="fade-up d2">
+        <div class="tag"><i class="fa-solid fa-heart"></i> About This Service</div>
+        <h2 class="sec-title">Complete Child Health Care — <em>Every Stage, Every Need</em></h2>
+        <p class="sec-sub">Children are not small adults — they require specialised clinical attention at each stage of development. Dr. Tivender Addhrann's child health consultations are tailored to your child's age, stage, and specific health needs, ensuring they grow up healthy, strong, and well-cared for.</p>
+        <div class="check-list">
+          <div class="check-item"><i class="fa-solid fa-circle-check"></i> Comprehensive assessment of your child's growth, nutrition, and development</div>
+          <div class="check-item"><i class="fa-solid fa-circle-check"></i> Diagnosis and management of common and complex childhood illnesses</div>
+          <div class="check-item"><i class="fa-solid fa-circle-check"></i> Complete immunisation schedules — from birth through adolescence</div>
+          <div class="check-item"><i class="fa-solid fa-circle-check"></i> Monitoring of developmental milestones and early intervention when needed</div>
+          <div class="check-item"><i class="fa-solid fa-circle-check"></i> Guidance for parents on nutrition, sleep, behaviour, and healthy habits</div>
+          <div class="check-item"><i class="fa-solid fa-circle-check"></i> Adolescent health — puberty, mental wellness, and lifestyle counselling</div>
+        </div>
+        <a href="contact.html" class="btn btn-primary"><i class="fa-regular fa-calendar-check"></i> Book a Child Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGE STAGES -->
+<section class="stages" id="stages">
+  <div class="container">
+    <div class="stages-header fade-up">
+      <div class="tag"><i class="fa-solid fa-child"></i> Care for Every Age</div>
+      <h2 class="sec-title">Tailored Care at <em>Every Stage of Childhood</em></h2>
+      <p class="sec-sub">From the first days of life through the teenage years, each stage of childhood brings unique health needs — and we are equipped for all of them.</p>
+    </div>
+    <div class="stages-grid">
+      <div class="stage-card fade-up d1">
+        <div class="stage-icon"><i class="fa-solid fa-baby"></i></div>
+        <div class="stage-age">0 – 1 Year</div>
+        <h3>Newborn & Infant</h3>
+        <p>Newborn health assessments, feeding guidance, weight gain monitoring, jaundice checks, and early vaccination schedules.</p>
+      </div>
+      <div class="stage-card fade-up d2">
+        <div class="stage-icon"><i class="fa-solid fa-child"></i></div>
+        <div class="stage-age">1 – 6 Years</div>
+        <h3>Toddler & Pre-School</h3>
+        <p>Growth milestones, speech and motor development, nutrition, immunity-building, and management of frequent infections and fevers.</p>
+      </div>
+      <div class="stage-card fade-up d3">
+        <div class="stage-icon"><i class="fa-solid fa-school"></i></div>
+        <div class="stage-age">6 – 12 Years</div>
+        <h3>School Age</h3>
+        <p>Academic performance concerns, attention and behaviour, allergy management, dental health awareness, sports fitness, and annual checkups.</p>
+      </div>
+      <div class="stage-card fade-up d4">
+        <div class="stage-icon"><i class="fa-solid fa-person"></i></div>
+        <div class="stage-age">13 – 18 Years</div>
+        <h3>Adolescent</h3>
+        <p>Puberty guidance, mental and emotional wellness, weight management, lifestyle counselling, and adolescent-specific health concerns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES OFFERED -->
+<section class="services-offered" id="services-offered">
+  <div class="container">
+    <div class="fade-up">
+      <div class="tag"><i class="fa-solid fa-briefcase-medical"></i> What We Treat & Offer</div>
+      <h2 class="sec-title">Comprehensive Child Health <em>Services at Our Clinic</em></h2>
+      <p class="sec-sub">Everything your child needs — under one trusted roof, with one doctor who knows their full health history.</p>
+    </div>
+    <div class="services-offered-grid">
+      <div class="so-card fade-up d1">
+        <div class="so-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <h3>Growth & Development Monitoring</h3>
+        <p>Regular tracking of height, weight, head circumference, and developmental milestones to ensure your child is thriving on schedule.</p>
+      </div>
+      <div class="so-card fade-up d2">
+        <div class="so-icon"><i class="fa-solid fa-syringe"></i></div>
+        <h3>Vaccination & Immunisation</h3>
+        <p>Complete IAP and government immunisation schedules — from BCG at birth through all recommended childhood and adolescent vaccines.</p>
+      </div>
+      <div class="so-card fade-up d3">
+        <div class="so-icon"><i class="fa-solid fa-thermometer"></i></div>
+        <h3>Fever, Cold & Infections</h3>
+        <p>Accurate diagnosis and treatment of fever, viral infections, throat infections, ear infections, and recurrent respiratory illnesses.</p>
+      </div>
+      <div class="so-card fade-up d1">
+        <div class="so-icon"><i class="fa-solid fa-wind"></i></div>
+        <h3>Asthma & Breathing Concerns</h3>
+        <p>Assessment and long-term management of childhood asthma, wheezing, and breathing difficulties with personalised action plans.</p>
+      </div>
+      <div class="so-card fade-up d2">
+        <div class="so-icon"><i class="fa-solid fa-brain"></i></div>
+        <h3>Developmental & Behavioural</h3>
+        <p>Evaluation of speech delay, attention difficulties, learning concerns, and behavioural issues with appropriate guidance and referrals.</p>
+      </div>
+      <div class="so-card fade-up d3">
+        <div class="so-icon"><i class="fa-solid fa-apple-whole"></i></div>
+        <h3>Child Nutrition Guidance</h3>
+        <p>Tailored dietary advice for each age group — addressing undernutrition, picky eating, obesity, iron deficiency, and healthy eating habits.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="why-grid">
+      <div class="fade-up">
+        <div class="tag"><i class="fa-solid fa-star"></i> Why Choose Dr. Addhrann</div>
+        <h2 class="sec-title">Your Child Deserves a Doctor Who <em>Truly Knows Them</em></h2>
+        <p class="sec-sub">At Trisha Family Clinic, we treat every child as an individual — not a case number. Our approach is patient, thorough, and built on trust.</p>
+        <div class="why-list">
+          <div class="why-item">
+            <div class="why-icon"><i class="fa-solid fa-user-doctor"></i></div>
+            <div>
+              <h4>26+ Years of Child Health Experience</h4>
+              <p>Extensive hands-on experience managing everything from routine check-ups to complex childhood conditions in Delhi.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon"><i class="fa-solid fa-house-chimney-medical"></i></div>
+            <div>
+              <h4>Whole Family, One Clinic</h4>
+              <p>Dr. Addhrann knows your child's parents, siblings, and family health history — enabling more connected, informed care.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon"><i class="fa-solid fa-comments"></i></div>
+            <div>
+              <h4>Clear Guidance for Parents</h4>
+              <p>Every consultation includes time to answer your questions, explain the diagnosis, and give practical at-home care advice.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon"><i class="fa-solid fa-calendar-check"></i></div>
+            <div>
+              <h4>Same-Day Appointments Available</h4>
+              <p>When your child is unwell, you should not have to wait days for an appointment — we prioritise urgent child health cases.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why-img-panel fade-up d2">
+        <img class="why-img"
+          src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=700&q=80"
+          alt="Doctor examining child" loading="lazy"
+          onerror="this.src='https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&q=80'"/>
+        <div class="why-overlay">
+          <div class="why-overlay-icon"><i class="fa-solid fa-award"></i></div>
+          <div class="why-overlay-text">
+            <strong>Delhi Medical Council</strong>
+            Reg. No. 10915 · Member, DMA
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHEN TO VISIT -->
+<section class="symptoms" id="symptoms">
+  <div class="container">
+    <div class="symptoms-grid">
+      <div class="fade-up">
+        <div class="tag"><i class="fa-solid fa-triangle-exclamation"></i> When to Visit</div>
+        <h2 class="sec-title">Signs Your Child Needs a <em>Consultation Today</em></h2>
+        <p class="sec-sub">Don't wait — these symptoms in children warrant prompt medical attention from an experienced physician.</p>
+        <div class="symptoms-list">
+          <div class="symptom-tag"><i class="fa-solid fa-circle-check"></i> High or persistent fever</div>
+          <div class="symptom-tag"><i class="fa-solid fa-circle-check"></i> Difficulty breathing</div>
+          <div class="symptom-tag"><i class="fa-solid fa-circle-check"></i> Frequent vomiting or diarrhoea</div>
+          <div class="symptom-tag"><i class="fa-solid fa-circle-check"></i> Poor weight gain or loss</div>
+          <div class="symptom-tag"><i class="fa-solid fa-circle-check"></i> Skin rash or allergies</div>
+          <div class="symptom-tag"><i class="fa-solid fa-circle-check"></i> Speech or hearing concerns</div>
+          <div class="symptom-tag"><i class="fa-solid fa-circle-check"></i> Delayed developmental milestones</div>
+          <div class="symptom-tag"><i class="fa-solid fa-circle-check"></i> Recurrent ear or throat infections</div>
+          <div class="symptom-tag"><i class="fa-solid fa-circle-check"></i> Behavioural or learning issues</div>
+          <div class="symptom-tag"><i class="fa-solid fa-circle-check"></i> Vaccination due / overdue</div>
+          <div class="symptom-tag"><i class="fa-solid fa-circle-check"></i> Abdominal pain or constipation</div>
+          <div class="symptom-tag"><i class="fa-solid fa-circle-check"></i> Routine annual checkup</div>
+        </div>
+        <div class="symptoms-cta">
+          <a href="contact.html" class="btn btn-primary" style="margin-top:8px"><i class="fa-regular fa-calendar-check"></i> Book Appointment Now</a>
+        </div>
+      </div>
+      <div class="fade-up d2">
+        <img class="symptoms-img"
+          src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=700&q=80"
+          alt="Child health checkup" loading="lazy"
+          onerror="this.src='https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?w=700&q=80'"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPOINTMENT FORM -->
+<section class="appointment" id="appointment">
+  <div class="container">
+    <div class="appt-grid">
+      <div class="fade-up">
+        <div class="tag"><i class="fa-regular fa-calendar-check"></i> Book an Appointment</div>
+        <h2 class="sec-title">Book a Child Health <em>Consultation Today</em></h2>
+        <p class="sec-sub">Fill in the form and our team will confirm your appointment at the earliest available slot — same-day appointments available for urgent concerns.</p>
+        <div class="appt-feats">
+          <div class="appt-feat"><i class="fa-solid fa-location-dot"></i> Trisha Family Clinic, Delhi</div>
+          <div class="appt-feat"><i class="fa-solid fa-calendar-check"></i> Same-day appointments for sick children</div>
+          <div class="appt-feat"><i class="fa-solid fa-baby"></i> Newborns to 18 years welcome</div>
+          <div class="appt-feat"><i class="fa-brands fa-whatsapp"></i> Quick queries via WhatsApp</div>
+          <div class="appt-feat"><i class="fa-solid fa-phone"></i> Call: <a href="tel:+919676553666" style="color:var(--green-600);font-weight:700;text-decoration:none;">+91 9676553666</a></div>
+          <div class="appt-feat"><i class="fa-solid fa-shield-halved"></i> Delhi Medical Council Reg. No. 10915</div>
+        </div>
+      </div>
+      <div class="appt-form fade-up d2">
+        <h3>Request a Child Consultation</h3>
+        <p>We'll confirm your preferred slot as soon as possible.</p>
+        <div class="form-row">
+          <div class="fg"><label>Parent / Guardian Name</label><input type="text" placeholder="Rahul Sharma"/></div>
+          <div class="fg"><label>Child's Name</label><input type="text" placeholder="Aryan"/></div>
+        </div>
+        <div class="form-row">
+          <div class="fg"><label>Phone Number</label><input type="tel" placeholder="+91 00000 00000"/></div>
+          <div class="fg"><label>Preferred Date</label><input type="date"/></div>
+        </div>
+        <div class="fg">
+          <label>Child's Age Group</label>
+          <select>
+            <option value="">Select age group</option>
+            <option>Newborn (0–1 year)</option>
+            <option>Toddler (1–3 years)</option>
+            <option>Pre-school (3–6 years)</option>
+            <option>School Age (6–12 years)</option>
+            <option>Adolescent (13–18 years)</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>Reason for Visit</label>
+          <select>
+            <option value="">Select reason</option>
+            <option>Routine health checkup</option>
+            <option>Fever / Illness</option>
+            <option>Vaccination</option>
+            <option>Growth & development concern</option>
+            <option>Allergy / Skin issue</option>
+            <option>Breathing / Asthma</option>
+            <option>Nutrition / Feeding concern</option>
+            <option>Behavioural / Learning concern</option>
+            <option>Adolescent health</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>Describe Your Child's Concern (Optional)</label>
+          <textarea placeholder="Tell us briefly about your child's symptoms or health concern..."></textarea>
+        </div>
+        <button class="form-submit" type="button">
+          <i class="fa-regular fa-calendar-check"></i> Confirm My Appointment
+        </button>
+        <p class="form-note"><i class="fa-solid fa-lock"></i> Your information is private and secure.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OTHER SERVICES -->
+<section class="other-services">
+  <div class="container">
+    <div class="fade-up">
+      <div class="tag"><i class="fa-solid fa-briefcase-medical"></i> Explore More Services</div>
+      <h2 class="sec-title">Other Services at <em>Trisha Family Clinic</em></h2>
+    </div>
+    <div class="other-services-grid">
+      <a href="#" class="os-card fade-up d1">
+        <div class="os-icon"><i class="fa-solid fa-syringe"></i></div>
+        <h4>Vaccination & Immunisation</h4>
+        <p>Complete vaccine schedules for children and adults, including travel vaccines.</p>
+        <div class="os-arrow">Learn More <i class="fa-solid fa-arrow-right"></i></div>
+      </a>
+      <a href="#" class="os-card fade-up d2">
+        <div class="os-icon"><i class="fa-solid fa-wind"></i></div>
+        <h4>Allergy & Skin Allergies</h4>
+        <p>Diagnosis and management of food, environmental, and skin allergies.</p>
+        <div class="os-arrow">Learn More <i class="fa-solid fa-arrow-right"></i></div>
+      </a>
+      <a href="#" class="os-card fade-up d3">
+        <div class="os-icon"><i class="fa-solid fa-droplet"></i></div>
+        <h4>Diabetes Management</h4>
+        <p>Personalised long-term care for blood sugar control and chronic disease management.</p>
+        <div class="os-arrow">Learn More <i class="fa-solid fa-arrow-right"></i></div>
+      </a>
+      <a href="#" class="os-card fade-up d4">
+        <div class="os-icon"><i class="fa-solid fa-leaf"></i></div>
+        <h4>Nutrition Consultation</h4>
+        <p>Evidence-based dietary guidance for the whole family — wellness and chronic conditions.</p>
+        <div class="os-arrow">Learn More <i class="fa-solid fa-arrow-right"></i></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="f-brand">
+        <strong>Dr. Tivender Addhrann</strong>
+        <p>MBBS · MPH · Family Physician · Child Health Consultant<br/>Trisha Family Clinic · Delhi<br/><br/>Trusted clinical care for your entire family — newborns, children, adults, and seniors — all under one compassionate roof for over 26 years.</p>
+        <div class="f-badge"><i class="fa-solid fa-circle-check"></i> Verified · Delhi Medical Council · Reg. 10915</div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="doctor.html">About Doctor</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Child Health</a></li>
+          <li><a href="#">Vaccination</a></li>
+          <li><a href="#">Allergy Treatment</a></li>
+          <li><a href="#">Diabetes Management</a></li>
+          <li><a href="#">Health Checkup</a></li>
+          <li><a href="#">Nutrition</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="footer-divider"/>
+    <div class="footer-bottom">
+      <p>© 2025 Trisha Family Clinic · Dr. Tivender Addhrann. All Rights Reserved.</p>
+      <p>Delhi Medical Council Reg. No. 10915 · Member, Delhi Medical Association</p>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/919676553666?text=Hello%20Dr.%20Tivender%20Addhrann%2C%20I%20would%20like%20to%20book%20a%20child%20health%20consultation."
+  class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="28" height="28" fill="#fff">
+    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 414.7c-32 0-64-8-92-23l-6.6-4-68.5 18 18-66.8-4-6.6C55 304 46 264 46 222c0-98.1 80-178 178-178 98 0 178 80 178 178 0 98.1-80.1 178-178.1 178zM321 281.3c-5.3-2.7-31.5-15.6-36.4-17.4-4.9-1.8-8.4-2.7-12 2.7-3.6 5.3-13.8 17.4-16.9 21-3.1 3.6-6.2 4-11.6 1.3-5.3-2.7-22.5-8.3-42.9-26.6-15.8-14.2-26.5-31.8-29.6-37.1-3.1-5.3-.3-8.2 2.4-10.9 2.4-2.4 5.3-6.2 8-9.3 2.7-3.1 3.6-5.3 5.3-8.9 1.8-3.6.9-6.7-.4-9.3-1.3-2.7-12-28.9-16.4-39.6-4.3-10.4-8.7-9-12-9.1-3.1-.1-6.7-.1-10.2-.1-3.6 0-9.3 1.3-14.2 6.7-4.9 5.3-18.7 18.2-18.7 44.5 0 26.2 19.1 51.6 21.8 55.1 2.7 3.6 37.6 57.4 91 80.4 12.7 5.5 22.6 8.7 30.3 11.2 12.7 4 24.3 3.4 33.4 2.1 10.3-1.5 31.5-12.9 36-25.3 4.4-12.4 4.4-23.1 3.1-25.3-1.4-2.3-5-3.6-10.3-6.2z"/>
+  </svg>
+</a>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }});
+  }, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+  document.querySelectorAll('#mobileNav a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('mobileNav').classList.remove('open'));
+  });
+  document.querySelector('.nav-dropdown-toggle').addEventListener('click', function(e) {
+    e.preventDefault();
+    const menu = this.nextElementSibling;
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nav-dropdown')) {
+      const menu = document.querySelector('.dropdown-menu');
+      if (menu) menu.style.display = 'none';
+    }
+  });
+</script>
+</body>
+</html>

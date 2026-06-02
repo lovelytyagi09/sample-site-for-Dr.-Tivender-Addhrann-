@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Allergy & Skin Allergy Treatment Delhi | Dr. Tivender Addhrann – Trisha Family Clinic</title>
+  <meta name="description" content="Expert diagnosis and management of food, seasonal, environmental, and skin allergies in Delhi. Personalised care plans by Dr. Tivender Addhrann at Trisha Family Clinic." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── TOKENS ── */
+    :root {
+      --navy:   #0b2545;
+      --navy2:  #13375e;
+      --teal:   #1a8c7e;
+      --teal-l: #23b09f;
+      --gold:   #c8993a;
+      --cream:  #f8f5ef;
+      --light:  #eef4f2;
+      --white:  #ffffff;
+      --text:   #1c2b3a;
+      --muted:  #5a6e80;
+      --border: #d4e3db;
+      --ff-head: 'DM Serif Display', Georgia, serif;
+      --ff-body: 'DM Sans', system-ui, sans-serif;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(11,37,69,.10);
+      --shadow-lg: 0 12px 48px rgba(11,37,69,.15);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--ff-body);
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.65;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+    }
+    .nav-logo {
+      text-decoration: none; display: flex; flex-direction: column; gap: 1px;
+    }
+    .nav-logo-name {
+      font-family: var(--ff-head); font-size: 1.1rem; color: var(--navy); line-height: 1.2;
+    }
+    .nav-logo-sub { font-size: .72rem; color: var(--muted); font-weight: 400; letter-spacing: .03em; }
+    .nav-links { display: flex; align-items: center; gap: 1.8rem; list-style: none; }
+    .nav-links a {
+      font-size: .875rem; font-weight: 500; color: var(--text); text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-links a.active { color: var(--teal); }
+    .nav-cta {
+      background: var(--teal); color: var(--white) !important;
+      padding: .5rem 1.25rem; border-radius: 6px;
+      font-weight: 600 !important; transition: background .2s !important;
+    }
+    .nav-cta:hover { background: var(--navy) !important; color: var(--white) !important; }
+
+    /* topbar */
+    .topbar {
+      background: var(--navy); color: rgba(255,255,255,.85);
+      font-size: .78rem; padding: .45rem 2rem;
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;
+    }
+    .topbar a { color: rgba(255,255,255,.85); text-decoration: none; }
+    .topbar a:hover { color: var(--gold); }
+    .topbar-right { display: flex; gap: 1.4rem; align-items: center; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 60%, #0f4a3f 100%);
+      color: var(--white);
+      padding: 5rem 2rem 4rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 80% 50%, rgba(26,140,126,.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 420px; gap: 4rem; align-items: center;
+    }
+    .breadcrumb {
+      font-size: .78rem; opacity: .7; margin-bottom: 1.2rem;
+      display: flex; gap: .5rem; align-items: center;
+    }
+    .breadcrumb a { color: inherit; text-decoration: none; }
+    .breadcrumb a:hover { opacity: 1; text-decoration: underline; }
+    .breadcrumb span { opacity: .5; }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(26,140,126,.25); border: 1px solid rgba(26,140,126,.5);
+      color: #5ee6d4; font-size: .75rem; font-weight: 600; letter-spacing: .08em;
+      text-transform: uppercase; padding: .35rem .9rem; border-radius: 100px;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+      font-family: var(--ff-head); font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2; margin-bottom: 1.2rem;
+    }
+    .hero h1 em { font-style: italic; color: #5ee6d4; }
+    .hero-desc {
+      font-size: 1.05rem; opacity: .85; max-width: 520px; margin-bottom: 2rem; line-height: 1.7;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--teal); color: var(--white);
+      padding: .75rem 1.8rem; border-radius: 8px;
+      font-weight: 600; font-size: .9rem; text-decoration: none;
+      transition: background .2s, transform .15s; border: none; cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--teal-l); transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent; color: var(--white);
+      padding: .73rem 1.8rem; border-radius: 8px;
+      border: 1.5px solid rgba(255,255,255,.4);
+      font-weight: 500; font-size: .9rem; text-decoration: none;
+      transition: border-color .2s, background .2s;
+    }
+    .btn-outline:hover { border-color: #5ee6d4; background: rgba(255,255,255,.06); }
+
+    /* hero stats */
+    .hero-stats {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+      background: rgba(255,255,255,.1); border-radius: var(--radius);
+      overflow: hidden; border: 1px solid rgba(255,255,255,.12);
+    }
+    .hero-stat {
+      background: rgba(255,255,255,.06);
+      padding: 1.4rem 1.6rem;
+      backdrop-filter: blur(6px);
+    }
+    .hero-stat-num {
+      font-family: var(--ff-head); font-size: 2rem; color: #5ee6d4; line-height: 1;
+      margin-bottom: .3rem;
+    }
+    .hero-stat-label { font-size: .78rem; opacity: .7; }
+
+    /* ── SECTION BASE ── */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 1rem;
+    }
+    .section-label::before {
+      content: ''; display: block; width: 22px; height: 2px; background: var(--teal);
+    }
+    h2.section-title {
+      font-family: var(--ff-head); font-size: clamp(1.6rem, 3vw, 2.4rem);
+      color: var(--navy); line-height: 1.25; margin-bottom: 1rem;
+    }
+    h2.section-title em { font-style: italic; color: var(--teal); }
+    .section-sub {
+      color: var(--muted); max-width: 620px; font-size: 1rem; line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    /* ── TYPES GRID ── */
+    .types-section { background: var(--cream); }
+    .types-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .type-card {
+      background: var(--white); border-radius: var(--radius);
+      padding: 1.8rem; border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+    .type-card:hover {
+      transform: translateY(-4px); box-shadow: var(--shadow-lg);
+      border-color: var(--teal);
+    }
+    .type-icon {
+      width: 48px; height: 48px; border-radius: 10px;
+      background: var(--light); display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 1.1rem;
+    }
+    .type-card h3 {
+      font-family: var(--ff-head); font-size: 1.1rem; color: var(--navy);
+      margin-bottom: .6rem;
+    }
+    .type-card p { font-size: .88rem; color: var(--muted); line-height: 1.65; }
+
+    /* ── APPROACH ── */
+    .approach-section { background: var(--white); }
+    .approach-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+    }
+    .approach-img {
+      border-radius: 16px; overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      aspect-ratio: 4/3; position: relative;
+    }
+    .approach-img img { width: 100%; height: 100%; object-fit: cover; }
+    .approach-badge {
+      position: absolute; bottom: 1.2rem; left: 1.2rem;
+      background: var(--navy); color: var(--white);
+      padding: .6rem 1rem; border-radius: 8px; font-size: .8rem;
+    }
+    .approach-badge strong { display: block; font-size: 1.1rem; color: #5ee6d4; }
+    .steps { display: flex; flex-direction: column; gap: 1.4rem; }
+    .step { display: flex; gap: 1.2rem; align-items: flex-start; }
+    .step-num {
+      flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%;
+      background: var(--teal); color: var(--white);
+      font-weight: 700; font-size: .85rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .step-body h4 {
+      font-weight: 600; font-size: .95rem; color: var(--navy); margin-bottom: .25rem;
+    }
+    .step-body p { font-size: .87rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── SYMPTOMS ── */
+    .symptoms-section { background: var(--light); }
+    .symptoms-layout {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+    }
+    .symptom-block h3 {
+      font-family: var(--ff-head); font-size: 1.25rem; color: var(--navy);
+      margin-bottom: 1.2rem; padding-bottom: .7rem;
+      border-bottom: 2px solid var(--teal);
+    }
+    .symptom-list { list-style: none; display: flex; flex-direction: column; gap: .7rem; }
+    .symptom-list li {
+      display: flex; gap: .75rem; align-items: flex-start;
+      font-size: .9rem; color: var(--text);
+    }
+    .symptom-list li::before {
+      content: '✓'; flex-shrink: 0; width: 20px; height: 20px;
+      background: var(--teal); color: var(--white);
+      border-radius: 50%; font-size: .7rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 2px;
+    }
+
+    /* ── WHY CHOOSE ── */
+    .why-section { background: var(--navy); color: var(--white); }
+    .why-section .section-label { color: #5ee6d4; }
+    .why-section .section-label::before { background: #5ee6d4; }
+    .why-section h2.section-title { color: var(--white); }
+    .why-section h2.section-title em { color: #5ee6d4; }
+    .why-section .section-sub { color: rgba(255,255,255,.7); }
+    .why-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+    .why-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius); padding: 1.6rem;
+      transition: background .2s, border-color .2s;
+    }
+    .why-card:hover { background: rgba(255,255,255,.1); border-color: rgba(94,230,212,.4); }
+    .why-icon { font-size: 1.8rem; margin-bottom: .9rem; }
+    .why-card h4 { font-weight: 600; font-size: .95rem; margin-bottom: .4rem; color: var(--white); }
+    .why-card p { font-size: .84rem; color: rgba(255,255,255,.65); line-height: 1.6; }
+
+    /* ── FAQ ── */
+    .faq-section { background: var(--cream); }
+    .faq-wrap { max-width: 760px; }
+    .faq-item {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius); margin-bottom: 1rem; overflow: hidden;
+    }
+    .faq-q {
+      width: 100%; background: none; border: none; cursor: pointer;
+      padding: 1.2rem 1.5rem; display: flex; justify-content: space-between; align-items: center;
+      text-align: left; font-family: var(--ff-body); font-size: .95rem;
+      font-weight: 600; color: var(--navy); gap: 1rem;
+    }
+    .faq-q .faq-icon { flex-shrink: 0; font-size: 1.2rem; transition: transform .3s; }
+    .faq-item.open .faq-q .faq-icon { transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height .35s ease, padding .3s ease;
+      font-size: .88rem; color: var(--muted); line-height: 1.7;
+      padding: 0 1.5rem;
+    }
+    .faq-item.open .faq-a { max-height: 400px; padding: 0 1.5rem 1.3rem; }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--teal) 0%, #0f6b60 100%);
+      color: var(--white); text-align: center; padding: 5rem 2rem;
+    }
+    .cta-section h2 {
+      font-family: var(--ff-head); font-size: clamp(1.7rem, 3vw, 2.5rem);
+      margin-bottom: 1rem;
+    }
+    .cta-section h2 em { font-style: italic; color: #b8f5ed; }
+    .cta-section p { opacity: .85; max-width: 520px; margin: 0 auto 2rem; font-size: 1rem; }
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-white {
+      background: var(--white); color: var(--teal);
+      padding: .8rem 2rem; border-radius: 8px;
+      font-weight: 700; font-size: .95rem; text-decoration: none;
+      transition: transform .15s, box-shadow .15s;
+    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,.15); }
+    .btn-outline-white {
+      background: transparent; color: var(--white);
+      padding: .78rem 2rem; border-radius: 8px;
+      border: 2px solid rgba(255,255,255,.5);
+      font-weight: 500; font-size: .95rem; text-decoration: none;
+      transition: border-color .2s, background .2s;
+    }
+    .btn-outline-white:hover { border-color: var(--white); background: rgba(255,255,255,.08); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy); color: rgba(255,255,255,.7);
+      padding: 3rem 2rem 1.5rem;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .footer-brand p { font-size: .85rem; line-height: 1.7; max-width: 300px; margin: .9rem 0; }
+    .footer-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+      padding: .4rem .9rem; border-radius: 100px; font-size: .75rem;
+    }
+    .footer-brand .nav-logo-name { font-size: 1rem; }
+    .footer-col h5 {
+      font-size: .8rem; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; color: rgba(255,255,255,.5); margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+    .footer-col ul a {
+      font-size: .87rem; color: rgba(255,255,255,.7); text-decoration: none;
+      transition: color .2s;
+    }
+    .footer-col ul a:hover { color: #5ee6d4; }
+    .footer-bottom {
+      max-width: 1200px; margin: 1.5rem auto 0;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: .5rem;
+      font-size: .78rem; opacity: .55;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-stats { grid-template-columns: repeat(4, 1fr); }
+      .approach-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .symptoms-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .topbar { flex-direction: column; text-align: center; }
+      .nav-links { display: none; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      .types-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div><a href="tel:+919676553666">+91 9676553666</a> &nbsp;·&nbsp; Delhi, India</div>
+    <div class="topbar-right">
+      <a href="https://wa.me/919676553666?text=Hello%20Dr.%20Tivender%20Addhrann%2C%20I%20would%20like%20to%20book%20a%20consultation.">Available on WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">
+        <span class="nav-logo-name">Dr. Tivender Addhrann</span>
+        <span class="nav-logo-sub">MBBS · Family Physician · Child Health Consultant · Delhi</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="doctor.html">About Doctor</a></li>
+        <li><a href="clinic.html">About Clinic</a></li>
+        <li><a href="service.html" class="active">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="contact.html" class="nav-cta">Book Consultation</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <a href="service.html">Services</a>
+          <span>›</span>
+          Allergy &amp; Skin Allergies
+        </div>
+        <div class="hero-tag">Allergy Care</div>
+        <h1>Allergy &amp; <em>Skin Allergy</em> Treatment in Delhi</h1>
+        <p class="hero-desc">
+          Accurate diagnosis and personalised management of food, seasonal, environmental, and skin allergies — so your family can breathe, eat, and live without fear.
+        </p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn-primary">Book Consultation</a>
+          <a href="tel:+919676553666" class="btn-outline">Call Now</a>
+        </div>
+      </div>
+      <div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num">26+</div>
+            <div class="hero-stat-label">Years Experience</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">All</div>
+            <div class="hero-stat-label">Age Groups Treated</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">4</div>
+            <div class="hero-stat-label">Allergy Types Managed</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">Delhi</div>
+            <div class="hero-stat-label">Same-Day Slots</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPES OF ALLERGIES -->
+  <section class="types-section">
+    <div class="container">
+      <div class="section-label">What We Treat</div>
+      <h2 class="section-title">Types of Allergies We <em>Diagnose &amp; Manage</em></h2>
+      <p class="section-sub">From itchy skin and watery eyes to gut reactions and breathing trouble — every allergy type is different and needs a personalised plan.</p>
+      <div class="types-grid">
+
+        <div class="type-card">
+          <div class="type-icon">🌿</div>
+          <h3>Food Allergies</h3>
+          <p>Identification of trigger foods — nuts, dairy, wheat, eggs, seafood — and creation of safe dietary plans to prevent reactions without unnecessary restrictions.</p>
+        </div>
+
+        <div class="type-card">
+          <div class="type-icon">🌸</div>
+          <h3>Seasonal Allergies</h3>
+          <p>Management of hay fever, pollen allergies, and seasonal rhinitis with symptom relief and preventive strategies tailored to Delhi's seasonal patterns.</p>
+        </div>
+
+        <div class="type-card">
+          <div class="type-icon">🏠</div>
+          <h3>Environmental Allergies</h3>
+          <p>Diagnosis and control of reactions to dust mites, mould, pet dander, pollution, and indoor allergens — highly relevant in Delhi's urban environment.</p>
+        </div>
+
+        <div class="type-card">
+          <div class="type-icon">🧴</div>
+          <h3>Skin Allergies</h3>
+          <p>Expert management of eczema, contact dermatitis, urticaria (hives), and allergic rashes — with treatment plans that bring lasting relief, not just temporary suppression.</p>
+        </div>
+
+        <div class="type-card">
+          <div class="type-icon">🤧</div>
+          <h3>Allergic Rhinitis</h3>
+          <p>Relief from persistent runny nose, sneezing, nasal congestion, and postnasal drip — caused by airborne allergens or irritants.</p>
+        </div>
+
+        <div class="type-card">
+          <div class="type-icon">💊</div>
+          <h3>Drug Allergies</h3>
+          <p>Evaluation and documentation of medication sensitivities and allergic reactions — ensuring safe prescribing for you and your family going forward.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SYMPTOMS -->
+  <section class="symptoms-section">
+    <div class="container">
+      <div class="section-label">Warning Signs</div>
+      <h2 class="section-title">Signs You May Have an <em>Allergy</em></h2>
+      <p class="section-sub">Many allergy symptoms are mistaken for a common cold or skin condition. If these sound familiar, it is time to consult Dr. Tivender Addhrann.</p>
+      <div class="symptoms-layout">
+        <div class="symptom-block">
+          <h3>Respiratory &amp; General Symptoms</h3>
+          <ul class="symptom-list">
+            <li>Frequent or unexplained sneezing</li>
+            <li>Persistent runny or blocked nose</li>
+            <li>Itchy or watery eyes</li>
+            <li>Coughing, wheezing, or breathlessness</li>
+            <li>Recurring sore throat or postnasal drip</li>
+            <li>Fatigue or brain fog following exposure to triggers</li>
+            <li>Swelling of the lips, tongue, or throat</li>
+          </ul>
+        </div>
+        <div class="symptom-block">
+          <h3>Skin &amp; Gut Symptoms</h3>
+          <ul class="symptom-list">
+            <li>Red, itchy, or inflamed patches on skin</li>
+            <li>Hives or raised welts appearing suddenly</li>
+            <li>Dry, flaky, or cracked skin (eczema)</li>
+            <li>Rash after eating certain foods or touching surfaces</li>
+            <li>Stomach cramps, bloating, or diarrhoea after food</li>
+            <li>Nausea or vomiting after meals</li>
+            <li>Recurring skin reactions with no clear cause</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section class="approach-section">
+    <div class="container">
+      <div class="approach-grid">
+        <div class="approach-img">
+          <img
+            src="https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?w=800&q=80"
+            alt="Allergy consultation at Trisha Family Clinic, Delhi"
+            loading="lazy"
+          />
+          <div class="approach-badge">
+            <strong>26+ Years</strong>
+            Allergy &amp; Family Medicine
+          </div>
+        </div>
+        <div>
+          <div class="section-label">Our Approach</div>
+          <h2 class="section-title">How We <em>Diagnose &amp; Treat</em> Allergies</h2>
+          <p style="color:var(--muted);font-size:.93rem;margin-bottom:2rem;line-height:1.7;">
+            Our approach is thorough, patient-centred, and evidence-based — getting to the root of your allergy, not just masking its symptoms.
+          </p>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <h4>Detailed Clinical History</h4>
+                <p>A thorough consultation covering your symptoms, triggers, timeline, diet, environment, and family history — the foundation of accurate allergy diagnosis.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <h4>Trigger Identification</h4>
+                <p>Clinical assessment to identify the specific allergens causing your reactions — food, airborne, contact, or drug-related.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <h4>Investigations &amp; Lab Referrals</h4>
+                <p>Referrals to accredited labs for blood tests or skin assessments when required to confirm diagnosis with clinical precision.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-body">
+                <h4>Personalised Care Plan</h4>
+                <p>A tailored management plan — medications, lifestyle modifications, dietary adjustments, and avoidance strategies — designed specifically for you.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">5</div>
+              <div class="step-body">
+                <h4>Follow-Up &amp; Monitoring</h4>
+                <p>Ongoing consultations to review your progress, adjust the plan, and ensure long-term control of your allergy symptoms.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE -->
+  <section class="why-section">
+    <div class="container">
+      <div class="section-label">Why Choose Us</div>
+      <h2 class="section-title">Trusted Allergy Care by a Doctor Who <em>Knows Your Family</em></h2>
+      <p class="section-sub">At Trisha Family Clinic, you get more than a prescription — you get a complete plan and a doctor who stays with you through your recovery.</p>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">🎯</div>
+          <h4>Root Cause Diagnosis</h4>
+          <p>We identify the actual trigger — not just treat the symptom — so your relief is lasting, not temporary.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">👨‍👩‍👧‍👦</div>
+          <h4>All Ages Welcome</h4>
+          <p>From infants with food allergies to elderly patients with skin reactions — we treat every member of your family.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">📋</div>
+          <h4>Personalised Care Plans</h4>
+          <p>No generic protocols. Every patient receives a care plan tailored to their specific allergens, lifestyle, and health goals.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🔬</div>
+          <h4>Evidence-Based Medicine</h4>
+          <p>Every diagnosis and treatment decision is grounded in current clinical evidence — 26 years of experience combined with modern practice.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🏥</div>
+          <h4>Specialist Referrals</h4>
+          <p>When specialist input is needed, we refer to trusted dermatologists and allergists in Delhi — always with proper context and guidance.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">📞</div>
+          <h4>Accessible &amp; Responsive</h4>
+          <p>Same-day consultations available. WhatsApp access for quick follow-up queries between visits.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Common Questions About <em>Allergy Treatment</em></h2>
+      <p class="section-sub">Everything you need to know before your first consultation.</p>
+      <div class="faq-wrap">
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            How do I know if I have an allergy or just a cold?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            Allergies typically produce symptoms that last longer than a week, appear at specific times (seasons, after eating, exposure to pets), and do not include fever. A cold usually resolves in 7–10 days. Dr. Tivender Addhrann can differentiate the two through a detailed consultation and clinical assessment.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Can children develop allergies? At what age?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            Yes. Allergies can appear at any age — including infancy. Food allergies often emerge in the first two years of life, while seasonal and environmental allergies may develop in early childhood or adolescence. Early diagnosis and management make a significant difference in a child's quality of life.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Is allergy treatment a lifelong commitment?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            Not necessarily. Some allergies — particularly childhood food allergies — can be outgrown. Others require ongoing management. Our goal is to reduce your dependence on medications wherever clinically possible, through trigger avoidance and appropriate long-term strategies.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Do I need a referral or test reports before my first visit?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            No prior referral is required. If you have existing test reports or a history of previous allergic reactions, please bring them — but you can walk in without any prior documentation and Dr. Tivender Addhrann will guide you from there.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Are skin allergies the same as skin infections?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            No — skin allergies (like eczema, urticaria, or contact dermatitis) are immune-mediated reactions to specific triggers, while skin infections are caused by bacteria, viruses, or fungi. They look similar but require different treatments. Correct diagnosis is essential to avoid inappropriate medication.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Book Your Allergy Consultation <em>Today</em></h2>
+      <p>Get an accurate diagnosis and a personalised allergy care plan from Dr. Tivender Addhrann at Trisha Family Clinic, Delhi.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn-white">Book Consultation</a>
+        <a href="https://wa.me/919676553666?text=Hello%20Dr.%20Tivender%20Addhrann%2C%20I%20would%20like%20to%20book%20an%20allergy%20consultation." class="btn-outline-white">WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="nav-logo" href="index.html" style="display:inline-flex;margin-bottom:.4rem;">
+          <span class="nav-logo-name" style="color:var(--white);">Dr. Tivender Addhrann</span>
+        </a>
+        <p>MBBS · MPH · Family Physician · Child Health Consultant<br>Trisha Family Clinic · Delhi<br>Trusted clinical care for your entire family — newborns, children, adults, and seniors — all under one compassionate roof for over 26 years.</p>
+        <span class="footer-badge">✓ Verified · Delhi Medical Council · Reg. 10915</span>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="doctor.html">About Doctor</a></li>
+          <li><a href="clinic.html">About Clinic</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#">Child Health</a></li>
+          <li><a href="#">Vaccination</a></li>
+          <li><a href="#">Allergy Treatment</a></li>
+          <li><a href="#">Diabetes Management</a></li>
+          <li><a href="#">Health Checkup</a></li>
+          <li><a href="#">Nutrition</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Trisha Family Clinic · Dr. Tivender Addhrann. All Rights Reserved.</span>
+      <span>Delhi Medical Council Reg. No. 10915 · Member, Delhi Medical Association</span>
+    </div>
+  </footer>
+
+  <script>
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+  </script>
+
+</body>
+</html>
