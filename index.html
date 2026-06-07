@@ -554,7 +554,15 @@ footer ul li a:hover { color: var(--yellow-300); }
           <li><a href="clinic.html"><i class="fa-solid fa-house-chimney-medical"></i> About Clinic</a></li>
         </ul>
       </li>
-      <li><a href="service.html">Services</a></li>
+ <li class="nav-dropdown">
+  <a href="service.html" class="nav-dropdown-toggle">Services <i class="fa-solid fa-chevron-down" style="font-size:10px;margin-left:3px;"></i></a>
+  <ul class="dropdown-menu">
+    <li><a href="vaccination.html"><i class="fa-solid fa-syringe"></i> Vaccination & Immunization</a></li>
+    <li><a href="childhealth.html"><i class="fa-solid fa-baby"></i> Child Health Care</a></li>
+    <li><a href="health-checkup.html"><i class="fa-solid fa-microscope"></i> Health Checkup (General)</a></li>
+    <li><a href="diabetes.html"><i class="fa-solid fa-droplet"></i> Diabetes & Hypertension Management</a></li>
+  </ul>
+</li>
       <li><a href="contact.html" class="active">Contact Us</a></li>
     </ul>
     <a class="nav-book" href="contact.html"><i class="fa-regular fa-calendar-check"></i> Book Consultation</a>
@@ -993,24 +1001,35 @@ Addhrann . All Rights Reserved.</p>
 </a>
 
 <script>
+ 
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }});
   }, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
   document.querySelectorAll('#mobileNav a').forEach(a => {
     a.addEventListener('click', () => document.getElementById('mobileNav').classList.remove('open'));
   });
-  document.querySelector('.nav-dropdown-toggle').addEventListener('click', function(e) {
-  e.preventDefault();
-  const menu = this.nextElementSibling;
-  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-});
-document.addEventListener('click', function(e) {
-  if (!e.target.closest('.nav-dropdown')) {
-    const menu = document.querySelector('.dropdown-menu');
-    if (menu) menu.style.display = 'none';
-  }
-});
+
+  // Dropdown — works for ALL nav dropdowns (About + Services)
+  document.querySelectorAll('.nav-dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      const menu = this.nextElementSibling;
+      const isOpen = menu.style.display === 'block';
+      // Close all first
+      document.querySelectorAll('.nav-dropdown .dropdown-menu').forEach(m => m.style.display = 'none');
+      // Then open this one if it was closed
+      if (!isOpen) menu.style.display = 'block';
+    });
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown .dropdown-menu').forEach(m => m.style.display = 'none');
+    }
+  });
+
 </script>
 </body>
 </html>

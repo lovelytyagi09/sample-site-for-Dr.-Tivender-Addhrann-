@@ -491,17 +491,31 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
 <!-- NAVBAR -->
 <header>
   <nav>
-    <a class="brand" href="#">
+    <a class="brand" href="index.html">
       <div class="brand-icon"><i class="fa-solid fa-stethoscope"></i></div>
       <div>
-        <div class="brand-name">Dr. Tivendra Aadhraan</div>
+        <div class="brand-name">Dr. Tivender Addhrann</div>
         <div class="brand-creds">MBBS · MPH · Family Physician (Adult & Child Health) · Vaccine Specialist · Delhi</div>
       </div>
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="service.html">Services</a></li>
+      <li class="nav-dropdown">
+        <a href="#" class="nav-dropdown-toggle">About <i class="fa-solid fa-chevron-down" style="font-size:10px;margin-left:3px;"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="doctor.html"><i class="fa-solid fa-user-doctor"></i> About Doctor</a></li>
+          <li><a href="clinic.html"><i class="fa-solid fa-house-chimney-medical"></i> About Clinic</a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown">
+        <a href="service.html" class="nav-dropdown-toggle">Services <i class="fa-solid fa-chevron-down" style="font-size:10px;margin-left:3px;"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="vaccination.html"><i class="fa-solid fa-syringe"></i> Vaccination & Immunization</a></li>
+          <li><a href="childhealth.html"><i class="fa-solid fa-baby"></i> Child Health Care</a></li>
+          <li><a href="health-checkup.html"><i class="fa-solid fa-microscope"></i> Health Checkup (General)</a></li>
+          <li><a href="diabetes.html"><i class="fa-solid fa-droplet"></i> Diabetes & Hypertension Management</a></li>
+        </ul>
+      </li>
       <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
     <a class="nav-book" href="#contact-form"><i class="fa-regular fa-calendar-check"></i> Book Consultation</a>
@@ -510,12 +524,14 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
     </button>
   </nav>
   <div class="mobile-nav" id="mobileNav">
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="services.html">Services</a>
-    <a href="#">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="doctor.html">About Doctor</a>
+    <a href="clinic.html">About Clinic</a>
+    <a href="service.html">Services</a>
+    <a href="contact.html">Contact</a>
     <a class="cta" href="#contact-form">Book Consultation</a>
   </div>
+</header>
 </header>
 
 <!-- HERO -->
@@ -814,19 +830,20 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
   document.querySelectorAll('#mobileNav a').forEach(a => {
     a.addEventListener('click', () => document.getElementById('mobileNav').classList.remove('open'));
   });
-
-  // Dropdown toggle
-  document.querySelector('.nav-dropdown-toggle').addEventListener('click', function(e) {
-    e.preventDefault();
-    const menu = this.nextElementSibling;
-    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+// Dropdown toggle (all dropdowns)
+  document.querySelectorAll('.nav-dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      const menu = this.nextElementSibling;
+      const isOpen = menu.style.display === 'block';
+      document.querySelectorAll('.nav-dropdown .dropdown-menu').forEach(m => m.style.display = 'none');
+      if (!isOpen) menu.style.display = 'block';
+    });
   });
 
-  // Close dropdown on outside click
   document.addEventListener('click', function(e) {
     if (!e.target.closest('.nav-dropdown')) {
-      const menu = document.querySelector('.dropdown-menu');
-      if (menu) menu.style.display = 'none';
+      document.querySelectorAll('.nav-dropdown .dropdown-menu').forEach(m => m.style.display = 'none');
     }
   });
 </script>
