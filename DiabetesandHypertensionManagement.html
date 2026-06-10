@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diabetes & Hypertension Management | Dr. Tivender Addhrann – Delhi</title>
+  <meta name="description" content="Expert diabetes and hypertension management at Trisha Family Clinic, Delhi. Personalised blood sugar & blood pressure control, medication optimisation, and long-term chronic disease care by Dr. Tivender Addhrann." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --green-900: #0d3320;
+      --green-800: #1a4a2e;
+      --green-700: #1f5c38;
+      --green-600: #2d7a48;
+      --green-500: #3a9e60;
+      --green-400: #4fc07a;
+      --green-300: #86d4a8;
+      --green-200: #b8e8cc;
+      --green-100: #d6f0e2;
+      --green-50:  #edfaf3;
+      --yellow-500: #f0c200;
+      --yellow-400: #f5d000;
+      --yellow-300: #f9df4a;
+      --yellow-200: #fceea0;
+      --yellow-100: #fef7d0;
+      --yellow-50:  #fffdf0;
+      --sky-100: #e0f4ff;
+      --sky-300: #7dd3fc;
+      --sky-500: #0ea5e9;
+      --pink-100: #fce7f3;
+      --pink-300: #f9a8d4;
+      --pink-500: #ec4899;
+      --purple-100: #f3e8ff;
+      --purple-300: #d8b4fe;
+      --purple-500: #a855f7;
+      --white: #ffffff;
+      --text: #1a3a1a;
+      --muted: #3a5f3a;
+      --border: #c8e8d8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text);
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      background: var(--green-900);
+      color: var(--green-200);
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.45rem 0;
+    }
+    .topbar a { color: var(--green-200); text-decoration: none; }
+    .topbar a:hover { color: var(--yellow-300); }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 0.9rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 16px rgba(13,51,32,0.07);
+    }
+    .navbar-brand {
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--green-900) !important;
+      line-height: 1.25;
+    }
+    .navbar-brand span { display: block; font-size: 0.72rem; font-weight: 500; color: var(--muted); }
+    .nav-link {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text) !important;
+      padding: 0.4rem 0.75rem !important;
+      transition: color .2s;
+    }
+    .nav-link:hover, .nav-link.active { color: var(--green-600) !important; }
+    .dropdown-menu { border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 8px 24px rgba(13,51,32,.1); }
+    .dropdown-item { font-size: 0.88rem; font-weight: 500; color: var(--text); padding: .5rem 1rem; }
+    .dropdown-item:hover { background: var(--green-50); color: var(--green-700); }
+    .btn-book {
+      background: var(--green-700);
+      color: #fff !important;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.45rem 1.2rem;
+      border: none;
+      transition: background .2s, transform .15s;
+    }
+    .btn-book:hover { background: var(--green-900); transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    .service-hero {
+      background: linear-gradient(135deg, var(--green-900) 0%, var(--green-700) 60%, var(--green-500) 100%);
+      padding: 5.5rem 0 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 80% 50%, rgba(79,192,122,0.18) 0%, transparent 65%);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: var(--green-200);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .35rem .9rem;
+      border-radius: 50px;
+      margin-bottom: 1.2rem;
+    }
+    .hero-badge i { margin-right: .4rem; }
+    .service-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .service-hero h1 em { font-style: normal; color: var(--yellow-300); }
+    .service-hero p {
+      color: var(--green-200);
+      font-size: 1.05rem;
+      max-width: 640px;
+      line-height: 1.7;
+      margin-bottom: 1.8rem;
+    }
+    .hero-breadcrumb {
+      font-size: 0.82rem;
+      color: var(--green-300);
+      margin-bottom: 1.2rem;
+    }
+    .hero-breadcrumb a { color: var(--green-300); text-decoration: none; }
+    .hero-breadcrumb a:hover { color: var(--yellow-300); }
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+    .hero-stat strong { display: block; font-size: 1.6rem; font-weight: 800; color: var(--yellow-300); line-height: 1; }
+    .hero-stat span { font-size: 0.78rem; color: var(--green-200); font-weight: 500; }
+    .hero-img-wrap {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(13,51,32,.5);
+    }
+    .hero-img-wrap img { width: 100%; height: 380px; object-fit: cover; display: block; }
+    .hero-img-badge {
+      position: absolute;
+      bottom: 1.2rem; left: 1.2rem;
+      background: rgba(13,51,32,0.85);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: .55rem 1rem;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    /* ── SECTION LABELS ── */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      font-size: 0.73rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--green-600);
+      background: var(--green-50);
+      border: 1px solid var(--green-100);
+      padding: .3rem .85rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+
+    /* ── INTRO OVERVIEW ── */
+    .overview-section { padding: 5rem 0; }
+    .overview-section h2 {
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      color: var(--green-900);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .overview-section h2 em { font-style: normal; color: var(--green-600); }
+    .overview-section p { color: var(--muted); font-size: 1rem; line-height: 1.8; }
+
+    .overview-card {
+      background: var(--green-50);
+      border: 1px solid var(--green-100);
+      border-radius: 16px;
+      padding: 1.6rem;
+      height: 100%;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .overview-card:hover { box-shadow: 0 8px 28px rgba(13,51,32,.1); transform: translateY(-3px); }
+    .overview-card .icon-wrap {
+      width: 50px; height: 50px;
+      background: var(--green-100);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      color: var(--green-700);
+      margin-bottom: 1rem;
+    }
+    .overview-card h5 { font-size: 1rem; font-weight: 700; color: var(--green-900); margin-bottom: .5rem; }
+    .overview-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    /* ── CONDITION TABS SECTION ── */
+    .conditions-section { background: var(--green-50); padding: 5rem 0; }
+    .conditions-section h2 {
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      color: var(--green-900);
+      line-height: 1.2;
+      margin-bottom: .5rem;
+    }
+    .conditions-section h2 em { font-style: normal; color: var(--green-600); }
+
+    .cond-tab-btn {
+      background: #fff;
+      border: 2px solid var(--border);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.92rem;
+      border-radius: 50px;
+      padding: .55rem 1.6rem;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .cond-tab-btn.active, .cond-tab-btn:hover {
+      background: var(--green-700);
+      border-color: var(--green-700);
+      color: #fff;
+    }
+
+    .cond-panel { display: none; }
+    .cond-panel.active { display: block; }
+
+    .cond-image { border-radius: 16px; overflow: hidden; box-shadow: 0 12px 40px rgba(13,51,32,.15); }
+    .cond-image img { width: 100%; height: 340px; object-fit: cover; display: block; }
+
+    .cond-content h3 { font-size: 1.6rem; font-weight: 800; color: var(--green-900); margin-bottom: .75rem; }
+    .cond-content h3 em { font-style: normal; color: var(--green-600); }
+    .cond-content p { color: var(--muted); line-height: 1.8; font-size: .97rem; margin-bottom: 1rem; }
+
+    .symptom-tag {
+      display: inline-block;
+      background: var(--green-100);
+      color: var(--green-800);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: .3rem .8rem;
+      border-radius: 50px;
+      margin: .2rem .2rem .2rem 0;
+    }
+    .symptom-tag.red { background: var(--pink-100); color: #9b1c4a; }
+    .symptom-tag.sky { background: var(--sky-100); color: #0369a1; }
+
+    /* ── CARE APPROACH ── */
+    .approach-section { padding: 5rem 0; }
+    .approach-section h2 {
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      color: var(--green-900);
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .approach-section h2 em { font-style: normal; color: var(--green-600); }
+
+    .step-card {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+      padding: 1.5rem;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      margin-bottom: 1rem;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .step-card:hover { box-shadow: 0 8px 28px rgba(13,51,32,.1); transform: translateY(-2px); }
+    .step-num {
+      width: 44px; height: 44px;
+      background: var(--green-700);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 800;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-card h5 { font-size: 1rem; font-weight: 700; color: var(--green-900); margin-bottom: .35rem; }
+    .step-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    /* ── BLOG SECTION ── */
+    .blog-section { background: var(--green-50); padding: 5rem 0; }
+    .blog-section h2 {
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      color: var(--green-900);
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .blog-section h2 em { font-style: normal; color: var(--green-600); }
+
+    .blog-card {
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow .25s, transform .25s;
+    }
+    .blog-card:hover { box-shadow: 0 12px 40px rgba(13,51,32,.13); transform: translateY(-4px); }
+    .blog-card img { width: 100%; height: 200px; object-fit: cover; display: block; transition: transform .4s; }
+    .blog-card:hover img { transform: scale(1.04); }
+    .blog-img-wrap { overflow: hidden; }
+    .blog-body { padding: 1.4rem; flex: 1; display: flex; flex-direction: column; }
+    .blog-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: .25rem .7rem;
+      border-radius: 50px;
+      margin-bottom: .75rem;
+      background: var(--green-50);
+      color: var(--green-700);
+      border: 1px solid var(--green-100);
+    }
+    .blog-tag.diabetes { background: var(--sky-100); color: #0369a1; border-color: var(--sky-300); }
+    .blog-tag.hypertension { background: var(--pink-100); color: #9b1c4a; border-color: var(--pink-300); }
+    .blog-tag.nutrition { background: var(--yellow-100); color: #7c5c00; border-color: var(--yellow-200); }
+    .blog-tag.lifestyle { background: var(--purple-100); color: #6b21a8; border-color: var(--purple-300); }
+    .blog-body h5 { font-size: 1rem; font-weight: 700; color: var(--green-900); line-height: 1.4; margin-bottom: .5rem; }
+    .blog-body p { font-size: 0.85rem; color: var(--muted); line-height: 1.65; margin-bottom: 1rem; flex: 1; }
+    .blog-meta { display: flex; align-items: center; justify-content: space-between; margin-top: auto; }
+    .blog-read { font-size: 0.78rem; color: var(--muted); }
+    .blog-link {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--green-700);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: .3rem;
+      transition: color .2s;
+    }
+    .blog-link:hover { color: var(--green-900); }
+
+    /* ── WHY CHOOSE ── */
+    .why-section { padding: 5rem 0; }
+    .why-section h2 {
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      color: var(--green-900);
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .why-section h2 em { font-style: normal; color: var(--green-600); }
+
+    .why-card {
+      text-align: center;
+      padding: 2rem 1.4rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: #fff;
+      height: 100%;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .why-card:hover { box-shadow: 0 8px 28px rgba(13,51,32,.1); transform: translateY(-3px); }
+    .why-icon {
+      width: 60px; height: 60px;
+      background: var(--green-50);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+      color: var(--green-600);
+      margin: 0 auto 1rem;
+    }
+    .why-card h5 { font-size: 0.97rem; font-weight: 700; color: var(--green-900); margin-bottom: .4rem; }
+    .why-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    /* ── FAQ ── */
+    .faq-section { background: var(--green-50); padding: 5rem 0; }
+    .faq-section h2 {
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      color: var(--green-900);
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .faq-section h2 em { font-style: normal; color: var(--green-600); }
+    .accordion-button {
+      font-weight: 700;
+      font-size: 0.97rem;
+      color: var(--green-900);
+      background: #fff;
+    }
+    .accordion-button:not(.collapsed) {
+      background: var(--green-50);
+      color: var(--green-700);
+      box-shadow: none;
+    }
+    .accordion-button::after { filter: hue-rotate(100deg); }
+    .accordion-body { font-size: 0.92rem; color: var(--muted); line-height: 1.8; }
+    .accordion-item { border: 1px solid var(--border) !important; border-radius: 12px !important; margin-bottom: .75rem; overflow: hidden; }
+
+    /* ── CTA BANNER ── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--green-900), var(--green-700));
+      padding: 4.5rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(79,192,122,0.2), transparent 60%);
+    }
+    .cta-section h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: .75rem;
+    }
+    .cta-section h2 em { font-style: normal; color: var(--yellow-300); }
+    .cta-section p { color: var(--green-200); font-size: 1rem; margin-bottom: 2rem; }
+    .btn-cta-primary {
+      background: var(--yellow-400);
+      color: var(--green-900);
+      font-weight: 800;
+      font-size: 0.95rem;
+      border-radius: 50px;
+      padding: .75rem 2rem;
+      border: none;
+      text-decoration: none;
+      display: inline-block;
+      transition: background .2s, transform .15s;
+      margin: .3rem;
+    }
+    .btn-cta-primary:hover { background: var(--yellow-300); transform: translateY(-2px); color: var(--green-900); }
+    .btn-cta-outline {
+      background: transparent;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 50px;
+      padding: .75rem 2rem;
+      border: 2px solid rgba(255,255,255,.35);
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color .2s, background .2s, transform .15s;
+      margin: .3rem;
+    }
+    .btn-cta-outline:hover { border-color: #fff; background: rgba(255,255,255,.08); transform: translateY(-2px); color: #fff; }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--green-900);
+      color: var(--green-200);
+      padding: 3.5rem 0 2rem;
+    }
+    .site-footer .brand { font-size: 1rem; font-weight: 800; color: #fff; margin-bottom: .3rem; }
+    .site-footer .brand-sub { font-size: 0.8rem; color: var(--green-300); line-height: 1.6; }
+    .footer-badge {
+      display: inline-block;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.15);
+      color: var(--green-300);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: .25rem .7rem;
+      border-radius: 50px;
+      margin-top: .75rem;
+    }
+    .site-footer h6 { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--green-400); margin-bottom: 1rem; }
+    .footer-links { list-style: none; padding: 0; margin: 0; }
+    .footer-links li { margin-bottom: .45rem; }
+    .footer-links a { font-size: 0.88rem; color: var(--green-300); text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: var(--yellow-300); }
+    .footer-divider { border-color: rgba(255,255,255,.1); margin: 2rem 0 1.5rem; }
+    .footer-copy { font-size: 0.78rem; color: var(--green-400); }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wa-float {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      width: 56px; height: 56px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      font-size: 1.6rem;
+      box-shadow: 0 6px 24px rgba(37,211,102,.4);
+      text-decoration: none;
+      z-index: 2000;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(37,211,102,.55); color: #fff; }
+
+    /* ── SCROLL ANIMATION ── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .55s ease, transform .55s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .3s; }
+    .reveal-delay-4 { transition-delay: .4s; }
+    .reveal-delay-5 { transition-delay: .5s; }
+
+    @media (max-width: 768px) {
+      .hero-stats { gap: 1.2rem; }
+      .hero-img-wrap { margin-top: 2rem; }
+      .hero-img-wrap img { height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+919676553666"><i class="bi bi-telephone-fill me-1"></i>+91 9676553666</a>
+        <span class="d-none d-sm-inline" style="color:var(--green-600)">|</span>
+        <span class="d-none d-sm-inline"><i class="bi bi-geo-alt-fill me-1"></i>Delhi, India</span>
+      </div>
+      <a href="https://wa.me/919676553666?text=Hello%20Dr.%20Tivender%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank">
+        <i class="bi bi-whatsapp me-1"></i>Available on WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        Dr. Tivender Addhrann
+        <span>MBBS · MPH · Family Physician & Vaccine Specialist · Delhi</span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="doctor.html">About Doctor</a></li>
+              <li><a class="dropdown-item" href="clinic.html">About Clinic</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="service.html" data-bs-toggle="dropdown">Services</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="vaccination.html">Vaccination & Immunization</a></li>
+              <li><a class="dropdown-item" href="childhealth.html">Child Health Care</a></li>
+              <li><a class="dropdown-item" href="health-checkup.html">Health Checkup (General)</a></li>
+              <li><a class="dropdown-item fw-bold" href="diabetes.html" style="color:var(--green-700)">Diabetes & Hypertension Management</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="btn-book" href="contact.html">Book Consultation</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="service-hero">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6">
+          <div class="hero-breadcrumb">
+            <a href="index.html">Home</a> ›
+            <a href="service.html">Services</a> ›
+            Diabetes & Hypertension Management
+          </div>
+          <div class="hero-badge"><i class="bi bi-heart-pulse-fill"></i> Chronic Disease Care</div>
+          <h1>Diabetes & <em>Hypertension</em> Management</h1>
+          <p>Personalised blood sugar & blood pressure control, medication optimisation, lifestyle coaching, and long-term chronic disease care — all under one trusted roof in Delhi.</p>
+          <div class="hero-stats">
+            <div class="hero-stat"><strong>26+</strong><span>Years Experience</span></div>
+            <div class="hero-stat"><strong>2-in-1</strong><span>Conditions Managed</span></div>
+            <div class="hero-stat"><strong>All</strong><span>Age Groups</span></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="hero-img-wrap">
+            <img src="https://images.unsplash.com/photo-1631563019676-5fcf6977dc25?w=800&q=80" alt="Diabetes and Hypertension Management at Trisha Family Clinic" />
+            <div class="hero-img-badge"><i class="bi bi-shield-check me-1"></i> Delhi's Trusted Chronic Care Specialist</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="overview-section">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-5 reveal">
+          <div class="section-label"><i class="bi bi-activity"></i> What We Treat</div>
+          <h2>Complete Care for <em>Chronic Conditions</em></h2>
+          <p class="mt-3">Diabetes and hypertension are among the most common — and most manageable — chronic conditions. At Trisha Family Clinic, Dr. Tivender provides comprehensive, patient-centred care that goes beyond prescriptions to address root causes, lifestyle, and long-term health outcomes.</p>
+          <p class="mt-2">Whether you are newly diagnosed, struggling with control, or managing multiple conditions together, we create a personalised plan tailored to your unique clinical profile.</p>
+        </div>
+        <div class="col-lg-7">
+          <div class="row g-3">
+            <div class="col-sm-6 reveal reveal-delay-1">
+              <div class="overview-card">
+                <div class="icon-wrap"><i class="bi bi-droplet-half"></i></div>
+                <h5>Blood Sugar Control</h5>
+                <p>Regular HbA1c monitoring, fasting & postprandial glucose assessment, and insulin optimisation for Type 1 & Type 2 diabetes.</p>
+              </div>
+            </div>
+            <div class="col-sm-6 reveal reveal-delay-2">
+              <div class="overview-card">
+                <div class="icon-wrap"><i class="bi bi-heart-pulse"></i></div>
+                <h5>Blood Pressure Management</h5>
+                <p>Evidence-based antihypertensive therapy, lifestyle modifications, and ABPM (ambulatory monitoring) for accurate diagnosis.</p>
+              </div>
+            </div>
+            <div class="col-sm-6 reveal reveal-delay-3">
+              <div class="overview-card">
+                <div class="icon-wrap"><i class="bi bi-capsule"></i></div>
+                <h5>Medication Optimisation</h5>
+                <p>Regular review and rationalisation of medications to reduce side effects, drug interactions, and polypharmacy burden.</p>
+              </div>
+            </div>
+            <div class="col-sm-6 reveal reveal-delay-4">
+              <div class="overview-card">
+                <div class="icon-wrap"><i class="bi bi-graph-up-arrow"></i></div>
+                <h5>Long-Term Follow-Up</h5>
+                <p>Scheduled reviews, complication screening (kidney, eye, nerve, heart), and proactive care to prevent disease progression.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONDITIONS -->
+  <section class="conditions-section">
+    <div class="container">
+      <div class="text-center mb-5 reveal">
+        <div class="section-label"><i class="bi bi-book-medical"></i> Understanding Your Condition</div>
+        <h2>Know Your <em>Condition Better</em></h2>
+        <p class="text-muted mt-2" style="max-width:560px; margin:auto;">Informed patients manage their conditions better. Learn about both conditions Dr. Tivender treats at Trisha Family Clinic.</p>
+      </div>
+
+      <!-- Tab Buttons -->
+      <div class="d-flex justify-content-center gap-3 mb-5 flex-wrap reveal">
+        <button class="cond-tab-btn active" onclick="showTab('diabetes', this)">
+          <i class="bi bi-droplet-half me-2"></i>Diabetes Mellitus
+        </button>
+        <button class="cond-tab-btn" onclick="showTab('hypertension', this)">
+          <i class="bi bi-heart-pulse me-2"></i>Hypertension
+        </button>
+      </div>
+
+      <!-- Diabetes Panel -->
+      <div class="cond-panel active" id="panel-diabetes">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-5 reveal">
+            <div class="cond-image">
+              <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=700&q=80" alt="Diabetes management" />
+            </div>
+          </div>
+          <div class="col-lg-7 cond-content reveal reveal-delay-2">
+            <div class="section-label"><i class="bi bi-droplet-half"></i> Diabetes Mellitus</div>
+            <h3>Managing <em>Diabetes</em> with Precision</h3>
+            <p>Diabetes is a chronic metabolic condition affecting how your body processes blood sugar (glucose). Left unmanaged, it can damage the kidneys, eyes, nerves, and heart. Dr. Tivender provides complete Type 1, Type 2, and pre-diabetes care with individualised treatment plans.</p>
+            <p><strong style="color:var(--green-800)">Common Symptoms to Watch:</strong></p>
+            <div class="mb-3">
+              <span class="symptom-tag sky">Frequent urination</span>
+              <span class="symptom-tag sky">Excessive thirst</span>
+              <span class="symptom-tag sky">Unexplained weight loss</span>
+              <span class="symptom-tag sky">Fatigue & weakness</span>
+              <span class="symptom-tag sky">Blurred vision</span>
+              <span class="symptom-tag sky">Slow-healing wounds</span>
+              <span class="symptom-tag sky">Tingling in feet/hands</span>
+            </div>
+            <p><strong style="color:var(--green-800)">What We Monitor:</strong></p>
+            <div>
+              <span class="symptom-tag">HbA1c (3-monthly)</span>
+              <span class="symptom-tag">Fasting Blood Sugar</span>
+              <span class="symptom-tag">Postprandial Glucose</span>
+              <span class="symptom-tag">Kidney Function (eGFR)</span>
+              <span class="symptom-tag">Lipid Profile</span>
+              <span class="symptom-tag">Foot Examination</span>
+              <span class="symptom-tag">Eye Referral (annual)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hypertension Panel -->
+      <div class="cond-panel" id="panel-hypertension">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-5 reveal">
+            <div class="cond-image">
+              <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=700&q=80" alt="Hypertension blood pressure management" />
+            </div>
+          </div>
+          <div class="col-lg-7 cond-content reveal reveal-delay-2">
+            <div class="section-label"><i class="bi bi-heart-pulse"></i> Hypertension</div>
+            <h3>Controlling <em>Blood Pressure</em> Effectively</h3>
+            <p>Hypertension (high blood pressure) is often called the "silent killer" because it causes no obvious symptoms until serious complications — stroke, heart attack, kidney failure — occur. Consistent monitoring and treatment are vital.</p>
+            <p><strong style="color:var(--green-800)">Warning Signs (often absent — hence "silent"):</strong></p>
+            <div class="mb-3">
+              <span class="symptom-tag red">Severe headaches</span>
+              <span class="symptom-tag red">Dizziness or vertigo</span>
+              <span class="symptom-tag red">Nose bleeds</span>
+              <span class="symptom-tag red">Chest discomfort</span>
+              <span class="symptom-tag red">Shortness of breath</span>
+              <span class="symptom-tag red">Visual disturbances</span>
+            </div>
+            <p><strong style="color:var(--green-800)">Our Management Protocol:</strong></p>
+            <div>
+              <span class="symptom-tag">Regular BP Monitoring</span>
+              <span class="symptom-tag">24-hr Ambulatory BP</span>
+              <span class="symptom-tag">ECG Assessment</span>
+              <span class="symptom-tag">Kidney Function Tests</span>
+              <span class="symptom-tag">Salt & Fluid Guidance</span>
+              <span class="symptom-tag">Medication Review</span>
+              <span class="symptom-tag">Stress Management</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARE APPROACH -->
+  <section class="approach-section">
+    <div class="container">
+      <div class="row gy-5 align-items-center">
+        <div class="col-lg-5 reveal">
+          <div class="section-label"><i class="bi bi-clipboard2-pulse"></i> Our Approach</div>
+          <h2>How We <em>Manage</em> Your Condition</h2>
+          <p class="mt-3 text-muted">A structured, step-by-step care protocol ensures you receive consistent, evidence-based management that adapts to your body's response over time.</p>
+          <div class="mt-4 p-4 rounded-4" style="background:var(--green-50); border:1px solid var(--green-100)">
+            <p class="mb-1" style="font-size:.88rem; font-weight:700; color:var(--green-800)"><i class="bi bi-info-circle-fill me-2" style="color:var(--green-500)"></i>Did You Know?</p>
+            <p class="mb-0" style="font-size:.85rem; color:var(--muted)">Over 77 million Indians have Type 2 diabetes, and nearly 1 in 4 adults has hypertension. Both conditions are highly manageable with the right clinical partnership.</p>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="step-card reveal reveal-delay-1">
+            <div class="step-num">1</div>
+            <div>
+              <h5>Initial Comprehensive Assessment</h5>
+              <p>Detailed history, physical examination, and baseline investigations — blood sugar panel, HbA1c, lipid profile, kidney function, ECG, and blood pressure assessment across multiple readings.</p>
+            </div>
+          </div>
+          <div class="step-card reveal reveal-delay-2">
+            <div class="step-num">2</div>
+            <div>
+              <h5>Personalised Treatment Plan</h5>
+              <p>An individualised clinical plan combining the right medications, dietary targets, exercise goals, and lifestyle modifications — tailored to your age, weight, co-morbidities, and lifestyle.</p>
+            </div>
+          </div>
+          <div class="step-card reveal reveal-delay-3">
+            <div class="step-num">3</div>
+            <div>
+              <h5>Regular Monitoring & Medication Review</h5>
+              <p>Scheduled follow-ups every 3 months (or more frequently if unstable) to review blood sugar and BP readings, adjust medications, and screen for early complications.</p>
+            </div>
+          </div>
+          <div class="step-card reveal reveal-delay-4">
+            <div class="step-num">4</div>
+            <div>
+              <h5>Complication Prevention & Referral</h5>
+              <p>Annual diabetic foot exams, kidney function monitoring, retinal screening referrals, and cardiac risk assessment to catch complications before they become serious.</p>
+            </div>
+          </div>
+          <div class="step-card reveal reveal-delay-5">
+            <div class="step-num">5</div>
+            <div>
+              <h5>Patient Education & Self-Management</h5>
+              <p>We empower you to understand your condition — teaching glucose self-monitoring, recognising warning signs, and making confident lifestyle decisions between visits.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG / HEALTH ARTICLES -->
+  <section class="blog-section">
+    <div class="container">
+      <div class="text-center mb-5 reveal">
+        <div class="section-label"><i class="bi bi-journal-text"></i> Health Blog</div>
+        <h2>Know More About <em>Diabetes & Blood Pressure</em></h2>
+        <p class="text-muted mt-2" style="max-width:560px; margin:auto;">Evidence-based articles by Dr. Tivender Addhrann to help you understand and manage your condition better.</p>
+      </div>
+      <div class="row g-4">
+
+        <!-- Blog 1 -->
+        <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+          <div class="blog-card">
+            <div class="blog-img-wrap">
+              <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&q=80" alt="Diabetes warning signs" />
+            </div>
+            <div class="blog-body">
+              <span class="blog-tag diabetes">Diabetes</span>
+              <h5>10 Early Warning Signs of Diabetes You Shouldn't Ignore</h5>
+              <p>Frequent thirst, fatigue, and blurry vision are not just tiredness — they may be your body signalling uncontrolled blood sugar. Dr. Tivender explains what to watch for.</p>
+              <div class="blog-meta">
+                <span class="blog-read"><i class="bi bi-clock me-1"></i>5 min read</span>
+                <a href="contact.html" class="blog-link">Read More <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog 2 -->
+        <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+          <div class="blog-card">
+            <div class="blog-img-wrap">
+              <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&q=80" alt="Blood pressure monitoring" />
+            </div>
+            <div class="blog-body">
+              <span class="blog-tag hypertension">Hypertension</span>
+              <h5>Why Hypertension is Called the Silent Killer — And What to Do About It</h5>
+              <p>Most people with high blood pressure feel completely fine. That's exactly what makes it dangerous. Here's how to detect, monitor, and control it effectively.</p>
+              <div class="blog-meta">
+                <span class="blog-read"><i class="bi bi-clock me-1"></i>6 min read</span>
+                <a href="contact.html" class="blog-link">Read More <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog 3 -->
+        <div class="col-md-6 col-lg-4 reveal reveal-delay-3">
+          <div class="blog-card">
+            <div class="blog-img-wrap">
+              <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80" alt="Diabetic diet plan" />
+            </div>
+            <div class="blog-body">
+              <span class="blog-tag nutrition">Nutrition</span>
+              <h5>The Best Diet for Diabetics in India — A Doctor's Practical Guide</h5>
+              <p>Rotis, rice, dal, and sabzi — can an Indian diet work for diabetes? Dr. Tivender shares practical, culturally relevant dietary strategies that actually work.</p>
+              <div class="blog-meta">
+                <span class="blog-read"><i class="bi bi-clock me-1"></i>7 min read</span>
+                <a href="contact.html" class="blog-link">Read More <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog 4 -->
+        <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+          <div class="blog-card">
+            <div class="blog-img-wrap">
+              <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="Exercise for diabetes" />
+            </div>
+            <div class="blog-body">
+              <span class="blog-tag lifestyle">Lifestyle</span>
+              <h5>Exercise & Diabetes: How Much Is Enough, and What Type Is Best?</h5>
+              <p>Walking, yoga, or strength training — what helps most with blood sugar control? Dr. Tivender explains how to safely build an exercise routine if you have diabetes.</p>
+              <div class="blog-meta">
+                <span class="blog-read"><i class="bi bi-clock me-1"></i>5 min read</span>
+                <a href="contact.html" class="blog-link">Read More <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog 5 -->
+        <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+          <div class="blog-card">
+            <div class="blog-img-wrap">
+              <img src="https://images.unsplash.com/photo-1576671081837-49000212a370?w=600&q=80" alt="HbA1c test explained" />
+            </div>
+            <div class="blog-body">
+              <span class="blog-tag diabetes">Diabetes</span>
+              <h5>What Is HbA1c and Why It Matters More Than Your Fasting Sugar</h5>
+              <p>Fasting sugar only shows one moment in time. HbA1c reveals your average blood sugar over 3 months. Understanding this number is key to long-term diabetes control.</p>
+              <div class="blog-meta">
+                <span class="blog-read"><i class="bi bi-clock me-1"></i>4 min read</span>
+                <a href="contact.html" class="blog-link">Read More <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog 6 -->
+        <div class="col-md-6 col-lg-4 reveal reveal-delay-3">
+          <div class="blog-card">
+            <div class="blog-img-wrap">
+              <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=600&q=80" alt="Diabetes and hypertension together" />
+            </div>
+            <div class="blog-body">
+              <span class="blog-tag hypertension">Hypertension</span>
+              <h5>When Diabetes and Hypertension Occur Together — Managing Both Safely</h5>
+              <p>Over 75% of Type 2 diabetics also have high blood pressure. This combination significantly raises cardiac and kidney risk. Here's how Dr. Tivender manages both.</p>
+              <div class="blog-meta">
+                <span class="blog-read"><i class="bi bi-clock me-1"></i>6 min read</span>
+                <a href="contact.html" class="blog-link">Read More <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY DR. TIVENDER -->
+  <section class="why-section">
+    <div class="container">
+      <div class="text-center mb-5 reveal">
+        <div class="section-label"><i class="bi bi-patch-check"></i> Why Choose Us</div>
+        <h2>Why Choose <em>Dr. Tivender</em> for Chronic Care?</h2>
+        <p class="text-muted mt-2" style="max-width:540px; margin:auto;">More than 26 years of clinical experience and a patient-first philosophy make Trisha Family Clinic Delhi's trusted destination for diabetes and hypertension care.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-3 reveal reveal-delay-1">
+          <div class="why-card">
+            <div class="why-icon"><i class="bi bi-person-badge"></i></div>
+            <h5>26+ Years Experience</h5>
+            <p>Decades of hands-on chronic disease management across diverse patient profiles — from young adults to seniors.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 reveal reveal-delay-2">
+          <div class="why-card">
+            <div class="why-icon"><i class="bi bi-diagram-3"></i></div>
+            <h5>Whole-Body Approach</h5>
+            <p>Treating diabetes and hypertension together, considering all co-morbidities, medications, and lifestyle factors holistically.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 reveal reveal-delay-3">
+          <div class="why-card">
+            <div class="why-icon"><i class="bi bi-calendar-check"></i></div>
+            <h5>Structured Follow-Ups</h5>
+            <p>Scheduled 3-month reviews keep your condition under control and catch early warning signs before they escalate.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 reveal reveal-delay-4">
+          <div class="why-card">
+            <div class="why-icon"><i class="bi bi-house-heart"></i></div>
+            <h5>Family-Centred Care</h5>
+            <p>One clinic for all ages — your entire family can manage their chronic conditions under one trusted, familiar doctor.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="text-center mb-5 reveal">
+        <div class="section-label"><i class="bi bi-question-circle"></i> FAQs</div>
+        <h2>Common Questions About <em>Diabetes & Hypertension</em></h2>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-9 reveal">
+          <div class="accordion" id="faqAccordion">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                  How often should I check my blood sugar at home?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  For Type 2 diabetics on oral medication, Dr. Tivender typically recommends checking fasting blood sugar 2–3 times per week and postprandial sugar once a week. Those on insulin should check daily or as advised. Your glucometer readings, combined with a quarterly HbA1c test, give the most complete picture of your control.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                  Can diabetes be reversed or is it lifelong?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Type 2 diabetes can go into remission — especially in early stages — with significant weight loss, dietary changes, and exercise. "Reversal" means maintaining normal blood sugar without medication. However, this requires sustained lifestyle changes and regular monitoring. Dr. Tivender will assess your specific case and advise a realistic, achievable goal.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                  What is a safe blood pressure target?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  For most adults, a target below 130/80 mmHg is recommended. For diabetics or those with kidney disease, tighter control may be needed. For elderly patients, Dr. Tivender individualises targets to avoid the risks of over-lowering blood pressure, which can cause falls and dizziness.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                  Do I need to take BP medications forever?
+                </button>
+              </h2>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  In most cases, yes — hypertension is a long-term condition. However, significant lifestyle changes (weight loss, reduced salt, regular exercise, quitting smoking) can sometimes allow dose reduction. Stopping medication without medical advice is dangerous and can trigger rebound hypertension. Dr. Tivender reviews your need for medication at every follow-up.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                  Can children or young adults get Type 2 diabetes or hypertension?
+                </button>
+              </h2>
+              <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Yes — increasingly so. Rising obesity rates, sedentary lifestyles, and high-sugar diets have made both conditions common in younger Indians. Dr. Tivender sees and manages chronic conditions across all age groups at Trisha Family Clinic, and recommends annual screening for children with a family history of diabetes or obesity.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                  What complications should I watch out for?
+                </button>
+              </h2>
+              <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Uncontrolled diabetes can lead to diabetic nephropathy (kidney damage), retinopathy (eye damage), neuropathy (nerve damage), and increased cardiovascular risk. Uncontrolled hypertension raises the risk of stroke, heart attack, heart failure, and kidney failure. At Trisha Family Clinic, annual complication screening is built into your care plan to detect these early.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container position-relative">
+      <div class="section-label" style="background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.25); color:var(--green-200); margin-bottom:1.2rem;">
+        <i class="bi bi-calendar2-check"></i> Book Appointment
+      </div>
+      <h2>Take Control of Your <em>Health Today</em></h2>
+      <p>Same-day consultations available · Complete chronic disease records maintained · All age groups</p>
+      <div>
+        <a href="contact.html" class="btn-cta-primary"><i class="bi bi-calendar2-check me-2"></i>Book Appointment</a>
+        <a href="https://wa.me/919676553666?text=Hello%20Dr.%20Tivender%2C%20I%20want%20to%20book%20a%20diabetes%20or%20hypertension%20consultation." target="_blank" class="btn-cta-outline"><i class="bi bi-whatsapp me-2"></i>WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-4">
+          <div class="brand">Dr. Tivender Addhrann</div>
+          <div class="brand-sub mt-1">
+            MBBS · MPH · Family Physician (Adult & Child Health) · Vaccine Specialist<br>
+            Trisha Family Clinic · Delhi<br><br>
+            Trusted clinical care for your entire family — newborns, children, adults, and seniors — all under one compassionate roof for over 26 years.
+          </div>
+          <div class="footer-badge"><i class="bi bi-patch-check-fill me-1"></i>Verified · Delhi Medical Council · Reg. 10915</div>
+        </div>
+        <div class="col-sm-6 col-lg-2 offset-lg-1">
+          <h6>Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="doctor.html">About Doctor</a></li>
+            <li><a href="clinic.html">About Clinic</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <h6>Services</h6>
+          <ul class="footer-links">
+            <li><a href="childhealth.html">Child Health</a></li>
+            <li><a href="vaccination.html">Vaccination</a></li>
+            <li><a href="service.html">Allergy Treatment</a></li>
+            <li><a href="diabetes.html" style="color:var(--yellow-300)">Diabetes Management</a></li>
+            <li><a href="diabetes.html" style="color:var(--yellow-300)">Hypertension</a></li>
+            <li><a href="service.html">Nutrition Consultation</a></li>
+            <li><a href="health-checkup.html">Health Checkup</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <h6>Contact</h6>
+          <ul class="footer-links">
+            <li><a href="tel:+919676553666"><i class="bi bi-telephone me-1"></i>+91 9676553666</a></li>
+            <li><span style="font-size:.88rem; color:var(--green-300)"><i class="bi bi-geo-alt me-1"></i>Trisha Family Clinic, Delhi</span></li>
+            <li class="mt-2"><a href="https://wa.me/919676553666" target="_blank"><i class="bi bi-whatsapp me-1"></i>Chat on WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="footer-copy text-center">
+        © 2025 Trisha Family Clinic · Dr. Tivender Addhrann. All Rights Reserved.<br>
+        Delhi Medical Council Reg. No. 10915 · Member, Delhi Medical Association
+      </p>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/919676553666?text=Hello%20Dr.%20Tivender%20Addhrann%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" class="wa-float" aria-label="Chat on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Tab switcher
+    function showTab(tab, btn) {
+      document.querySelectorAll('.cond-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.cond-tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('panel-' + tab).classList.add('active');
+      btn.classList.add('active');
+      // re-trigger reveal for newly shown panel
+      document.querySelectorAll('#panel-' + tab + ' .reveal').forEach(el => {
+        el.classList.remove('visible');
+        setTimeout(() => el.classList.add('visible'), 50);
+      });
+    }
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Navbar scroll shadow
+    window.addEventListener('scroll', () => {
+      document.querySelector('.navbar').style.boxShadow =
+        window.scrollY > 10 ? '0 4px 24px rgba(13,51,32,.12)' : '0 2px 16px rgba(13,51,32,.07)';
+    });
+  </script>
+
+</body>
+</html>

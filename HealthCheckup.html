@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Health Checkup (General) | Dr. Tivender Addhrann – Delhi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; color: #1a3a1a; background: #fff; overflow-x: hidden; }
+
+    :root {
+      --green-900: #0d3320;
+      --green-800: #1a4a2e;
+      --green-700: #1f5c38;
+      --green-600: #2d7a48;
+      --green-500: #3a9e60;
+      --green-400: #4fc07a;
+      --green-300: #86d4a8;
+      --green-200: #b8e8cc;
+      --green-100: #d6f0e2;
+      --green-50:  #edfaf3;
+      --yellow-500: #f0c200;
+      --yellow-400: #f5d000;
+      --yellow-300: #f9df4a;
+      --yellow-200: #fceea0;
+      --yellow-100: #fef7d0;
+      --yellow-50:  #fffdf0;
+      --sky-100: #e0f4ff;
+      --sky-300: #7dd3fc;
+      --sky-500: #0ea5e9;
+      --pink-100: #fce7f3;
+      --pink-300: #f9a8d4;
+      --pink-500: #ec4899;
+      --purple-100: #f3e8ff;
+      --purple-300: #d8b4fe;
+      --purple-500: #a855f7;
+      --white: #ffffff;
+      --text: #1a3a1a;
+      --muted: #3a5f3a;
+      --border: #c8e8d8;
+    }
+
+    /* ── TOPBAR ── */
+    .topbar {
+      background: var(--green-900);
+      padding: 9px 0;
+      font-size: 12px;
+      color: rgba(255,255,255,.7);
+    }
+    .topbar .wrap {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; gap: 28px; flex-wrap: wrap;
+    }
+    .ti { display: flex; align-items: center; gap: 7px; }
+    .ti i { color: var(--yellow-400); font-size: 11px; }
+    .ti a { color: rgba(255,255,255,.8); text-decoration: none; transition: color .2s; }
+    .ti a:hover { color: var(--yellow-300); }
+
+    /* ── NAVBAR ── */
+    header {
+      position: sticky; top: 0; z-index: 999;
+      background: #fff;
+      border-bottom: 2px solid var(--green-100);
+      box-shadow: 0 4px 24px rgba(26,74,46,.08);
+    }
+    nav {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px; height: 74px;
+    }
+    .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .brand-icon {
+      width: 48px; height: 48px; border-radius: 14px;
+      background: linear-gradient(135deg, var(--green-600), var(--green-800));
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 20px; flex-shrink: 0;
+      box-shadow: 0 4px 14px rgba(45,122,72,.3);
+    }
+    .brand-name { font-size: 15.5px; font-weight: 800; color: var(--text); line-height: 1.2; font-family: 'Playfair Display', serif; }
+    .brand-creds { font-size: 11px; color: var(--muted); font-weight: 400; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 600; transition: color .2s; }
+    .nav-links a:hover { color: var(--green-600); }
+    .nav-book {
+      background: var(--yellow-400); color: var(--green-900); text-decoration: none;
+      padding: 11px 22px; border-radius: 10px; font-size: 13.5px; font-weight: 800;
+      transition: all .2s; white-space: nowrap; display: flex; align-items: center; gap: 7px;
+      box-shadow: 0 4px 16px rgba(240,194,0,.35);
+    }
+    .nav-book:hover { background: var(--yellow-500); transform: translateY(-1px); }
+    .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
+    .hamburger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; display: block; }
+    .mobile-nav {
+      display: none; flex-direction: column;
+      background: #fff; border-top: 1px solid var(--border);
+      position: fixed; top: 74px; left: 0; right: 0; z-index: 998;
+      box-shadow: 0 8px 32px rgba(0,0,0,.1);
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { padding: 16px 24px; text-decoration: none; color: var(--text); font-size: 15px; font-weight: 600; border-bottom: 1px solid var(--border); }
+    .mobile-nav a.cta { background: var(--yellow-400); color: var(--green-900); text-align: center; font-weight: 800; border: none; }
+
+    /* ── NAV DROPDOWN ── */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-toggle { display: flex; align-items: center; }
+    .dropdown-menu {
+      display: none;
+      position: absolute; top: calc(100% + 12px); left: 50%;
+      transform: translateX(-50%);
+      background: #fff; border-radius: 12px;
+      border: 1.5px solid var(--green-100);
+      box-shadow: 0 12px 40px rgba(26,74,46,.13);
+      list-style: none; min-width: 200px;
+      padding: 8px; z-index: 1000;
+    }
+    .dropdown-menu::before {
+      content: '';
+      position: absolute; top: -6px; left: 50%; transform: translateX(-50%);
+      width: 12px; height: 12px; background: #fff;
+      border-left: 1.5px solid var(--green-100);
+      border-top: 1.5px solid var(--green-100);
+      rotate: 45deg;
+    }
+    .dropdown-menu li a {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 14px; border-radius: 8px;
+      color: var(--text); font-size: 14px; font-weight: 600;
+      transition: background .15s, color .15s;
+      text-decoration: none;
+    }
+    .dropdown-menu li a i { color: var(--green-500); font-size: 15px; }
+    .dropdown-menu li a:hover { background: var(--green-50); color: var(--green-700); }
+
+    /* ── SHARED ── */
+    .container-main { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── HERO ── */
+    .hero-section {
+      background: linear-gradient(135deg, var(--green-900) 0%, var(--green-700) 60%, var(--green-500) 100%);
+      padding: 5rem 0 3.5rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .4rem;
+      background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2);
+      color: var(--green-200); font-size: .75rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+      padding: .35rem .9rem; border-radius: 2rem; margin-bottom: 1.25rem;
+    }
+    .hero-section h1 { color: #fff; font-size: clamp(2rem,4.5vw,3rem); font-weight: 800; line-height: 1.2; font-family: 'Playfair Display', serif; }
+    .hero-section h1 em { font-style: italic; color: var(--yellow-300); }
+    .hero-section p { color: var(--green-200); font-size: 1.05rem; line-height: 1.7; max-width: 600px; }
+    .breadcrumb-hero { font-size: .82rem; color: var(--green-300); }
+    .breadcrumb-hero a { color: var(--green-300); text-decoration: none; }
+    .breadcrumb-hero a:hover { color: var(--yellow-300); }
+    .hero-stat-pill {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15);
+      color: #fff; border-radius: 2rem; padding: .5rem 1rem; font-size: .82rem;
+    }
+    .hero-stat-pill strong { font-size: 1.1rem; color: var(--yellow-300); }
+    .hero-img-wrap {
+      position: relative; border-radius: 1.25rem; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+    }
+    .hero-img-wrap img { width: 100%; height: 340px; object-fit: cover; display: block; }
+    .hero-img-badge {
+      position: absolute; bottom: 1rem; left: 1rem;
+      background: var(--green-900); color: var(--green-200);
+      padding: .55rem 1rem; border-radius: .75rem; font-size: .78rem; font-weight: 600;
+    }
+
+    /* ── SECTION LABELS ── */
+    .section-label {
+      display: inline-flex; align-items: center; gap: .4rem;
+      color: var(--green-600); font-size: .74rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase; margin-bottom: .75rem;
+    }
+    .section-label::before { content: ''; width: 22px; height: 2px; background: var(--green-500); }
+
+    /* ── WHY CHECKUP ── */
+    .why-section { padding: 5rem 0; background: var(--green-50); }
+    .why-card {
+      background: #fff; border: 1px solid var(--border); border-radius: 1rem;
+      padding: 1.75rem 1.5rem; transition: box-shadow .2s, transform .2s;
+    }
+    .why-card:hover { box-shadow: 0 8px 30px rgba(13,51,32,.12); transform: translateY(-3px); }
+    .why-icon {
+      width: 52px; height: 52px; border-radius: .85rem;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; margin-bottom: 1rem;
+    }
+
+    /* ── PACKAGES ── */
+    .packages-section { padding: 5rem 0; }
+    .pkg-card {
+      border: 2px solid var(--border); border-radius: 1.25rem; overflow: hidden;
+      transition: box-shadow .25s, border-color .25s; background: #fff;
+    }
+    .pkg-card:hover, .pkg-card.featured { border-color: var(--green-400); box-shadow: 0 12px 40px rgba(58,158,96,.18); }
+    .pkg-card.featured { border-color: var(--green-500); }
+    .pkg-header { padding: 1.75rem 1.75rem 1.25rem; border-bottom: 1px solid var(--border); }
+    .pkg-badge {
+      display: inline-block; font-size: .68rem; font-weight: 700; letter-spacing: .07em;
+      text-transform: uppercase; padding: .25rem .75rem; border-radius: 2rem; margin-bottom: .75rem;
+    }
+    .pkg-name { font-size: 1.3rem; font-weight: 800; color: var(--green-800); font-family: 'Playfair Display', serif; }
+    .pkg-desc { font-size: .87rem; color: var(--muted); line-height: 1.6; }
+    .pkg-body { padding: 1.5rem 1.75rem; }
+    .pkg-item { display: flex; align-items: flex-start; gap: .65rem; font-size: .88rem; margin-bottom: .65rem; color: var(--text); }
+    .pkg-item i { color: var(--green-500); font-size: .95rem; margin-top: .15rem; flex-shrink: 0; }
+    .pkg-footer { padding: 1.25rem 1.75rem; border-top: 1px solid var(--border); }
+    .featured-ribbon {
+      background: var(--green-600); color: #fff;
+      text-align: center; font-size: .72rem; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; padding: .4rem;
+    }
+
+    /* ── WHAT TO EXPECT ── */
+    .expect-section { padding: 5rem 0; background: var(--green-50); }
+    .step-item { display: flex; gap: 1.25rem; align-items: flex-start; }
+    .step-num {
+      width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+      background: var(--green-700); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .88rem; font-weight: 800;
+    }
+    .step-connector { width: 2px; height: 32px; background: var(--border); margin: .3rem 0 .3rem 21px; }
+
+    /* ── WHO NEEDS ── */
+    .who-section { padding: 5rem 0; }
+    .who-card {
+      background: #fff; border: 1px solid var(--border); border-radius: 1rem;
+      padding: 1.5rem; text-align: center; transition: box-shadow .2s;
+    }
+    .who-card:hover { box-shadow: 0 6px 24px rgba(13,51,32,.1); }
+    .who-card img { width: 100%; height: 180px; object-fit: cover; border-radius: .75rem; margin-bottom: 1rem; }
+
+    /* ── BLOG ── */
+    .blog-section { padding: 5rem 0; background: var(--green-50); }
+    .blog-card {
+      background: #fff; border: 1px solid var(--border); border-radius: 1.25rem;
+      overflow: hidden; transition: box-shadow .2s, transform .2s;
+    }
+    .blog-card:hover { box-shadow: 0 10px 35px rgba(13,51,32,.13); transform: translateY(-4px); }
+    .blog-card img { width: 100%; height: 210px; object-fit: cover; display: block; }
+    .blog-tag {
+      display: inline-block; font-size: .68rem; font-weight: 700; letter-spacing: .07em;
+      text-transform: uppercase; padding: .25rem .7rem; border-radius: 2rem;
+      background: var(--green-100); color: var(--green-700); margin-bottom: .5rem;
+    }
+    .blog-body { padding: 1.5rem; }
+    .blog-body h5 { font-size: 1rem; font-weight: 700; line-height: 1.45; color: var(--green-800); margin-bottom: .5rem; font-family: 'Playfair Display', serif; }
+    .blog-body p { font-size: .85rem; color: var(--muted); line-height: 1.65; margin-bottom: 1rem; }
+    .blog-meta { font-size: .78rem; color: var(--muted); display: flex; align-items: center; gap: .4rem; }
+    .blog-read-link { font-size: .83rem; font-weight: 700; color: var(--green-600); text-decoration: none; }
+    .blog-read-link:hover { color: var(--green-800); }
+
+    /* ── FAQ ── */
+    .faq-section { padding: 5rem 0; }
+    .accordion-item { border: 1px solid var(--border) !important; border-radius: .85rem !important; margin-bottom: .75rem; overflow: hidden; }
+    .accordion-button {
+      font-weight: 700; font-size: .95rem; color: var(--text);
+      background: #fff !important; box-shadow: none !important;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .accordion-button:not(.collapsed) { color: var(--green-700); background: var(--green-50) !important; }
+    .accordion-button::after { filter: hue-rotate(130deg); }
+    .accordion-body { font-size: .9rem; color: var(--muted); line-height: 1.7; background: #fff; }
+
+    /* ── CTA STRIP ── */
+    .cta-strip {
+      background: linear-gradient(135deg, var(--green-800), var(--green-600));
+      padding: 3.5rem 0; text-align: center;
+    }
+    .cta-strip h2 { color: #fff; font-weight: 800; font-size: 1.9rem; font-family: 'Playfair Display', serif; }
+    .cta-strip h2 em { font-style: italic; color: var(--yellow-300); }
+    .cta-strip p { color: var(--green-200); font-size: .97rem; margin: .75rem auto 1.75rem; max-width: 520px; }
+    .btn-cta-white {
+      background: #fff; color: var(--green-800);
+      font-weight: 800; border-radius: 2rem; padding: .75rem 2rem; font-size: .95rem;
+      text-decoration: none; display: inline-flex; align-items: center; gap: .5rem;
+      transition: background .2s, color .2s;
+    }
+    .btn-cta-white:hover { background: var(--yellow-300); color: var(--green-900); }
+    .btn-cta-wa {
+      background: transparent; border: 2px solid rgba(255,255,255,.5); color: #fff;
+      font-weight: 700; border-radius: 2rem; padding: .72rem 1.75rem; font-size: .9rem;
+      text-decoration: none; display: inline-flex; align-items: center; gap: .5rem;
+      transition: border-color .2s, background .2s;
+    }
+    .btn-cta-wa:hover { border-color: #fff; background: rgba(255,255,255,.1); color: #fff; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--green-900); padding: 80px 0 32px; }
+    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 56px; margin-bottom: 52px; }
+    .f-brand strong { font-family: 'Playfair Display', serif; font-size: 20px; color: #fff; display: block; margin-bottom: 10px; }
+    .f-brand p { font-size: 13px; color: rgba(255,255,255,.4); line-height: 1.85; margin-bottom: 20px; }
+    .f-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(240,194,0,.12); border: 1px solid rgba(240,194,0,.3);
+      border-radius: 8px; padding: 8px 16px; font-size: 11px; color: var(--yellow-300); font-weight: 700;
+    }
+    footer h4 { font-size: 10.5px; font-weight: 800; color: rgba(255,255,255,.9); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1.4px; }
+    footer ul { list-style: none; display: flex; flex-direction: column; gap: 10px; padding: 0; }
+    footer ul li a { text-decoration: none; color: rgba(255,255,255,.4); font-size: 14px; transition: color .2s; }
+    footer ul li a:hover { color: var(--yellow-300); }
+    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.07); margin-bottom: 24px; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .footer-bottom p { font-size: 12px; color: rgba(255,255,255,.25); }
+
+    /* ── WA FLOAT ── */
+    .wa-float {
+      position: fixed; bottom: 24px; right: 24px; z-index: 900;
+      width: 60px; height: 60px; border-radius: 50%;
+      background: #25d366; color: #fff; text-decoration: none;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 24px rgba(37,211,102,.5); transition: transform .25s;
+    }
+    .wa-float:hover { transform: scale(1.12); }
+
+    /* ── UTILS ── */
+    .btn-green {
+      background: var(--green-700); color: #fff;
+      border-radius: 2rem; padding: .65rem 1.75rem; font-weight: 700; font-size: .9rem;
+      text-decoration: none; display: inline-flex; align-items: center; gap: .5rem;
+      transition: background .2s; border: none; font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .btn-green:hover { background: var(--green-600); color: #fff; }
+    .btn-green-outline {
+      background: transparent; border: 2px solid var(--green-600); color: var(--green-700);
+      border-radius: 2rem; padding: .6rem 1.6rem; font-weight: 700; font-size: .9rem;
+      text-decoration: none; display: inline-flex; align-items: center; gap: .5rem;
+      transition: all .2s;
+    }
+    .btn-green-outline:hover { background: var(--green-700); color: #fff; }
+    h2.section-title { font-size: clamp(1.6rem,3vw,2.2rem); font-weight: 800; line-height: 1.25; font-family: 'Playfair Display', serif; }
+    h2.section-title em { font-style: italic; color: var(--green-600); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 36px; }
+      .footer-inner .f-brand { grid-column: 1 / -1; }
+    }
+    @media (max-width: 640px) {
+      .nav-links, .nav-book { display: none; }
+      .hamburger { display: flex; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-inner .f-brand { grid-column: auto; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .hero-section { padding: 3rem 0 2.5rem; }
+      .hero-section h1 { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="ti"><i class="fa-solid fa-phone"></i><a href="tel:+919676553666">+91 9676553666</a></div>
+    <div class="ti"><i class="fa-brands fa-whatsapp"></i><a href="/contact.html">Available on WhatsApp</a></div>
+    <div class="ti"><i class="fa-solid fa-location-dot"></i><span>Delhi, India</span></div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<header>
+  <nav>
+    <a class="brand" href="index.html">
+      <div class="brand-icon"><i class="fa-solid fa-stethoscope"></i></div>
+      <div>
+        <div class="brand-name">Dr. Tivender Addhrann</div>
+        <div class="brand-creds">MBBS. MPH. Family Physician (Adult & Child Heath) and Vaccine Specialist. Delhi</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-dropdown">
+        <a href="#" class="nav-dropdown-toggle">About <i class="fa-solid fa-chevron-down" style="font-size:10px;margin-left:3px;"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="doctor.html"><i class="fa-solid fa-user-doctor"></i> About Doctor</a></li>
+          <li><a href="clinic.html"><i class="fa-solid fa-house-chimney-medical"></i> About Clinic</a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown">
+        <a href="service.html" class="nav-dropdown-toggle">Services <i class="fa-solid fa-chevron-down" style="font-size:10px;margin-left:3px;"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="vaccination.html"><i class="fa-solid fa-syringe"></i> Vaccination & Immunization</a></li>
+          <li><a href="childhealth.html"><i class="fa-solid fa-baby"></i> Child Health Care</a></li>
+          <li><a href="health-checkup.html"><i class="fa-solid fa-microscope"></i> Health Checkup (General)</a></li>
+          <li><a href="diabetes.html"><i class="fa-solid fa-droplet"></i> Diabetes & Hypertension Management</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <a class="nav-book" href="contact.html"><i class="fa-regular fa-calendar-check"></i> Book Consultation</a>
+    <button class="hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="doctor.html"><i class="fa-solid fa-user-doctor" style="margin-right:8px;color:var(--green-500);"></i>About Doctor</a>
+    <a href="clinic.html"><i class="fa-solid fa-house-chimney-medical" style="margin-right:8px;color:var(--green-500);"></i>About Clinic</a>
+    <a href="service.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a class="cta" href="contact.html">Book Consultation</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero-section">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <div class="hero-badge"><i class="bi bi-shield-heart-fill me-1"></i> Preventive &amp; Diagnostic</div>
+        <h1>Health Checkup <em>(General)</em> Services</h1>
+        <p class="mt-3 mb-4">Comprehensive full-body screening and health assessments for all age groups — preventive, diagnostic, and personalised — by Delhi's trusted family physician with 26+ years of clinical experience.</p>
+        <nav class="breadcrumb-hero mb-4">
+          <a href="index.html">Home</a> › <a href="service.html">Services</a> › Health Checkup (General)
+        </nav>
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          <div class="hero-stat-pill"><strong>26+</strong>&nbsp;Years Experience</div>
+          <div class="hero-stat-pill"><strong>All</strong>&nbsp;Age Groups</div>
+          <div class="hero-stat-pill"><strong>Same</strong>&nbsp;Day Results</div>
+        </div>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="contact.html" class="btn-green"><i class="bi bi-calendar2-check"></i> Book a Checkup</a>
+          <a href="https://wa.me/919676553666?text=Hello%20Dr.%20Tivender%2C%20I%20want%20to%20book%20a%20health%20checkup." class="btn-green-outline" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> WhatsApp Us</a>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="hero-img-wrap">
+          <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=80" alt="Health Checkup at Trisha Family Clinic" />
+          <div class="hero-img-badge"><i class="bi bi-patch-check-fill me-1"></i> Delhi's Trusted Checkup Clinic</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHECKUP -->
+<section class="why-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="section-label justify-content-center">Why Checkups Matter</div>
+      <h2 class="section-title">Prevention is Better Than <em>Cure</em></h2>
+      <p class="text-muted mt-2" style="max-width:560px;margin:auto;font-size:.95rem;">Most serious diseases are silent in early stages. Regular health checkups catch risks before they become problems.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-3">
+        <div class="why-card h-100">
+          <div class="why-icon" style="background:var(--green-100);color:var(--green-600);"><i class="bi bi-search-heart"></i></div>
+          <h6 style="font-weight:700;margin-bottom:.5rem;">Early Disease Detection</h6>
+          <p style="font-size:.87rem;color:var(--muted);line-height:1.65;">Identify diabetes, hypertension, thyroid disorders and anaemia before symptoms appear — when they are easiest to treat.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="why-card h-100">
+          <div class="why-icon" style="background:var(--sky-100);color:var(--sky-500);"><i class="bi bi-heart-pulse-fill"></i></div>
+          <h6 style="font-weight:700;margin-bottom:.5rem;">Cardiovascular Risk Screening</h6>
+          <p style="font-size:.87rem;color:var(--muted);line-height:1.65;">Lipid profile, ECG, and blood pressure evaluation to assess your heart health and reduce the risk of a cardiac event.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="why-card h-100">
+          <div class="why-icon" style="background:var(--yellow-100);color:#b8860b;"><i class="bi bi-graph-up-arrow"></i></div>
+          <h6 style="font-weight:700;margin-bottom:.5rem;">Personalised Health Baseline</h6>
+          <p style="font-size:.87rem;color:var(--muted);line-height:1.65;">Know your numbers — blood sugar, cholesterol, kidney function — and track changes year-on-year with your personal health record.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="why-card h-100">
+          <div class="why-icon" style="background:var(--pink-100);color:var(--pink-500);"><i class="bi bi-people-fill"></i></div>
+          <h6 style="font-weight:700;margin-bottom:.5rem;">Whole Family Coverage</h6>
+          <p style="font-size:.87rem;color:var(--muted);line-height:1.65;">From children to seniors — one clinic, one trusted doctor, complete health screening plans tailored to every age group.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="packages-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="section-label justify-content-center">Checkup Packages</div>
+      <h2 class="section-title">Health Checkup <em>Plans for Every Need</em></h2>
+      <p class="text-muted mt-2" style="max-width:540px;margin:auto;font-size:.95rem;">Choose the right plan for your age and health goals. Dr. Tivender customises every checkup to your individual clinical history.</p>
+    </div>
+    <div class="row g-4 align-items-stretch">
+
+      <!-- Basic -->
+      <div class="col-md-6 col-lg-3">
+        <div class="pkg-card h-100">
+          <div class="pkg-header">
+            <div class="pkg-badge" style="background:var(--green-100);color:var(--green-700);">Basic</div>
+            <div class="pkg-name">Essential Checkup</div>
+            <div class="pkg-desc mt-1">Quick wellness screen for healthy adults — annual baseline monitoring.</div>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-item"><i class="bi bi-check-circle-fill"></i> Complete Blood Count (CBC)</div>
+            <div class="pkg-item"><i class="bi bi-check-circle-fill"></i> Fasting Blood Glucose</div>
+            <div class="pkg-item"><i class="bi bi-check-circle-fill"></i> Urine Routine & Microscopy</div>
+            <div class="pkg-item"><i class="bi bi-check-circle-fill"></i> Blood Pressure &amp; BMI</div>
+            <div class="pkg-item"><i class="bi bi-check-circle-fill"></i> Clinical Consultation</div>
+          </div>
+          <div class="pkg-footer">
+            <a href="contact.html" class="btn-green w-100 justify-content-center">Book This Plan</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Standard — featured -->
+      <div class="col-md-6 col-lg-3">
+        <div class="pkg-card featured h-100">
+          <div class="featured-ribbon"><i class="bi bi-star-fill me-1"></i> Most Popular</div>
+          <div class="pkg-header">
+            <div class="pkg-badge" style="background:var(--green-600);color:#fff;">Standard</div>
+            <div class="pkg-name">Comprehensive Checkup</div>
+            <div class="pkg-desc mt-1">Complete health assessment for adults — including heart, liver and kidney panel.</div>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-item"><i class="bi bi-check-circle-fill"></i> All Essential Tests</div>
+            <div class="pkg-item"><i class="bi bi-check-circle-fill"></i> Lipid Profile (Cholesterol)</div>
+            <div class="pkg-item"><i class="bi bi-check-circle-fill"></i> Liver Function Test (LFT)</div>
+            <div class="pkg-item"><i class="bi bi-check-circle-fill"></i> Kidney Function Test (KFT)</div>
+            <div class="pkg-item"><i class="bi bi-check-circle-fill"></i> Thyroid Profile (TSH)</div>
+            <div class="pkg-item"><i class="bi bi-check-circle-fill"></i> ECG (Electrocardiogram)</div>
+            <div class="pkg-item"><i class="bi bi-check-circle-fill"></i> Detailed Consultation &amp; Report Review</div>
+          </div>
+          <div class="pkg-footer">
+            <a href="contact.html" class="btn-green w-100 justify-content-center">Book This Plan</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Senior -->
+      <div class="col-md-6 col-lg-3">
+        <div class="pkg-card h-100">
+          <div class="pkg-header">
+            <div class="pkg-badge" style="background:var(--purple-100);color:var(--purple-500);">Senior</div>
+            <div class="pkg-name">Senior Citizen Checkup</div>
+            <div class="pkg-desc mt-1">Targeted screening for 55+ — bone density, cardiac and chronic disease focus.</div>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-item"><i class="bi bi-check-circle-fill"></i> All Comprehensive Tests</div>
+            <div class="pkg-item"><i class="bi bi-check-circle-fill"></i> HbA1c (Diabetes Control)</div>
+            <div class="pkg-item"><i class="bi bi-check-circle-fill"></i> Vitamin D &amp; B12 Levels</div>
+            <div class="pkg-item"><i class="bi bi-check-circle-fill"></i> Calcium &amp; Bone Health</div>
+            <div class="pkg-item"><i class="bi bi-check-circle-fill"></i> PSA / Gynaecological Review</div>
+            <div class="pkg-item"><i class="bi bi-check-circle-fill"></i> Chest X-Ray</div>
+            <div class="pkg-item"><i class="bi bi-check-circle-fill"></i> Comprehensive Geriatric Review</div>
+          </div>
+          <div class="pkg-footer">
+            <a href="contact.html" class="btn-green w-100 justify-content-center">Book This Plan</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Child -->
+      <div class="col-md-6 col-lg-3">
+        <div class="pkg-card h-100">
+          <div class="pkg-header">
+            <div class="pkg-badge" style="background:var(--sky-100);color:var(--sky-500);">Child</div>
+            <div class="pkg-name">Child Health Checkup</div>
+            <div class="pkg-desc mt-1">Growth and developmental screening for children 2–17 years — school-age and adolescent focus.</div>
+          </div>
+          <div class="pkg-body">
+            <div class="pkg-item"><i class="bi bi-check-circle-fill"></i> Growth &amp; Weight Monitoring</div>
+            <div class="pkg-item"><i class="bi bi-check-circle-fill"></i> Haemoglobin &amp; Iron (Anaemia)</div>
+            <div class="pkg-item"><i class="bi bi-check-circle-fill"></i> Blood Glucose Screening</div>
+            <div class="pkg-item"><i class="bi bi-check-circle-fill"></i> Vision &amp; Hearing Assessment</div>
+            <div class="pkg-item"><i class="bi bi-check-circle-fill"></i> Developmental Milestone Review</div>
+            <div class="pkg-item"><i class="bi bi-check-circle-fill"></i> Vaccination Status Review</div>
+          </div>
+          <div class="pkg-footer">
+            <a href="contact.html" class="btn-green w-100 justify-content-center">Book This Plan</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-center mt-4" style="font-size:.84rem;color:var(--muted);">
+      <i class="bi bi-info-circle me-1"></i> All packages are customised to your clinical history. Final test inclusions are confirmed by Dr. Tivender at consultation.
+    </p>
+  </div>
+</section>
+
+<!-- WHAT TO EXPECT -->
+<section class="expect-section">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5">
+        <div class="section-label">Your Checkup Visit</div>
+        <h2 class="section-title">What to <em>Expect</em> on the Day</h2>
+        <p class="text-muted mt-3 mb-4" style="font-size:.95rem;line-height:1.7;">Your health checkup at Trisha Family Clinic is unhurried, thorough and fully guided — from the moment you walk in until you have your results and a personalised health plan.</p>
+        <a href="contact.html" class="btn-green"><i class="bi bi-calendar2-check"></i> Schedule Your Visit</a>
+      </div>
+      <div class="col-lg-7">
+        <div class="ps-lg-4">
+
+          <div class="step-item">
+            <div class="step-num">01</div>
+            <div>
+              <h6 class="fw-bold mb-1">Registration &amp; Pre-Consultation</h6>
+              <p style="font-size:.88rem;color:var(--muted);line-height:1.65;">Fill your health history form and share any existing reports. Our team reviews your concerns before you meet the doctor.</p>
+            </div>
+          </div>
+          <div class="step-connector"></div>
+
+          <div class="step-item">
+            <div class="step-num">02</div>
+            <div>
+              <h6 class="fw-bold mb-1">Clinical Examination by Dr. Tivender</h6>
+              <p style="font-size:.88rem;color:var(--muted);line-height:1.65;">Blood pressure, BMI, heart &amp; lung auscultation, abdominal examination — a thorough head-to-toe clinical assessment.</p>
+            </div>
+          </div>
+          <div class="step-connector"></div>
+
+          <div class="step-item">
+            <div class="step-num">03</div>
+            <div>
+              <h6 class="fw-bold mb-1">Blood &amp; Urine Sample Collection</h6>
+              <p style="font-size:.88rem;color:var(--muted);line-height:1.65;">Samples collected at the clinic with strict sterile protocols. Fasting samples (8–12 hours) are required for glucose and lipid tests.</p>
+            </div>
+          </div>
+          <div class="step-connector"></div>
+
+          <div class="step-item">
+            <div class="step-num">04</div>
+            <div>
+              <h6 class="fw-bold mb-1">Lab Reports &amp; Imaging (Same Day)</h6>
+              <p style="font-size:.88rem;color:var(--muted);line-height:1.65;">Most routine reports are available same-day. ECG is interpreted immediately. X-ray reports within a few hours.</p>
+            </div>
+          </div>
+          <div class="step-connector"></div>
+
+          <div class="step-item">
+            <div class="step-num">05</div>
+            <div>
+              <h6 class="fw-bold mb-1">Report Review &amp; Personalised Health Plan</h6>
+              <p style="font-size:.88rem;color:var(--muted);line-height:1.65;">Dr. Tivender explains every result in plain language and creates a personalised diet, lifestyle and follow-up plan tailored to you.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO NEEDS A CHECKUP -->
+<section class="who-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="section-label justify-content-center">For Every Stage of Life</div>
+      <h2 class="section-title">Who Should Get a <em>Regular Checkup?</em></h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-3">
+        <div class="who-card">
+          <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&q=80" alt="Children checkup" />
+          <h6 style="font-weight:700;font-size:.97rem;margin-bottom:.4rem;">Children (2–17 yrs)</h6>
+          <p style="font-size:.83rem;color:var(--muted);">Annual growth monitoring, anaemia screening, vaccine review and developmental assessment.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="who-card">
+          <img src="https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?w=600&q=80" alt="Young adults checkup" />
+          <h6 style="font-weight:700;font-size:.97rem;margin-bottom:.4rem;">Young Adults (18–35 yrs)</h6>
+          <p style="font-size:.83rem;color:var(--muted);">Baseline blood work, stress and lifestyle risk assessment, early metabolic disease detection.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="who-card">
+          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80" alt="Adults checkup" />
+          <h6 style="font-weight:700;font-size:.97rem;margin-bottom:.4rem;">Adults (35–55 yrs)</h6>
+          <p style="font-size:.83rem;color:var(--muted);">Cardiac risk, thyroid, diabetes, liver and kidney screening. Annual checkup strongly recommended.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="who-card">
+          <img src="https://images.unsplash.com/photo-1588776814546-1ffbb64e8d1d?w=600&q=80" alt="Senior checkup" />
+          <h6 style="font-weight:700;font-size:.97rem;margin-bottom:.4rem;">Senior Citizens (55+)</h6>
+          <p style="font-size:.83rem;color:var(--muted);">Bone health, cardiac screening, chronic disease management and geriatric wellness assessment — every 6 months.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG / ARTICLES -->
+<section class="blog-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="section-label justify-content-center">Health Blog</div>
+      <h2 class="section-title">Know More About <em>Preventive Health</em></h2>
+      <p class="text-muted mt-2" style="max-width:540px;margin:auto;font-size:.95rem;">Evidence-based articles by Dr. Tivender Addhrann to help your family make informed decisions about health checkups and preventive care.</p>
+    </div>
+    <div class="row g-4">
+
+      <div class="col-md-6 col-lg-4">
+        <div class="blog-card h-100">
+          <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=700&q=80" alt="Blood tests explained" />
+          <div class="blog-body">
+            <div class="blog-tag">Diagnostics</div>
+            <h5>What Your Blood Test Numbers Actually Mean — A Plain English Guide</h5>
+            <p>CBC, LFT, KFT, TSH — your lab report can look overwhelming. Dr. Tivender explains what each value means for your health and what to do when something is flagged.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="blog-meta"><i class="bi bi-clock"></i> 6 min read</div>
+              <a href="contact.html" class="blog-read-link">Read More <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="blog-card h-100">
+          <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=700&q=80" alt="How often checkup" />
+          <div class="blog-body">
+            <div class="blog-tag">Preventive Care</div>
+            <h5>How Often Should You Get a Full Body Checkup? Age-Wise Guide</h5>
+            <p>Is an annual checkup enough? Or do you need more frequent screening? Dr. Tivender breaks down the recommended frequency based on age, family history and risk factors.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="blog-meta"><i class="bi bi-clock"></i> 5 min read</div>
+              <a href="contact.html" class="blog-read-link">Read More <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="blog-card h-100">
+          <img src="https://images.unsplash.com/photo-1631563019676-5fcf6977dc25?w=700&q=80" alt="Diabetes early signs" />
+          <div class="blog-body">
+            <div class="blog-tag">Chronic Disease</div>
+            <h5>5 Silent Signs You May Have Pre-Diabetes — And Not Know It</h5>
+            <p>Pre-diabetes affects millions of Indians silently. Fatigue, increased thirst, slow healing — these subtle signs could mean your blood sugar is already elevated. Early detection reverses it.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="blog-meta"><i class="bi bi-clock"></i> 4 min read</div>
+              <a href="contact.html" class="blog-read-link">Read More <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="blog-card h-100">
+          <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=700&q=80" alt="Thyroid health" />
+          <div class="blog-body">
+            <div class="blog-tag">Hormonal Health</div>
+            <h5>Thyroid Disorders Are More Common Than You Think — Here's What to Test</h5>
+            <p>Unexplained weight gain, fatigue, hair loss — these are classic signs of thyroid dysfunction. A simple TSH test can detect it. Dr. Tivender explains when and why to test.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="blog-meta"><i class="bi bi-clock"></i> 5 min read</div>
+              <a href="contact.html" class="blog-read-link">Read More <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="blog-card h-100">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&q=80" alt="Heart checkup" />
+          <div class="blog-body">
+            <div class="blog-tag">Heart Health</div>
+            <h5>When Should You Get Your First Cardiac Screening? A Delhi Family Doctor's View</h5>
+            <p>Heart disease in India is striking younger and younger. If you're over 30 with a family history of heart disease, you may already need a lipid profile and ECG. Here's what to ask your doctor.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="blog-meta"><i class="bi bi-clock"></i> 5 min read</div>
+              <a href="contact.html" class="blog-read-link">Read More <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="blog-card h-100">
+          <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=700&q=80" alt="Women health checkup" />
+          <div class="blog-body">
+            <div class="blog-tag">Women's Health</div>
+            <h5>Essential Health Tests Every Woman in Delhi Should Get Every Year</h5>
+            <p>From haemoglobin and vitamin D to thyroid and cervical health — a Delhi family physician's guide to the most important annual tests for women at every stage of life.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="blog-meta"><i class="bi bi-clock"></i> 6 min read</div>
+              <a href="contact.html" class="blog-read-link">Read More <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="text-center mb-5">
+          <div class="section-label justify-content-center">FAQs</div>
+          <h2 class="section-title">Common Questions About <em>Health Checkups</em></h2>
+        </div>
+        <div class="accordion" id="faqAccordion">
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                Do I need to fast before a health checkup?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Yes. For most comprehensive checkups, a fasting period of 8–12 hours is required for accurate blood glucose and lipid profile results. Water is permitted during the fasting period. Dr. Tivender recommends scheduling your checkup early in the morning so fasting is less inconvenient.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                How long does a full body checkup take?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">A comprehensive checkup at Trisha Family Clinic typically takes 60–90 minutes — including clinical examination, sample collection, ECG, and an initial consultation. Report review with Dr. Tivender is typically scheduled the same day once results are ready, or the following morning for specialised tests.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                At what age should I start getting annual health checkups?
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Dr. Tivender recommends starting annual checkups from age 30 onwards — or earlier if you have risk factors like family history of diabetes, heart disease, or hypertension. Children should have an annual growth and developmental checkup. Senior citizens (55+) should ideally have checkups every 6 months.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                Can I get a checkup even if I have no symptoms?
+              </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Absolutely — in fact, that is the entire purpose of a preventive health checkup. Many serious conditions like diabetes, hypertension and thyroid disorders have no symptoms in their early stages. Detecting them before symptoms appear gives the best chance of reversal or effective management.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                Can I bring my entire family for a checkup on the same day?
+              </button>
+            </h2>
+            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Yes. Trisha Family Clinic is a complete family health centre. Dr. Tivender sees all age groups — from children to senior citizens — so your entire family can come in on the same day. Family health checkup slots can be pre-booked by calling us or via WhatsApp.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                What should I bring to my health checkup appointment?
+              </button>
+            </h2>
+            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Please bring any previous medical reports, current prescriptions or medications, your vaccination record if available, and a government-issued photo ID for registration. If you are on blood pressure or diabetes medication, take your regular medications as prescribed (with a small sip of water) before coming in.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section class="cta-strip">
+  <div class="container">
+    <h2>Book Your Family's Health Checkup <em>Today</em></h2>
+    <p>Same-day appointments available · Complete reports reviewed personally by Dr. Tivender · All age groups · One trusted family clinic in Delhi</p>
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+      <a href="contact.html" class="btn-cta-white"><i class="bi bi-calendar2-check"></i> Book Appointment</a>
+      <a href="https://wa.me/919676553666?text=Hello%20Dr.%20Tivender%2C%20I%20want%20to%20book%20a%20health%20checkup." class="btn-cta-wa" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> WhatsApp Us</a>
+    </div>
+    <p class="mt-4 mb-0" style="font-size:.8rem;color:var(--green-300);">Delhi Medical Council Reg. No. 10915 · Member, Delhi Medical Association</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="f-brand">
+        <strong>Dr. Tivender Addhrann</strong>
+        <p>MBBS · MPH · Family Physician (Adult & Child Health) · Vaccine Specialist<br/><br/>Trisha Family Clinic · Delhi<br/><br/>Trusted clinical care for your entire family — newborns, children, adults, and seniors — all under one compassionate roof for over 26 years.</p>
+        <div class="f-badge"><i class="fa-solid fa-circle-check"></i> Verified · Delhi Medical Council · Reg. 10915</div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="doctor.html">About Doctor</a></li>
+          <li><a href="clinic.html">About Clinic</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="childhealth.html">Child Health</a></li>
+          <li><a href="vaccination.html">Vaccination</a></li>
+          <li><a href="service.html">Allergy Treatment</a></li>
+          <li><a href="diabetes.html">Diabetes Management</a></li>
+          <li><a href="health-checkup.html">Health Checkup</a></li>
+          <li><a href="service.html">Nutrition Consultation</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="footer-divider"/>
+    <div class="footer-bottom">
+      <p>© 2025 Trisha Family Clinic · Dr. Tivender Addhrann. All Rights Reserved.</p>
+      <p>Delhi Medical Council Reg. No. 10915 · Member, Delhi Medical Association</p>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a class="wa-float" href="https://wa.me/919676553666?text=Hello%20Dr.%20Tivender%20Addhrann%2C%20I%20would%20like%20to%20book%20a%20health%20checkup%20consultation." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="28" height="28" fill="#fff">
+    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 414.7c-32 0-64-8-92-23l-6.6-4-68.5 18 18-66.8-4-6.6C55 304 46 264 46 222c0-98.1 80-178 178-178 98 0 178 80 178 178 0 98.1-80.1 178-178.1 178zM321 281.3c-5.3-2.7-31.5-15.6-36.4-17.4-4.9-1.8-8.4-2.7-12 2.7-3.6 5.3-13.8 17.4-16.9 21-3.1 3.6-6.2 4-11.6 1.3-5.3-2.7-22.5-8.3-42.9-26.6-15.8-14.2-26.5-31.8-29.6-37.1-3.1-5.3-.3-8.2 2.4-10.9 2.4-2.4 5.3-6.2 8-9.3 2.7-3.1 3.6-5.3 5.3-8.9 1.8-3.6.9-6.7-.4-9.3-1.3-2.7-12-28.9-16.4-39.6-4.3-10.4-8.7-9-12-9.1-3.1-.1-6.7-.1-10.2-.1-3.6 0-9.3 1.3-14.2 6.7-4.9 5.3-18.7 18.2-18.7 44.5 0 26.2 19.1 51.6 21.8 55.1 2.7 3.6 37.6 57.4 91 80.4 12.7 5.5 22.6 8.7 30.3 11.2 12.7 4 24.3 3.4 33.4 2.1 10.3-1.5 31.5-12.9 36-25.3 4.4-12.4 4.4-23.1 3.1-25.3-1.4-2.3-5-3.6-10.3-6.2z"/>
+  </svg>
+</a>
+
+<!-- Bootstrap JS (for accordion/FAQ) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // Dropdown — works for all nav dropdowns
+  document.querySelectorAll('.nav-dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      const menu = this.nextElementSibling;
+      const isOpen = menu.style.display === 'block';
+      document.querySelectorAll('.nav-dropdown .dropdown-menu').forEach(m => m.style.display = 'none');
+      if (!isOpen) menu.style.display = 'block';
+    });
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown .dropdown-menu').forEach(m => m.style.display = 'none');
+    }
+  });
+
+  document.querySelectorAll('#mobileNav a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('mobileNav').classList.remove('open'));
+  });
+
+  // Scroll-in animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.why-card, .pkg-card, .who-card, .blog-card, .step-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(22px)';
+    el.style.transition = 'opacity .5s ease, transform .5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
