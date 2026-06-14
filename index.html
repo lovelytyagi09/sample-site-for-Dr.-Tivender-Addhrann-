@@ -840,7 +840,7 @@ footer ul li a:hover { color: var(--yellow-300); }
           <div class="svc-icon"><i class="fa-solid fa-syringe"></i></div>
           <h3 id="fc-svc-title-0">Vaccination & Immunization</h3>
           <p id="fc-svc-desc-0">Complete immunisation schedules for children and adults — including travel vaccines and routine boosters for the whole family. With more than 20 years of experience in vaccine innovation, development and implementation.</p>
-          <span class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+          <!-- <span class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></span> -->
         </div>
       </div>
 
@@ -853,7 +853,7 @@ footer ul li a:hover { color: var(--yellow-300); }
           <div class="svc-icon"><i class="fa-solid fa-baby"></i></div>
           <h3 id="fc-svc-title-1">Child Health Consultation</h3>
           <p id="fc-svc-desc-1">Expert consultations for children's growth, development, and illness — from newborns through adolescence.</p>
-          <span class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+          <!-- <span class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></span> -->
         </div>
       </div>
 
@@ -866,7 +866,7 @@ footer ul li a:hover { color: var(--yellow-300); }
           <div class="svc-icon"><i class="fa-solid fa-wind"></i></div>
           <h3 id="fc-svc-title-2">Allergy & Skin Allergies</h3>
           <p id="fc-svc-desc-2">Diagnosis and management of food, seasonal, environmental, and skin allergies with personalised care plans.</p>
-          <span class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+          <!-- <span class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></span> -->
         </div>
       </div>
 
@@ -879,7 +879,7 @@ footer ul li a:hover { color: var(--yellow-300); }
           <div class="svc-icon"><i class="fa-solid fa-microscope"></i></div>
           <h3 id="fc-svc-title-3">Health Checkup (General)</h3>
           <p id="fc-svc-desc-3">Comprehensive full-body screening and health assessments for all age groups — preventive and diagnostic.</p>
-          <span class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+          <!-- <span class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></span> -->
         </div>
       </div>
 
@@ -892,7 +892,7 @@ footer ul li a:hover { color: var(--yellow-300); }
           <div class="svc-icon"><i class="fa-solid fa-droplet"></i></div>
           <h3 id="fc-svc-title-4">Diabetes & Hypertension Management</h3>
           <p id="fc-svc-desc-4">Personalised diabetes and hypertension care — blood sugar and blood pressure monitoring, medication optimisation, and long-term chronic disease control.</p>
-          <span class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+          <!-- <span class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></span> -->
         </div>
       </div>
 
@@ -905,7 +905,7 @@ footer ul li a:hover { color: var(--yellow-300); }
           <div class="svc-icon"><i class="fa-solid fa-leaf"></i></div>
           <h3 id="fc-svc-title-5">Nutrition Consultation</h3>
           <p id="fc-svc-desc-5">Evidence-based dietary guidance for the whole family — wellness, child nutrition, weight management, and chronic condition control.</p>
-          <span class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+          <!-- <span class="svc-link">Learn More <i class="fa-solid fa-arrow-right"></i></span> -->
         </div>
       </div>
 
@@ -1021,8 +1021,9 @@ footer ul li a:hover { color: var(--yellow-300); }
     </div>
     <hr class="footer-divider"/>
     <div class="footer-bottom">
-      <p>© <span id="fc-footer-year">2025</span> <span id="fc-footer-clinicName">Trisha Family Clinic</span> · <span id="fc-footer-doctorName2">Dr. Tivender Addhrann</span>. All Rights Reserved.</p>
+     <p>© <span id="fc-footer-year">2025</span> <span id="fc-footer-clinicName">Trisha Family Clinic</span> · <span id="fc-footer-doctorName2">Dr. Tivender Addhrann</span>. All Rights Reserved.</p>
       <p>Delhi Medical Council Reg. No. 10915 · Member, Delhi Medical Association</p>
+      <p>Designed by Lovely Web Studio</p>
     </div>
   </div>
 </footer>
@@ -1249,6 +1250,28 @@ footer ul li a:hover { color: var(--yellow-300); }
       body.classList.add('open');
     }
   }
+  document.querySelector('.form-submit').addEventListener('click', function () {
+  const firstName = document.querySelector('input[placeholder="Rahul"]').value.trim();
+  const phone     = document.querySelector('input[type="tel"]').value.trim();
+
+  if (!firstName || !phone) {
+    alert('Please fill in your name and phone number.');
+    return;
+  }
+
+  // WhatsApp submission
+  const lastName  = document.querySelector('input[placeholder="Sharma"]').value.trim();
+  const date      = document.querySelector('input[type="date"]').value;
+  const ageGroup  = document.querySelectorAll('select')[0].value;
+  const service   = document.querySelectorAll('select')[1].value;
+  const concern   = document.querySelector('textarea').value.trim();
+
+  const msg = encodeURIComponent(
+    `Appointment Request\nName: ${firstName} ${lastName}\nPhone: ${phone}\nDate: ${date}\nAge Group: ${ageGroup}\nService: ${service}\nConcern: ${concern}`
+  );
+
+  window.open(`https://wa.me/919676553666?text=${msg}`, '_blank');
+});
 </script>
 </body>
 </html>
