@@ -74,18 +74,14 @@ nav {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  height: 800px; /* matches hero min-height on desktop */
+  height: 800px;
 }
-
 .hero-img-wrap img {
   width: 86%;
   height: 106%;
   object-fit: cover;
   object-position: top;
 }
-
-
-
 .hero-img-placeholder svg { width: 160px; height: 160px; fill: var(--green-400); opacity: .4; }
 .hero-stat-badge {
   position: absolute; bottom: 28px; left: 28px;
@@ -167,7 +163,7 @@ nav {
 .role-contacts a { font-size:12px; font-weight:500; color:var(--green-700); text-decoration:none; }
 .role-contacts a:hover { color:var(--green-500); }
 
-/* ── CLARITY BLOCK (One Visit style) ── */
+/* ── CLARITY BLOCK ── */
 .clarity-section {
   background: var(--cream);
   padding: 80px 0;
@@ -234,7 +230,6 @@ nav {
 .acc-body { display:none; padding:0 24px 24px; }
 .acc-item.open .acc-body { display:block; }
 
-/* accordion body styles */
 .edu-row { padding:14px 0; border-bottom:1px solid var(--border); }
 .edu-row:last-child { border-bottom:none; }
 .edu-row .deg { font-size:14px; font-weight:600; color:var(--green-900); margin-bottom:3px; }
@@ -339,13 +334,12 @@ footer { background:var(--navy); padding:56px 48px 32px; }
   .training-list { grid-template-columns:1fr; }
   .tr-item { border-right:none; }
   .hero-img-wrap {
-    height: 400px; /* fixed, not min-height */
+    height: 400px;
     min-height: unset;
   }
-  .hero-stat-badge{
-    display: none;
-  }
+  .hero-stat-badge { display: none; }
 }
+
 /* ── TOPBAR ── */
 .topbar { background: var(--green-900); padding: 9px 0; font-size: 12px; color: rgba(255,255,255,.7); }
 .topbar .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
@@ -367,22 +361,36 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
 .nav-book { background: var(--yellow-400); color: var(--green-900); text-decoration: none; padding: 11px 22px; border-radius: 10px; font-size: 13.5px; font-weight: 800; transition: all .2s; white-space: nowrap; display: flex; align-items: center; gap: 7px; box-shadow: 0 4px 16px rgba(240,194,0,.35); }
 .nav-book:hover { background: var(--yellow-500); transform: translateY(-1px); }
 .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
-.hamburger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; display: block; }
-.mobile-nav { display: none; flex-direction: column; background: #fff; border-top: 1px solid var(--border); position: fixed; top: 74px; left: 0; right: 0; z-index: 998; box-shadow: 0 8px 32px rgba(0,0,0,.1); }
+.hamburger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; display: block; transition: all .2s; }
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.mobile-nav { display: none; flex-direction: column; background: #fff; border-top: 1px solid var(--border); position: fixed; top: 74px; left: 0; right: 0; z-index: 998; box-shadow: 0 8px 32px rgba(0,0,0,.1); max-height: calc(100vh - 74px); overflow-y: auto; }
 .mobile-nav.open { display: flex; }
 .mobile-nav a { padding: 16px 24px; text-decoration: none; color: var(--text); font-size: 15px; font-weight: 600; border-bottom: 1px solid var(--border); }
 .mobile-nav a.cta { background: var(--yellow-400); color: var(--green-900); text-align: center; font-weight: 800; border: none; }
+.mobile-acc { border-bottom: 1px solid var(--border); }
+.mobile-acc-toggle { width: 100%; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; background: none; border: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 600; color: var(--text); cursor: pointer; text-align: left; }
+.mobile-acc-toggle i { transition: transform .25s; }
+.mobile-acc-toggle.open i { transform: rotate(180deg); }
+.mobile-acc-toggle.open { color: var(--green-600); }
+.mobile-acc-body { max-height: 0; overflow: hidden; background: var(--green-50); transition: max-height .25s ease; }
+.mobile-acc-body.open { max-height: 400px; }
+.mobile-acc-body a { display: block; padding: 13px 24px 13px 36px; font-size: 14px; border-bottom: 1px solid var(--border); }
+.mobile-acc-body a:last-child { border-bottom: none; }
 
 /* ── DROPDOWN ── */
 .nav-dropdown { position: relative; }
-.nav-dropdown-toggle { display: flex; align-items: center; }
+.nav-dropdown-toggle { display: flex; align-items: center; cursor: pointer; }
 .dropdown-menu { display: none; position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%); background: #fff; border-radius: 12px; border: 1.5px solid var(--green-100); box-shadow: 0 12px 40px rgba(26,74,46,.13); list-style: none; min-width: 200px; padding: 8px; z-index: 1000; }
+.dropdown-menu.open { display: block; }
 .dropdown-menu::before { content: ''; position: absolute; top: -6px; left: 50%; transform: translateX(-50%); width: 12px; height: 12px; background: #fff; border-left: 1.5px solid var(--green-100); border-top: 1.5px solid var(--green-100); rotate: 45deg; }
 .dropdown-menu li a { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; color: var(--text); font-size: 14px; font-weight: 600; transition: background .15s, color .15s; }
 .dropdown-menu li a i { color: var(--green-500); font-size: 15px; }
 .dropdown-menu li a:hover { background: var(--green-50); color: var(--green-700); }
+.nav-dropdown-toggle[aria-expanded="true"] i.fa-chevron-down { transform: rotate(180deg); }
+.nav-dropdown-toggle i.fa-chevron-down { transition: transform .2s; }
 
-/* ── RESPONSIVE ── */
 @media (max-width: 640px) {
   .nav-links, .nav-book { display: none; }
   .hamburger { display: flex; }
@@ -394,9 +402,9 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
 <!-- TOPBAR -->
 <div class="topbar">
   <div class="wrap">
-    <div class="ti"><i class="fa-solid fa-phone"></i><a href="tel:+919899226760">+91 9676553666</a></div>
+    <div class="ti"><i class="fa-solid fa-phone"></i><a href="tel:+919676553666" id="topbar-phone">+91 9676553666</a></div>
     <div class="ti"><i class="fa-brands fa-whatsapp"></i><a href="/contact.html">Available on WhatsApp</a></div>
-    <div class="ti"><i class="fa-solid fa-location-dot"></i><span>Delhi, India</span></div>
+    <div class="ti"><i class="fa-solid fa-location-dot"></i><span id="topbar-city">Delhi, India</span></div>
   </div>
 </div>
 
@@ -406,69 +414,72 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
     <a class="brand" href="index.html">
       <div class="brand-icon"><i class="fa-solid fa-stethoscope"></i></div>
       <div>
-        <div class="brand-name">Dr. Tivender Addhrann</div>
-       <div class="brand-creds">MBBS · MPH · Family Physician (Adult & Child Health) and Vaccine Specialist · Delhi</div>
+        <div class="brand-name" id="nav-doctor-name">Dr. Tivender Addhrann</div>
+        <div class="brand-creds" id="nav-doctor-creds">MBBS · MPH · Family Physician (Adult & Child Health) and Vaccine Specialist · Delhi</div>
       </div>
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li class="nav-dropdown">
-        <a href="#" class="nav-dropdown-toggle">About <i class="fa-solid fa-chevron-down" style="font-size:10px;margin-left:3px;"></i></a>
+        <a href="#" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">About <i class="fa-solid fa-chevron-down" style="font-size:10px;margin-left:3px;"></i></a>
         <ul class="dropdown-menu">
           <li><a href="doctor.html"><i class="fa-solid fa-user-doctor"></i> About Doctor</a></li>
           <li><a href="clinic.html"><i class="fa-solid fa-house-chimney-medical"></i> About Clinic</a></li>
         </ul>
       </li>
       <li class="nav-dropdown">
-  <a href="service.html" class="nav-dropdown-toggle">Services <i class="fa-solid fa-chevron-down" style="font-size:10px;margin-left:3px;"></i></a>
-  <ul class="dropdown-menu">
-    <li><a href="vaccination.html"><i class="fa-solid fa-syringe"></i> Vaccination & Immunization</a></li>
-    <li><a href="childhealth.html"><i class="fa-solid fa-baby"></i> Child Health Care</a></li>
-    <li><a href="HealthCheckup.html"><i class="fa-solid fa-microscope"></i> Health Checkup (General)</a></li>
-    <li><a href="DiabetesandHypertensionManagement.html"><i class="fa-solid fa-droplet"></i> Diabetes & Hypertension Management</a></li>
-  </ul>
-</li>
+        <a href="service.html" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Services <i class="fa-solid fa-chevron-down" style="font-size:10px;margin-left:3px;"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="vaccination.html"><i class="fa-solid fa-syringe"></i> Vaccination & Immunization</a></li>
+          <li><a href="childhealth.html"><i class="fa-solid fa-baby"></i> Child Health Care</a></li>
+          <li><a href="HealthCheckup.html"><i class="fa-solid fa-microscope"></i> Health Checkup (General)</a></li>
+          <li><a href="DiabetesandHypertensionManagement.html"><i class="fa-solid fa-droplet"></i> Diabetes & Hypertension Management</a></li>
+        </ul>
+      </li>
       <li><a href="contact.html">Contact Us</a></li>
     </ul>
     <a class="nav-book" href="/contact.html"><i class="fa-regular fa-calendar-check"></i> Book Consultation</a>
-    <button class="hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+    <button class="hamburger" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </nav>
   <div class="mobile-nav" id="mobileNav">
-  <a href="index.html">Home</a>
-  <a href="doctor.html">About Doctor</a>
-  <a href="clinic.html">About Clinic</a>
-  <a href="service.html">Services</a>
-  <a href="vaccination.html">— Vaccination & Immunization</a>
-  <a href="childhealth.html">— Child Health Care</a>
-  <a href="health-checkup.html">— Health Checkup (General)</a>
-  <a href="diabetes.html">— Diabetes & Hypertension</a>
-  <a href="contact.html">Contact</a>
-  <a class="cta" href="/contact.html">Book Consultation</a>
-</div>
+    <a href="index.html">Home</a>
+    <a href="doctor.html"><i class="fa-solid fa-user-doctor" style="margin-right:8px;color:var(--green-500);"></i>About Doctor</a>
+    <a href="clinic.html"><i class="fa-solid fa-house-chimney-medical" style="margin-right:8px;color:var(--green-500);"></i>About Clinic</a>
+    <div class="mobile-acc">
+      <button class="mobile-acc-toggle" onclick="toggleMobileAcc(this)" aria-expanded="false">
+        Services <i class="fa-solid fa-chevron-down" style="font-size:11px;"></i>
+      </button>
+      <div class="mobile-acc-body">
+        <a href="vaccination.html"><i class="fa-solid fa-syringe" style="margin-right:8px;color:var(--green-500);"></i>Vaccination &amp; Immunization</a>
+        <a href="childhealth.html"><i class="fa-solid fa-baby" style="margin-right:8px;color:var(--green-500);"></i>Child Health Care</a>
+        <a href="HealthCheckup.html"><i class="fa-solid fa-microscope" style="margin-right:8px;color:var(--green-500);"></i>Health Checkup (General)</a>
+        <a href="DiabetesandHypertensionManagement.html"><i class="fa-solid fa-droplet" style="margin-right:8px;color:var(--green-500);"></i>Diabetes &amp; Hypertension</a>
+      </div>
+    </div>
+    <a href="contact.html">Contact</a>
+    <a class="cta" href="/contact.html">Book Consultation</a>
+  </div>
 </header>
 
 <!-- HERO SPLIT -->
 <section class="hero">
   <div class="hero-img-wrap">
-    <img src="about doctor hero image.jpeg">
-    <!-- <div class="hero-img-placeholder">
-      <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 1 1 0 10A5 5 0 0 1 12 2zm0 12c5.33 0 8 2.67 8 4v2H4v-2c0-1.33 2.67-4 8-4z"/></svg> -->
-    </div></div>
+    <img id="hero-profile-img" src="about doctor hero image.jpeg" alt="Dr. Tivender Addhrann">
     <div class="hero-stat-badge">
-     <div class="big">50,000+</div>
+      <div class="big" id="hero-patients">50,000+</div>
       <div class="lbl">Patients Consulted</div>
     </div>
   </div>
   <div class="hero-content">
     <div class="hero-eyebrow">Trisha Family Clinic · Lajpat Nagar 4</div>
-    <h1>Dr. Tivender<br><em>Addhrann</em></h1>
+    <h1 id="hero-name-split">Dr. Tivender<br><em>Addhrann</em></h1>
     <div class="hero-creds">
-      <p>MBBS · MPH<br>Family Physician (Adult & Child Health)</p>
+      <p id="hero-qual">MBBS · MPH<br>Family Physician (Adult & Child Health)</p>
     </div>
-    <p class="hero-bio">
-      Trusted  serving adults and children since 2000. With 26 years of clinical and research experience — including tenures at AIIMS Delhi, Safdarjung Hospital, and WHO/ICMR-affiliated institutions — Dr. Addhrann brings rigorous evidence-based care to every consultation.
+    <p class="hero-bio" id="hero-bio">
+      Trusted serving adults and children since 2000. With 26 years of clinical and research experience — including tenures at AIIMS Delhi, Safdarjung Hospital, and WHO/ICMR-affiliated institutions — Dr. Addhrann brings rigorous evidence-based care to every consultation.
     </p>
     <div class="hero-tags">
       <span class="tag">Family Medicine</span>
@@ -478,10 +489,10 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
       <span class="tag yellow">Ex. AIIMS Pedia Dept.</span>
     </div>
     <div class="hero-stats-row">
-      <div class="hstat"><span class="n">26 yrs</span><span class="l">Experience</span></div>
-      <div class="hstat"><span class="n">4.8–4.9 ★</span><span class="l">Star Rating</span></div>
+      <div class="hstat"><span class="n" id="stat-patients">50,000+</span><span class="l">Patients Consulted</span></div>
+      <div class="hstat"><span class="n" id="stat-rating">4.8–4.9 ★</span><span class="l">Star Rating</span></div>
       <div class="hstat"><span class="n">&lt;5%</span><span class="l">Revisit Rate</span></div>
-      <div class="hstat"><span class="n">40+</span><span class="l">Publications</span></div>
+      <div class="hstat"><span class="n" id="stat-pubs">40+</span><span class="l">Publications</span></div>
     </div>
   </div>
 </section>
@@ -495,13 +506,13 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
       <div class="role-card">
         <span class="role-num">01</span>
         <div class="role-icon"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 1 1 0 10A5 5 0 0 1 12 2zm0 12c5.33 0 8 2.67 8 4v2H4v-2c0-1.33 2.67-4 8-4z"/></svg></div>
-        <div class="role-title">Family Physician (Adult & Child Health)</div>
-        <div class="role-org">Trisha Family Clinic, Lajpat Nagar 4, New Delhi</div>
+        <div class="role-title" id="role1-title">Family Physician (Adult & Child Health)</div>
+        <div class="role-org" id="role1-org">Trisha Family Clinic, Lajpat Nagar 4, New Delhi</div>
         <span class="role-since">Est – 2014</span>
         <p class="role-desc">Research Officer, AIIMS Delhi (May 2000 – Dec 2006)<br>Resident, Safdarjung Hospital Delhi (Apr 1999 – Apr 2000)</p>
         <div class="role-contacts">
-          <a href="tel:9676553666">📞 +91 9676553666>
-          <a href="tel:9582576086">📞 +91 9676553666
+          <a href="tel:9676553666">📞 +91 9676553666</a>
+          <a href="tel:9582576086">📞 +91 9582576086</a>
           <a href="mailto:dr.tivenderadhran@gmail.com">✉ dr.tivenderadhran@gmail.com</a>
         </div>
       </div>
@@ -509,12 +520,12 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
       <div class="role-card">
         <span class="role-num">02</span>
         <div class="role-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14l4-4h12a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/></svg></div>
-        <div class="role-title">Asst. Director &amp; Research Scientist</div>
-        <div class="role-org">Society for Applied Studies (SAS), New Delhi<br>ICMR &amp; WHO Collaborating Centre</div>
+        <div class="role-title" id="role2-title">Asst. Director &amp; Research Scientist</div>
+        <div class="role-org" id="role2-org">Society for Applied Studies (SAS), New Delhi<br>ICMR &amp; WHO Collaborating Centre</div>
         <span class="role-since">Jan 2007 – Present</span>
         <p class="role-desc">30+ national &amp; international research projects. Part of innovations in new treatments and vaccine development.</p>
         <div class="role-contacts">
-          <a href="tel:+91 967655366653666 (WhatsApp)</a>
+          <a href="tel:+919676553666">📞 +91 9676553666 (WhatsApp)</a>
           <a href="mailto:tivendra.kumar@sas.org.in">✉ tivendra.kumar@sas.org.in</a>
           <a href="https://sas.org.in" target="_blank">🌐 sas.org.in</a>
         </div>
@@ -538,7 +549,7 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
   <div class="wrap">
     <div class="clarity-inner">
       <div class="clarity-img">
-       <img src="clinic gate.jpeg">
+        <img id="clarity-clinic-img" src="clinic gate.jpeg" alt="Clinic">
         <div class="clarity-badge">
           <div class="big">&lt; 5%</div>
           <div class="lbl">Second Visit Rate</div>
@@ -559,7 +570,7 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
           <div class="hc-icon">⭐</div>
           <div>
             <div class="hc-title">Consistently Top-Rated</div>
-            <div class="hc-desc"><strong>4.8–4.9 star ratings</strong> across platforms. More than 50,000 patients seen over 26 years of practice.</div>
+            <div class="hc-desc"><strong id="highlight-rating">4.8–4.9 star ratings</strong> across platforms. More than <strong id="highlight-patients">50,000 patients</strong> seen over 26 years of practice.</div>
           </div>
         </div>
       </div>
@@ -583,19 +594,18 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
         </div>
         <div class="acc-body">
           <div class="edu-row">
-            <div class="deg">Masters of Public Health (MPH)</div>
+            <div class="deg" id="cred-mph">Masters of Public Health (MPH)</div>
             <div class="yr">2005 – 2006</div>
             <div class="inst">Achutha Menon Centre for Health Science Studies, Sree Chitra Tirunal Institute for Medical Sciences &amp; Technology, Thiruvananthapuram, Kerala</div>
           </div>
           <div class="edu-row">
-           <div class="deg">MBBS – CCS, Meerut, UP (2000)</div>
+            <div class="deg" id="cred-mbbs">MBBS – CCS, Meerut, UP (2000)</div>
             <div class="yr">1993 – 1999</div>
-            <!-- FIX: Updated to CCS University as per reference -->
             <div class="inst">CCS University, Meerut, UP, India</div>
           </div>
           <div class="edu-row">
             <div class="deg">Date of Birth</div>
-            <div class="yr">05 March 1972</div>
+            <div class="yr" id="cred-dob">05 March 1972</div>
           </div>
         </div>
       </div>
@@ -608,7 +618,7 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
           <div class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
         </div>
         <div class="acc-body">
-          <div class="lic-row"><div class="dot"></div><div class="lic-text">Delhi Medical Council, Delhi — Reg. No. <strong>10915</strong></div></div>
+          <div class="lic-row"><div class="dot"></div><div class="lic-text" id="cred-regNo">Delhi Medical Council, Delhi — Reg. No. <strong>10915</strong></div></div>
           <div class="lic-row"><div class="dot"></div><div class="lic-text">Medical Council of Uttar Pradesh, Lucknow, UP</div></div>
         </div>
       </div>
@@ -672,7 +682,6 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
 </section>
 
 <!-- OPD TIMINGS -->
-<!-- FIX: All timings updated to match reference -->
 <section class="opd-section">
   <div class="wrap">
     <div class="section-head">Schedule</div>
@@ -681,38 +690,37 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
 
       <div class="opd-card highlight">
         <div class="opd-day">Monday – Friday</div>
-        <div class="opd-time">5:30 PM – 9:30 PM</div>
+        <div class="opd-time" id="opd-monFri">5:30 PM – 9:30 PM</div>
         <div class="opd-label">Evening OPD</div>
       </div>
 
       <div class="opd-card">
         <div class="opd-day">Saturday</div>
-        <div class="opd-time">2:00 PM – 4:00 PM</div>
+        <div class="opd-time" id="opd-satAft">2:00 PM – 4:00 PM</div>
         <div class="opd-label">Afternoon OPD</div>
         <div style="margin-top:12px;">
-          <div class="opd-time">5:30 PM – 9:30 PM</div>
+          <div class="opd-time" id="opd-satEve">5:30 PM – 9:30 PM</div>
           <div class="opd-label">Evening OPD</div>
         </div>
       </div>
 
       <div class="opd-card">
         <div class="opd-day">Sunday</div>
-        <div class="opd-time">10:30 AM – 2:30 PM</div>
+        <div class="opd-time" id="opd-sunMorn">10:30 AM – 2:30 PM</div>
         <div class="opd-label">Morning OPD</div>
         <div style="margin-top:12px;">
-          <div class="opd-time">6:00 PM – 9:00 PM</div>
+          <div class="opd-time" id="opd-sunEve">6:00 PM – 9:00 PM</div>
           <div class="opd-label">Evening OPD</div>
         </div>
       </div>
 
     </div>
 
-    <!-- On Call Row -->
     <div class="opd-on-call">
       <div class="opd-on-call-icon">📞</div>
       <div>
         <div class="oc-label">On Call — Daily</div>
-        <div class="oc-time">7:00 AM – 8:00 AM</div>
+        <div class="oc-time" id="opd-onCall">7:00 AM – 8:00 AM</div>
         <div class="oc-note">Available for urgent queries every day before OPD hours</div>
       </div>
     </div>
@@ -729,7 +737,7 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
         <h2>Research Publications</h2>
         <p>International peer-reviewed research papers &amp; reports</p>
       </div>
-      <div class="pub-num">40<span>+</span></div>
+      <div class="pub-num" id="pub-count">40<span>+</span></div>
     </div>
   </div>
 </section>
@@ -738,9 +746,9 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <strong>Dr. Tivender Addhrann</strong>
+      <strong id="footer-doctor-name">Dr. Tivender Addhrann</strong>
       <em>Family Physician · Trisha Family Clinic</em>
-      <p>Complete family healthcare for adults and children. Evidence-based, patient-first medicine — 26 years, one family at a time.</p>
+      <p id="footer-bio">Complete family healthcare for adults and children. Evidence-based, patient-first medicine — 26 years, one family at a time.</p>
     </div>
     <div class="footer-col">
       <h4>Quick Links</h4>
@@ -757,7 +765,7 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
       <ul>
         <li><a href="#">General Medicine</a></li>
         <li><a href="/childhealth.html">Child Healthcare</a></li>
-          <li><a href="#">Vaccination &amp; Immunization</a></li>
+        <li><a href="#">Vaccination &amp; Immunization</a></li>
         <li><a href="#">Preventive Care</a></li>
         <li><a href="#">Diabetes &amp; Hypertension</a></li>
         <li><a href="#">Clinical Research</a></li>
@@ -767,20 +775,20 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
       <h4>Contact Us</h4>
       <div class="footer-contact-item">
         <div class="ic">📍</div>
-        <p>LGF, D-87, Amar Colony, Near Raghunath Temple, Lajpat Nagar, New Delhi – 110024</p>
+        <p id="footer-address">LGF, D-87, Amar Colony, Near Raghunath Temple, Lajpat Nagar, New Delhi – 110024</p>
       </div>
       <div class="footer-contact-item">
         <div class="ic">📞</div>
-        <p>+91 9676553666 (WhatsApp)</p>
+        <p id="footer-phone">+91 9676553666 (WhatsApp)</p>
       </div>
       <div class="footer-contact-item">
         <div class="ic">✉</div>
-        <p>dr.tivenderadhran@gmail.com</p>
+        <p id="footer-email">dr.tivenderadhran@gmail.com</p>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 Trisha Family Clinic · Dr. Tivender Addhrann · MBBS · MPH</p>
+    <p>© <span id="footer-year">2025</span> Trisha Family Clinic · <span id="footer-clinic-name">Dr. Tivender Addhrann</span> · MBBS · MPH</p>
     <div class="footer-bottom-links">
       <a href="#">Privacy Policy</a>
       <a href="#">Terms of Use</a>
@@ -790,38 +798,207 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
 </footer>
 
 <!-- WhatsApp FAB -->
-<a href="https://wa.me/919676553666" class="wa-fab" target="_blank" title="WhatsApp">
+<a href="https://wa.me/919676553666" id="wa-fab-link" class="wa-fab" target="_blank" title="WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.558 4.115 1.535 5.84L.057 23.999l6.305-1.654A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.374l-.359-.213-3.722.976.992-3.625-.234-.372A9.818 9.818 0 0 1 2.182 12C2.182 6.577 6.577 2.182 12 2.182S21.818 6.577 21.818 12 17.423 21.818 12 21.818z"/></svg>
 </a>
 
-<script>
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }});
-  }, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+<!-- ═══════════════════════════════════════════════
+     FIREBASE — dynamic content loader
+════════════════════════════════════════════════ -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-  document.querySelectorAll('#mobileNav a').forEach(a => {
-    a.addEventListener('click', () => document.getElementById('mobileNav').classList.remove('open'));
+  const firebaseConfig = {
+    apiKey: "AIzaSyAEsZdxnYzQIuVtXJAmx6wW8HHlAundv2o",
+    authDomain: "trisha-family-clinic.firebaseapp.com",
+    projectId: "trisha-family-clinic",
+    storageBucket: "trisha-family-clinic.firebasestorage.app",
+    messagingSenderId: "246186022817",
+    appId: "1:246186022817:web:d0c35d6a5f311816555de0"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db  = getFirestore(app);
+
+  function setText(id, val) {
+    if (!val) return;
+    const el = document.getElementById(id);
+    if (el) el.textContent = val;
+  }
+  function setImg(id, url) {
+    if (!url) return;
+    const el = document.getElementById(id);
+    if (el) el.src = url;
+  }
+  function setHref(id, val) {
+    if (!val) return;
+    const el = document.getElementById(id);
+    if (el) el.href = val;
+  }
+
+  async function fetchDoc(name) {
+    try {
+      const snap = await getDoc(doc(db, 'siteContent', name));
+      return snap.exists() ? snap.data() : {};
+    } catch { return {}; }
+  }
+
+  async function loadPage() {
+    const hero = await fetchDoc('doctor_hero');
+    if (hero.doc_name) {
+      const parts = hero.doc_name.split(' ');
+      const first = parts[0];
+      const rest  = parts.slice(1).join(' ');
+      document.getElementById('hero-name-split').innerHTML = `${first}<br><em>${rest}</em>`;
+      setText('nav-doctor-name', hero.doc_name);
+      setText('footer-doctor-name', hero.doc_name);
+    }
+    if (hero.doc_qual) {
+      setText('nav-doctor-creds', hero.doc_qual);
+      setText('hero-qual', hero.doc_qual);
+    }
+    setText('hero-bio',      hero.doc_heroBio);
+    setText('hero-patients', hero.doc_patients);
+    setText('stat-patients', hero.doc_patients);
+    setText('stat-rating',   hero.doc_rating);
+    setText('stat-pubs',     hero.doc_pubs);
+    if (hero.doc_pubs) {
+      document.getElementById('pub-count').innerHTML = hero.doc_pubs.replace('+','') + '<span>+</span>';
+    }
+    setText('highlight-rating',   hero.doc_rating ? hero.doc_rating + ' star ratings' : '');
+    setText('highlight-patients', hero.doc_patients ? hero.doc_patients + ' patients' : '');
+
+    const creds = await fetchDoc('doctor_credentials');
+    setText('cred-mbbs',    creds.doc_mbbs);
+    setText('cred-mph',     creds.doc_mph);
+    setText('cred-dob',     creds.doc_dob);
+    if (creds.doc_regNo) {
+      document.getElementById('cred-regNo').innerHTML = 'Delhi Medical Council — Reg. No. <strong>' + creds.doc_regNo + '</strong>';
+    }
+    setText('role1-title', creds.doc_pos1title);
+    setText('role1-org',   creds.doc_pos1loc);
+    setText('role2-title', creds.doc_pos2title);
+    if (creds.doc_pos2org) {
+      document.getElementById('role2-org').innerHTML = creds.doc_pos2org.replace('\n','<br>');
+    }
+
+    const sched = await fetchDoc('doctor_schedule');
+    setText('opd-monFri',  sched.doc_monFri);
+    setText('opd-satAft',  sched.doc_satAft);
+    setText('opd-satEve',  sched.doc_satEve);
+    setText('opd-sunMorn', sched.doc_sunMorn);
+    setText('opd-sunEve',  sched.doc_sunEve);
+    setText('opd-onCall',  sched.doc_onCall);
+
+    const imgs = await fetchDoc('doctor_images');
+    setImg('hero-profile-img',   imgs.profileImage);
+    setImg('clarity-clinic-img', imgs.clinicImage);
+
+    const global = await fetchDoc('global_all');
+    setText('topbar-city',       global.g_city);
+    setText('footer-bio',        global.g_footerBio);
+    setText('footer-year',       global.g_year);
+    setText('footer-clinic-name', global.g_clinicName);
+    if (global.g_phone) {
+      const phoneEl = document.getElementById('topbar-phone');
+      if (phoneEl) { phoneEl.textContent = global.g_phone; phoneEl.href = 'tel:' + global.g_phone.replace(/\s/g,''); }
+      setText('footer-phone', global.g_phone + ' (WhatsApp)');
+    }
+    if (global.g_whatsapp) {
+      setHref('wa-fab-link', 'https://wa.me/' + global.g_whatsapp);
+    }
+
+    const contact = await fetchDoc('contact_all');
+    setText('footer-address', contact.ct_address);
+    setText('footer-email',   contact.ct_email);
+  }
+
+  loadPage();
+</script>
+
+<!-- UI scripts (accordion, dropdown, mobile nav) -->
+<script>
+  // Credentials accordion
+  function toggle(header) {
+    const item = header.parentElement;
+    item.classList.toggle('open');
+  }
+
+  // ── HAMBURGER ──
+  const hamburger = document.querySelector('.hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
   });
 
-  // Dropdown — works for ALL nav dropdowns (About + Services)
+  document.querySelectorAll('#mobileNav a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (mobileNav.classList.contains('open') &&
+        !e.target.closest('.mobile-nav') &&
+        !e.target.closest('.hamburger')) {
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // ── DESKTOP DROPDOWNS ──
   document.querySelectorAll('.nav-dropdown-toggle').forEach(toggle => {
     toggle.addEventListener('click', function(e) {
       e.preventDefault();
       const menu = this.nextElementSibling;
-      const isOpen = menu.style.display === 'block';
-      // Close all first
-      document.querySelectorAll('.nav-dropdown .dropdown-menu').forEach(m => m.style.display = 'none');
-      // Then open this one if it was closed
-      if (!isOpen) menu.style.display = 'block';
+      const isOpen = menu.classList.contains('open');
+      document.querySelectorAll('.nav-dropdown .dropdown-menu').forEach(m => m.classList.remove('open'));
+      document.querySelectorAll('.nav-dropdown-toggle').forEach(t => t.setAttribute('aria-expanded', 'false'));
+      if (!isOpen) {
+        menu.classList.add('open');
+        this.setAttribute('aria-expanded', 'true');
+      }
     });
   });
 
   document.addEventListener('click', function(e) {
     if (!e.target.closest('.nav-dropdown')) {
-      document.querySelectorAll('.nav-dropdown .dropdown-menu').forEach(m => m.style.display = 'none');
+      document.querySelectorAll('.nav-dropdown .dropdown-menu').forEach(m => m.classList.remove('open'));
+      document.querySelectorAll('.nav-dropdown-toggle').forEach(t => t.setAttribute('aria-expanded', 'false'));
     }
   });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.nav-dropdown .dropdown-menu').forEach(m => m.classList.remove('open'));
+      document.querySelectorAll('.nav-dropdown-toggle').forEach(t => t.setAttribute('aria-expanded', 'false'));
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+    }
+  });
+
+  // ── MOBILE SERVICES ACCORDION ──
+  function toggleMobileAcc(btn) {
+    const body = btn.nextElementSibling;
+    const isOpen = body.classList.contains('open');
+    document.querySelectorAll('.mobile-acc-toggle').forEach(b => {
+      b.classList.remove('open');
+      b.setAttribute('aria-expanded', 'false');
+    });
+    document.querySelectorAll('.mobile-acc-body').forEach(b => b.classList.remove('open'));
+    if (!isOpen) {
+      btn.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      body.classList.add('open');
+    }
+  }
 </script>
 </body>
 </html>

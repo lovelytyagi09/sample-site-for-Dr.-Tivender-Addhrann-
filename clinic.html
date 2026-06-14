@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,20 +63,11 @@
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
 
-    /* TOP BAR */
-    .topbar { background: var(--green-900); color: rgba(255,255,255,.75); font-size: .82rem; padding: .5rem 0; }
-    .topbar a { color: rgba(255,255,255,.85); }
-    .topbar a:hover { color: #fff; }
-    .topbar .sep { margin: 0 .75rem; opacity: .35; }
-
-    /* NAVBAR */
-    .navbar { background: #fff; border-bottom: 1.5px solid var(--border); padding: .9rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: var(--shadow-sm); }
-    .navbar-brand { font-family: var(--font-head); font-weight: 700; font-size: 1.08rem; color: var(--green-900) !important; line-height: 1.2; }
-    .navbar-brand small { display: block; font-family: var(--font-body); font-size: .72rem; font-weight: 400; color: var(--muted); letter-spacing: .04em; }
-    .nav-link { font-family: var(--font-body); font-size: .88rem; font-weight: 600; color: var(--text) !important; padding: .4rem .9rem !important; transition: color .2s; }
-    .nav-link:hover, .nav-link.active { color: var(--green-600) !important; }
-    .btn-book { background: var(--green-600); color: #fff !important; border-radius: 50px; padding: .45rem 1.25rem !important; font-size: .83rem !important; font-weight: 700 !important; transition: background .2s, transform .15s; }
-    .btn-book:hover { background: var(--green-900); transform: translateY(-1px); }
+    /* TOP BAR (secondary info bar) */
+    .topbar2 { background: var(--green-900); color: rgba(255,255,255,.75); font-size: .82rem; padding: .5rem 0; }
+    .topbar2 a { color: rgba(255,255,255,.85); }
+    .topbar2 a:hover { color: #fff; }
+    .topbar2 .sep { margin: 0 .75rem; opacity: .35; }
 
     /* PAGE HERO */
     .page-hero {
@@ -263,63 +253,80 @@
       .lightbox-next { right: -.5rem; }
       .video-thumbs { display: none; }
     }
+
     /* ── TOPBAR ── */
-.topbar { background: var(--green-900); padding: 9px 0; font-size: 12px; color: rgba(255,255,255,.7); }
-.topbar .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
-.ti { display: flex; align-items: center; gap: 7px; }
-.ti i { color: var(--yellow-400); font-size: 11px; }
-.ti a { color: rgba(255,255,255,.8); text-decoration: none; transition: color .2s; }
-.ti a:hover { color: var(--yellow-300); }
+    .topbar { background: var(--green-900); padding: 9px 0; font-size: 12px; color: rgba(255,255,255,.7); }
+    .topbar .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+    .ti { display: flex; align-items: center; gap: 7px; }
+    .ti i { color: var(--yellow-400); font-size: 11px; }
+    .ti a { color: rgba(255,255,255,.8); text-decoration: none; transition: color .2s; }
+    .ti a:hover { color: var(--yellow-300); }
 
-/* ── NAVBAR ── */
-header { position: sticky; top: 0; z-index: 999; background: #fff; border-bottom: 2px solid var(--green-100); box-shadow: 0 4px 24px rgba(26,74,46,.08); }
-nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 74px; }
-.brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
-.brand-icon { width: 48px; height: 48px; border-radius: 14px; background: linear-gradient(135deg, var(--green-600), var(--green-800)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 20px; flex-shrink: 0; box-shadow: 0 4px 14px rgba(45,122,72,.3); }
-.brand-name { font-size: 15.5px; font-weight: 800; color: var(--text); line-height: 1.2; font-family: 'Playfair Display', serif; }
-.brand-creds { font-size: 11px; color: var(--muted); font-weight: 400; }
-.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-.nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 600; transition: color .2s; }
-.nav-links a:hover, .nav-links a.active { color: var(--green-600); }
-.nav-book { background: var(--yellow-400); color: var(--green-900); text-decoration: none; padding: 11px 22px; border-radius: 10px; font-size: 13.5px; font-weight: 800; transition: all .2s; white-space: nowrap; display: flex; align-items: center; gap: 7px; box-shadow: 0 4px 16px rgba(240,194,0,.35); }
-.nav-book:hover { background: var(--yellow-500); transform: translateY(-1px); }
-.hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
-.hamburger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; display: block; }
-.mobile-nav { display: none; flex-direction: column; background: #fff; border-top: 1px solid var(--border); position: fixed; top: 74px; left: 0; right: 0; z-index: 998; box-shadow: 0 8px 32px rgba(0,0,0,.1); }
-.mobile-nav.open { display: flex; }
-.mobile-nav a { padding: 16px 24px; text-decoration: none; color: var(--text); font-size: 15px; font-weight: 600; border-bottom: 1px solid var(--border); }
-.mobile-nav a.cta { background: var(--yellow-400); color: var(--green-900); text-align: center; font-weight: 800; border: none; }
+    /* ── NAVBAR ── */
+    header { position: sticky; top: 0; z-index: 999; background: #fff; border-bottom: 2px solid var(--green-100); box-shadow: 0 4px 24px rgba(26,74,46,.08); }
+    nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 74px; }
+    .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .brand-icon { width: 48px; height: 48px; border-radius: 14px; background: linear-gradient(135deg, var(--green-600), var(--green-800)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 20px; flex-shrink: 0; box-shadow: 0 4px 14px rgba(45,122,72,.3); }
+    .brand-name { font-size: 15.5px; font-weight: 800; color: var(--text); line-height: 1.2; font-family: 'Playfair Display', serif; }
+    .brand-creds { font-size: 11px; color: var(--muted); font-weight: 400; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 600; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--green-600); }
+    .nav-book { background: var(--yellow-400); color: var(--green-900); text-decoration: none; padding: 11px 22px; border-radius: 10px; font-size: 13.5px; font-weight: 800; transition: all .2s; white-space: nowrap; display: flex; align-items: center; gap: 7px; box-shadow: 0 4px 16px rgba(240,194,0,.35); }
+    .nav-book:hover { background: var(--yellow-500); transform: translateY(-1px); }
+    .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
+    .hamburger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; display: block; transition: all .2s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav { display: none; flex-direction: column; background: #fff; border-top: 1px solid var(--border); position: fixed; top: 74px; left: 0; right: 0; z-index: 998; box-shadow: 0 8px 32px rgba(0,0,0,.1); max-height: calc(100vh - 74px); overflow-y: auto; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { padding: 16px 24px; text-decoration: none; color: var(--text); font-size: 15px; font-weight: 600; border-bottom: 1px solid var(--border); }
+    .mobile-nav a.cta { background: var(--yellow-400); color: var(--green-900); text-align: center; font-weight: 800; border: none; }
+    .mobile-acc { border-bottom: 1px solid var(--border); }
+    .mobile-acc-toggle { width: 100%; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; background: none; border: none; font-family: var(--font-body); font-size: 15px; font-weight: 600; color: var(--text); cursor: pointer; text-align: left; }
+    .mobile-acc-toggle i { transition: transform .25s; }
+    .mobile-acc-toggle.open i { transform: rotate(180deg); }
+    .mobile-acc-toggle.open { color: var(--green-600); }
+    .mobile-acc-body { max-height: 0; overflow: hidden; background: var(--green-50); transition: max-height .25s ease; }
+    .mobile-acc-body.open { max-height: 400px; }
+    .mobile-acc-body a { display: block; padding: 13px 24px 13px 36px; font-size: 14px; border-bottom: 1px solid var(--border); }
+    .mobile-acc-body a:last-child { border-bottom: none; }
 
-/* ── DROPDOWN ── */
-.nav-dropdown { position: relative; }
-.nav-dropdown-toggle { display: flex; align-items: center; }
-.dropdown-menu { display: none; position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%); background: #fff; border-radius: 12px; border: 1.5px solid var(--green-100); box-shadow: 0 12px 40px rgba(26,74,46,.13); list-style: none; min-width: 200px; padding: 8px; z-index: 1000; }
-.dropdown-menu::before { content: ''; position: absolute; top: -6px; left: 50%; transform: translateX(-50%); width: 12px; height: 12px; background: #fff; border-left: 1.5px solid var(--green-100); border-top: 1.5px solid var(--green-100); rotate: 45deg; }
-.dropdown-menu li a { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; color: var(--text); font-size: 14px; font-weight: 600; transition: background .15s, color .15s; }
-.dropdown-menu li a i { color: var(--green-500); font-size: 15px; }
-.dropdown-menu li a:hover { background: var(--green-50); color: var(--green-700); }
+    /* ── DROPDOWN ── */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-toggle { display: flex; align-items: center; cursor: pointer; }
+    .dropdown-menu { display: none; position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%); background: #fff; border-radius: 12px; border: 1.5px solid var(--green-100); box-shadow: 0 12px 40px rgba(26,74,46,.13); list-style: none; min-width: 200px; padding: 8px; z-index: 1000; }
+    .dropdown-menu.open { display: block; }
+    .dropdown-menu::before { content: ''; position: absolute; top: -6px; left: 50%; transform: translateX(-50%); width: 12px; height: 12px; background: #fff; border-left: 1.5px solid var(--green-100); border-top: 1.5px solid var(--green-100); rotate: 45deg; }
+    .dropdown-menu li a { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 8px; color: var(--text); font-size: 14px; font-weight: 600; transition: background .15s, color .15s; }
+    .dropdown-menu li a i { color: var(--green-500); font-size: 15px; }
+    .dropdown-menu li a:hover { background: var(--green-50); color: var(--green-700); }
+    .nav-dropdown-toggle[aria-expanded="true"] i.fa-chevron-down { transform: rotate(180deg); }
+    .nav-dropdown-toggle i.fa-chevron-down { transition: transform .2s; }
 
-/* ── RESPONSIVE ── */
-@media (max-width: 640px) {
-  .nav-links, .nav-book { display: none; }
-  .hamburger { display: flex; }
-}
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .nav-links, .nav-book { display: none; }
+      .hamburger { display: flex; }
+    }
   </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar d-none d-md-block">
+<!-- TOP BAR (secondary info bar) -->
+<div class="topbar2 d-none d-md-block">
   <div class="container d-flex justify-content-between align-items-center">
     <div>
-      <i class="bi bi-geo-alt-fill me-1"></i> Lajpat Nagar 4, New Delhi – 110024
+      <i class="bi bi-geo-alt-fill me-1"></i> <span id="topbar2_address">Lajpat Nagar 4, New Delhi – 110024</span>
       <span class="sep">|</span>
       <i class="bi bi-clock me-1"></i> Mon–Fri: 5:30–9:30 PM &nbsp;·&nbsp; Sat: 2–4 PM &amp; 5:30–9:30 PM &nbsp;·&nbsp; Sun: 10:30 AM–9:30 PM
     </div>
     <div>
-      <a href="tel:+91 9676553666"><i class="bi bi-telephone-fill me-1"></i>+91 9676553666</a>
+      <a href="tel:+91 9676553666" id="topbar2_phone"><i class="bi bi-telephone-fill me-1"></i>+91 9676553666</a>
       <span class="sep">|</span>
-      <a href="https://wa.me/919676553666"><i class="bi bi-whatsapp me-1"></i>WhatsApp</a>
+      <a href="https://wa.me/919676553666">
+        <i class="bi bi-whatsapp me-1"></i>WhatsApp</a>
     </div>
   </div>
 </div>
@@ -327,9 +334,9 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
 <!-- TOPBAR -->
 <div class="topbar">
   <div class="wrap">
-    <div class="ti"><i class="fa-solid fa-phone"></i><a href="tel:+91 9676553666">+91 9676553666</a></div>
+    <div class="ti"><i class="fa-solid fa-phone"></i><a href="tel:+91 9676553666" id="topbar_phone">+91 9676553666</a></div>
     <div class="ti"><i class="fa-brands fa-whatsapp"></i><a href="/contact.html">Available on WhatsApp</a></div>
-    <div class="ti"><i class="fa-solid fa-location-dot"></i><span>Delhi, India</span></div>
+    <div class="ti"><i class="fa-solid fa-location-dot"></i><span id="topbar_city">Delhi, India</span></div>
   </div>
 </div>
 
@@ -346,25 +353,25 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li class="nav-dropdown">
-        <a href="#" class="nav-dropdown-toggle">About <i class="fa-solid fa-chevron-down" style="font-size:10px;margin-left:3px;"></i></a>
+        <a href="#" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">About <i class="fa-solid fa-chevron-down" style="font-size:10px;margin-left:3px;"></i></a>
         <ul class="dropdown-menu">
           <li><a href="doctor.html"><i class="fa-solid fa-user-doctor"></i> About Doctor</a></li>
           <li><a href="clinic.html"><i class="fa-solid fa-house-chimney-medical"></i> About Clinic</a></li>
         </ul>
       </li>
-    <li class="nav-dropdown">
-  <a href="service.html" class="nav-dropdown-toggle">Services <i class="fa-solid fa-chevron-down" style="font-size:10px;margin-left:3px;"></i></a>
-  <ul class="dropdown-menu">
-    <li><a href="vaccination.html"><i class="fa-solid fa-syringe"></i> Vaccination & Immunization</a></li>
-    <li><a href="childhealth.html"><i class="fa-solid fa-baby"></i> Child Health Care</a></li>
-    <li><a href="HealthCheckup.html"><i class="fa-solid fa-microscope"></i> Health Checkup (General)</a></li>
-    <li><a href="DiabetesandHypertensionManagement.html"><i class="fa-solid fa-droplet"></i> Diabetes & Hypertension Management</a></li>
-  </ul>
-</li>
+      <li class="nav-dropdown">
+        <a href="service.html" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Services <i class="fa-solid fa-chevron-down" style="font-size:10px;margin-left:3px;"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="vaccination.html"><i class="fa-solid fa-syringe"></i> Vaccination & Immunization</a></li>
+          <li><a href="childhealth.html"><i class="fa-solid fa-baby"></i> Child Health Care</a></li>
+          <li><a href="HealthCheckup.html"><i class="fa-solid fa-microscope"></i> Health Checkup (General)</a></li>
+          <li><a href="DiabetesandHypertensionManagement.html"><i class="fa-solid fa-droplet"></i> Diabetes & Hypertension Management</a></li>
+        </ul>
+      </li>
       <li><a href="contact.html">Contact Us</a></li>
     </ul>
     <a class="nav-book" href="/contact.html"><i class="fa-regular fa-calendar-check"></i> Book Consultation</a>
-    <button class="hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+    <button class="hamburger" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </nav>
@@ -372,7 +379,20 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
     <a href="index.html">Home</a>
     <a href="doctor.html"><i class="fa-solid fa-user-doctor" style="margin-right:8px;color:var(--green-500);"></i>About Doctor</a>
     <a href="clinic.html"><i class="fa-solid fa-house-chimney-medical" style="margin-right:8px;color:var(--green-500);"></i>About Clinic</a>
-    <a href="service.html">Services</a>
+
+    <!-- Services accordion -->
+    <div class="mobile-acc">
+      <button class="mobile-acc-toggle" onclick="toggleMobileAcc(this)" aria-expanded="false">
+        Services <i class="fa-solid fa-chevron-down" style="font-size:11px;"></i>
+      </button>
+      <div class="mobile-acc-body">
+        <a href="vaccination.html"><i class="fa-solid fa-syringe" style="margin-right:8px;color:var(--green-500);"></i>Vaccination & Immunization</a>
+        <a href="childhealth.html"><i class="fa-solid fa-baby" style="margin-right:8px;color:var(--green-500);"></i>Child Health Care</a>
+        <a href="HealthCheckup.html"><i class="fa-solid fa-microscope" style="margin-right:8px;color:var(--green-500);"></i>Health Checkup (General)</a>
+        <a href="DiabetesandHypertensionManagement.html"><i class="fa-solid fa-droplet" style="margin-right:8px;color:var(--green-500);"></i>Diabetes & Hypertension</a>
+      </div>
+    </div>
+
     <a href="contact.html">Contact</a>
     <a class="cta" href="/contact.html">Book Consultation</a>
   </div>
@@ -384,12 +404,12 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
     <div class="row align-items-center">
       <div class="col-lg-8">
        <span class="eyebrow">Trisha Family Clinic · Est. 2014</span>
-        <h1>Our Clinic — <em>Where Families</em><br>Come First</h1>
-      <p>A warm, well-equipped primary care clinic in the heart of Lajpat Nagar, New Delhi — serving families for over 13 years with compassionate, evidence-based care.</p>
+        <h1 id="cl_heroHeading">Our Clinic — <em>Where Families</em><br>Come First</h1>
+      <p id="cl_heroSubtext">A warm, well-equipped primary care clinic in the heart of Lajpat Nagar, New Delhi — serving families for over 13 years with compassionate, evidence-based care.</p>
           <div class="hero-stats">
-            <div class="hero-stat"><strong>12+</strong><span>Years Since Est.</span></div>
-            <div class="hero-stat"><strong>30K+</strong><span>Patients Seen</span></div>
-          <div class="hero-stat"><strong>13+</strong><span>OPD Facilities</span></div>
+            <div class="hero-stat"><strong id="cl_stat1">12+</strong><span>Years Since Est.</span></div>
+            <div class="hero-stat"><strong id="cl_stat2">30K+</strong><span>Patients Seen</span></div>
+          <div class="hero-stat"><strong id="cl_stat3">13+</strong><span>OPD Facilities</span></div>
           <div class="hero-stat"><strong>4.8★</strong><span>Star Rating</span></div>
         </div>
         <div class="breadcrumb-nav">
@@ -418,25 +438,25 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
     <div class="row mb-5">
       <div class="col-lg-6">
         <span class="section-label">About the Clinic</span>
-        <h2 class="section-title">A Trusted Clinical <em>Home</em> for Delhi Families</h2>
+        <h2 class="section-title" id="cl_aboutHeading">A Trusted Clinical <em>Home</em> for Delhi Families</h2>
       </div>
       <div class="col-lg-6 d-flex align-items-end">
-        <p class="mb-0" style="font-size:.95rem;color:var(--muted);">Trisha Family Clinic was established in 2014 by Dr. Tivender Addhrann — bringing together decades of AIIMS-trained clinical experience, public health expertise, and genuine compassion for every patient who walks through the door.</p>
+        <p class="mb-0" id="cl_aboutPara" style="font-size:.95rem;color:var(--muted);">Trisha Family Clinic was established in 2014 by Dr. Tivender Addhrann — bringing together decades of AIIMS-trained clinical experience, public health expertise, and genuine compassion for every patient who walks through the door.</p>
       </div>
     </div>
     <div class="row g-4">
       <div class="col-sm-6 col-lg-3">
         <div class="overview-card">
           <div class="overview-icon"><i class="bi bi-house-heart-fill"></i></div>
-          <h5>Family-Centred Care</h5>
-          <p>One trusted doctor for every member of your family — newborns to seniors — under one roof.</p>
+          <h5 id="cl_feat1title">Family-Centred Care</h5>
+          <p id="cl_feat1desc">One trusted doctor for every member of your family — newborns to seniors — under one roof.</p>
         </div>
       </div>
       <div class="col-sm-6 col-lg-3">
         <div class="overview-card">
           <div class="overview-icon"><i class="bi bi-clipboard2-pulse-fill"></i></div>
-          <h5>Evidence-Based Medicine</h5>
-          <p>Treatments backed by 30+ national &amp; international research projects. No guesswork — ever.</p>
+          <h5 id="cl_feat2title">Evidence-Based Medicine</h5>
+          <p id="cl_feat2desc">Treatments backed by 30+ national &amp; international research projects. No guesswork — ever.</p>
         </div>
       </div>
       <div class="col-sm-6 col-lg-3">
@@ -474,22 +494,22 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
     <!-- Replace these src="" values with your actual clinic photos -->
     <div class="photo-grid" id="photoGrid">
       <div class="photo-item" data-index="0">
-        <img src="clinic inside.jpeg" alt="Clinic reception" />
+        <img src="clinic inside.jpeg" alt="Clinic reception" id="cl_img_reception" />
         <div class="photo-overlay"><span><i class="bi bi-arrows-fullscreen me-1"></i>Waiting Area</span></div>
         <div class="photo-badge"><i class="bi bi-zoom-in"></i> View</div>
       </div>
       <div class="photo-item" data-index="1">
-        <img src="waiting area.jpeg" alt="Waiting Area" />//doctor sitting.jpeg
+        <img src="waiting area.jpeg" alt="Waiting Area" id="cl_img_waitingArea" />
         <div class="photo-overlay"><span><i class="bi bi-arrows-fullscreen me-1"></i>Waiting Area</span></div>
         <div class="photo-badge"><i class="bi bi-zoom-in"></i> View</div>
       </div>
       <div class="photo-item" data-index="2">
-        <img src="clinic gate.jpeg" alt="Child health checkup" />//outside clinic pic.jpeg
+        <img src="clinic gate.jpeg" alt="Child health checkup" id="cl_img_entrance" />
         <div class="photo-overlay"><span><i class="bi bi-arrows-fullscreen me-1"></i>Clinic Entrance</span></div>
         <div class="photo-badge"><i class="bi bi-zoom-in"></i> View</div>
       </div>
       <div class="photo-item" data-index="3">
-        <img src="doctor sitting.jpeg" alt="Vaccination" />
+        <img src="doctor sitting.jpeg" alt="Vaccination" id="cl_img_consultRoom" />
         <div class="photo-overlay"><span><i class="bi bi-arrows-fullscreen me-1"></i>Consultaion room</span></div>
         <div class="photo-badge"><i class="bi bi-zoom-in"></i> View</div>
       </div>
@@ -612,28 +632,28 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
           <div class="location-detail-icon"><i class="bi bi-geo-alt-fill"></i></div>
           <div class="location-detail-text">
             <strong>Clinic Address</strong>
-            <span>LGF, D-87, Amar Colony,<br>Near Raghunath Temple,<br>Lajpat Nagar, New Delhi – 110024</span>
+            <span id="cl_address">LGF, D-87, Amar Colony,<br>Near Raghunath Temple,<br>Lajpat Nagar, New Delhi – 110024</span>
           </div>
         </div>
         <div class="location-detail">
           <div class="location-detail-icon"><i class="bi bi-telephone-fill"></i></div>
           <div class="location-detail-text">
             <strong>Clinic Phone</strong>
-            <span><a href="tel:9676553666">+91 96765 53666</a> (WhatsApp)<br><a href="tel:9582576086">+91 95825 76086</a></span>
+            <span><a href="tel:9676553666" id="cl_phone1">+91 96765 53666</a> (WhatsApp)<br><a href="tel:9582576086" id="cl_phone2">+91 95825 76086</a></span>
           </div>
         </div>
         <div class="location-detail">
           <div class="location-detail-icon"><i class="bi bi-envelope-fill"></i></div>
           <div class="location-detail-text">
             <strong>Email</strong>
-            <span><a href="mailto:dr.tivenderadhran@gmail.com">dr.tivenderadhran@gmail.com</a></span>
+            <span><a href="mailto:dr.tivenderadhran@gmail.com" id="cl_email">dr.tivenderadhran@gmail.com</a></span>
           </div>
         </div>
         <div class="location-detail">
           <div class="location-detail-icon"><i class="bi bi-train-front-fill"></i></div>
           <div class="location-detail-text">
             <strong>Nearest Metro</strong>
-            <span>Lajpat Nagar Metro Station (Violet Line) — ~5 min walk</span>
+            <span id="cl_metro">Lajpat Nagar Metro Station (Violet Line) — ~5 min walk</span>
           </div>
         </div>
         <div class="location-detail">
@@ -826,9 +846,9 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
       </div>
       <div class="col-lg-3">
         <div class="footer-heading">Contact Us</div>
-        <div class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>LGF, D-87, Amar Colony, Near Raghunath Temple, Lajpat Nagar, New Delhi – 110024</span></div>
-        <div class="footer-contact-item"><i class="bi bi-telephone-fill"></i><span><a href="tel:9676553666">+91 96765 53666</a><br><a href="tel:9582576086">+91 95825 76086</a></span></div>
-        <div class="footer-contact-item"><i class="bi bi-envelope-fill"></i><a href="mailto:dr.tivenderadhran@gmail.com">dr.tivenderadhran@gmail.com</a></div>
+        <div class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span id="footer_address">LGF, D-87, Amar Colony, Near Raghunath Temple, Lajpat Nagar, New Delhi – 110024</span></div>
+        <div class="footer-contact-item"><i class="bi bi-telephone-fill"></i><span><a href="tel:9676553666" id="footer_phone1">+91 96765 53666</a><br><a href="tel:9582576086" id="footer_phone2">+91 95825 76086</a></span></div>
+        <div class="footer-contact-item"><i class="bi bi-envelope-fill"></i><a href="mailto:dr.tivenderadhran@gmail.com" id="footer_email">dr.tivenderadhran@gmail.com</a></div>
       </div>
     </div>
     <div class="footer-bottom">
@@ -910,29 +930,183 @@ nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; jus
     el.style.transition = 'opacity .5s ease, transform .5s ease';
     observer.observe(el);
   });
-  
-  // Mobile nav close on link click
-  document.querySelectorAll('#mobileNav a').forEach(a => {
-    a.addEventListener('click', () => document.getElementById('mobileNav').classList.remove('open'));
+
+  // ── HAMBURGER ──
+  const hamburger = document.querySelector('.hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
   });
 
-  // Dropdown toggle (all dropdowns)
+  document.querySelectorAll('#mobileNav a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (mobileNav.classList.contains('open') &&
+        !e.target.closest('.mobile-nav') &&
+        !e.target.closest('.hamburger')) {
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // ── DESKTOP DROPDOWNS (About / Services) ──
   document.querySelectorAll('.nav-dropdown-toggle').forEach(toggle => {
     toggle.addEventListener('click', function(e) {
       e.preventDefault();
       const menu = this.nextElementSibling;
-      const isOpen = menu.style.display === 'block';
-      document.querySelectorAll('.nav-dropdown .dropdown-menu').forEach(m => m.style.display = 'none');
-      if (!isOpen) menu.style.display = 'block';
+      const isOpen = menu.classList.contains('open');
+
+      document.querySelectorAll('.nav-dropdown .dropdown-menu').forEach(m => m.classList.remove('open'));
+      document.querySelectorAll('.nav-dropdown-toggle').forEach(t => t.setAttribute('aria-expanded', 'false'));
+
+      if (!isOpen) {
+        menu.classList.add('open');
+        this.setAttribute('aria-expanded', 'true');
+      }
     });
   });
 
   document.addEventListener('click', function(e) {
     if (!e.target.closest('.nav-dropdown')) {
-      document.querySelectorAll('.nav-dropdown .dropdown-menu').forEach(m => m.style.display = 'none');
+      document.querySelectorAll('.nav-dropdown .dropdown-menu').forEach(m => m.classList.remove('open'));
+      document.querySelectorAll('.nav-dropdown-toggle').forEach(t => t.setAttribute('aria-expanded', 'false'));
     }
   });
 
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.nav-dropdown .dropdown-menu').forEach(m => m.classList.remove('open'));
+      document.querySelectorAll('.nav-dropdown-toggle').forEach(t => t.setAttribute('aria-expanded', 'false'));
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+    }
+  });
+
+  // ── MOBILE SERVICES ACCORDION ──
+  function toggleMobileAcc(btn) {
+    const body = btn.nextElementSibling;
+    const isOpen = body.classList.contains('open');
+
+    document.querySelectorAll('.mobile-acc-toggle').forEach(b => {
+      b.classList.remove('open');
+      b.setAttribute('aria-expanded', 'false');
+    });
+    document.querySelectorAll('.mobile-acc-body').forEach(b => b.classList.remove('open'));
+
+    if (!isOpen) {
+      btn.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      body.classList.add('open');
+    }
+  }
+</script>
+
+<!-- ═══ DYNAMIC CONTENT FROM FIREBASE ═══════════════════════════ -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAEsZdxnYzQIuVtXJAmx6wW8HHlAundv2o",
+    authDomain: "trisha-family-clinic.firebaseapp.com",
+    projectId: "trisha-family-clinic",
+    storageBucket: "trisha-family-clinic.firebasestorage.app",
+    messagingSenderId: "246186022817",
+    appId: "1:246186022817:web:d0c35d6a5f311816555de0"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  async function getData(id) {
+    try {
+      const snap = await getDoc(doc(db, 'siteContent', id));
+      return snap.exists() ? snap.data() : {};
+    } catch (e) { return {}; }
+  }
+
+  function setHTML(id, val) {
+    if (!val) return;
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = val;
+  }
+  function setText(id, val) {
+    if (!val) return;
+    const el = document.getElementById(id);
+    if (el) el.textContent = val;
+  }
+  function setImg(id, url) {
+    if (!url) return;
+    const el = document.getElementById(id);
+    if (el) el.src = url;
+  }
+  function setPhone(ids, val) {
+    if (!val) return;
+    const clean = val.replace(/\s+/g, '');
+    ids.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) { el.textContent = val; el.href = 'tel:' + clean; }
+    });
+  }
+  function setEmail(ids, val) {
+    if (!val) return;
+    ids.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) { el.textContent = val; el.href = 'mailto:' + val; }
+    });
+  }
+
+  (async () => {
+    const [hero, about, location, images, global] = await Promise.all([
+      getData('clinic_hero'),
+      getData('clinic_about'),
+      getData('clinic_location'),
+      getData('clinic_images'),
+      getData('global_all')
+    ]);
+
+    // Hero
+    setHTML('cl_heroHeading', hero.cl_heroHeading);
+    setText('cl_heroSubtext', hero.cl_heroSubtext);
+    setText('cl_stat1', hero.cl_stat1);
+    setText('cl_stat2', hero.cl_stat2);
+    setText('cl_stat3', hero.cl_stat3);
+
+    // About
+    setHTML('cl_aboutHeading', about.cl_aboutHeading);
+    setText('cl_aboutPara', about.cl_aboutPara);
+    setText('cl_feat1title', about.cl_feat1title);
+    setText('cl_feat1desc', about.cl_feat1desc);
+    setText('cl_feat2title', about.cl_feat2title);
+    setText('cl_feat2desc', about.cl_feat2desc);
+
+    // Location
+    setHTML('cl_address', location.cl_address);
+    setHTML('footer_address', location.cl_address);
+    setPhone(['cl_phone1','footer_phone1','topbar_phone','topbar2_phone'], location.cl_phone1);
+    setPhone(['cl_phone2','footer_phone2'], location.cl_phone2);
+    setEmail(['cl_email','footer_email'], location.cl_email);
+    setText('cl_metro', location.cl_metro);
+
+    // Images
+    setImg('cl_img_reception', images.reception);
+    setImg('cl_img_waitingArea', images.waitingArea);
+    setImg('cl_img_entrance', images.entrance);
+    setImg('cl_img_consultRoom', images.consultRoom);
+
+    // Global
+    setText('topbar_city', global.g_city);
+  })();
 </script>
 </body>
 </html>
